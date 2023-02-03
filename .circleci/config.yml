@@ -13,7 +13,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: Run tests
-          command: npm run cypress # If you are using Yarn, change this to Yarn - Hence if you are testing your project with Cypress you need to add a new run for that depends on how you've defined that script in your project.
+          command: npm test # If you are using Yarn, change this to Yarn - Hence if you are testing your project with Cypress you need to add a new run for that depends on how you've defined that script in your project.
       - run:
           name: Run build
           command: npm run build #If you are using Yarn change this to Yarn
@@ -25,5 +25,5 @@ workflows:
   test_my_app:
     jobs:
       - cypress/run:
-          start: npm start
+          start: npm run cypress
       - build
