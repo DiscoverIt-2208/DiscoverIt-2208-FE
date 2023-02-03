@@ -61,3 +61,58 @@
         "cities"
     ]
 }
+
+
+//Endpoints needed from front end by page 
+
+//City dashboard with list of cities, user sent "Denver" as city and has clicked a catagory, then we get the following:
+//array of place object that hold name and image for each object
+
+{
+    [
+        {"id": "1111", "placeName" : "Denver Zoo", "placeImage": "www.image.com" }, 
+        {"id": "2222", "placeName" : "Six Flags", "placeImage": "www.image1.com" }, 
+        {"id": "3333", "placeName" : "Queen of Sheba", "placeImage": "www.image2.com"}
+    ]
+}
+
+//Show page: user clicks a place and based on the id (ex: 1111), we get sent more information on that place, which looks like the following: 
+
+{
+    {
+        "id": "1111", 
+        "placeName" : "Denver Zoo", 
+        "placeImage": "www.image.com", 
+        "address" : "123 What St. Denver, CO", 
+        "hoursOperation": "9-6", 
+        "description": "Fun place to go"
+    } 
+}
+
+//When user saves the place, id gets sent to the backend for saving purposes and we recieve the updated array of all the saved places:
+{
+     [
+        {"id": "1111", "placeName" : "Denver Zoo", "placeImage": "www.image.com" }, 
+        {"id": "2222", "placeName" : "Six Flags", "placeImage": "www.image1.com" }, 
+        {"id": "3333", "placeName" : "Queen of Sheba", "placeImage": "www.image2.com"}
+    ]
+}
+
+//if unsuccessful, send empty array :
+{
+  []
+}
+
+//Saved page: when user double clicks place from saved page, id gets sent to backend and is deleted, we recieve back an updated array of saved places:
+{
+     [
+        {"id": "1111", "placeName" : "Denver Zoo", "placeImage": "www.image.com" }, 
+        {"id": "2222", "placeName" : "Six Flags", "placeImage": "www.image1.com" }, 
+        {"id": "3333", "placeName" : "Queen of Sheba", "placeImage": "www.image2.com"}
+    ]
+}
+
+//if unsuccessful, send empty array :
+{
+  []
+}
