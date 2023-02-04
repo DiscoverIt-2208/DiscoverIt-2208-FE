@@ -1,14 +1,20 @@
 import React from 'react'
 import SearchBar from '../SearchBar/SearchBar'
 import Logo from '../../assets/images/logo.png'
+import Loader from 'react-loaders'
+
 
 const Home = () => {
     return (
-        <div className='home-container'>
-            <div className='logo-container'>
+        <>
+            <div className='container home-page'>
                 <img src={Logo} alt='logo' />
+                <div>
+                    <SearchBar />
+                </div>
             </div>
-        </div>
+            <Loader type='ball-scale-multiple' />
+        </>
     )
 }
 
