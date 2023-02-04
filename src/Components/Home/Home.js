@@ -10,8 +10,9 @@ const Home = () => {
         <>
             <div className='container home-page'>
                 <img src={Logo} alt='logo' />
-                <div>
-                    <SearchBar />
+                <SearchBar />
+                <div className='search-results'>
+                    maybe we can display the cards here?
                 </div>
             </div>
             <Loader type='ball-scale-multiple' />
