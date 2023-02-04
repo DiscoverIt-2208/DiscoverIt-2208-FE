@@ -1,8 +1,9 @@
 input {
     border-radius: 13px;
-    border: none;
+    border-color: var(--color-primary);
+    border: 2px solid;
     width: 300px;
-    height: 32px;
+    height: 35px;
     background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    color: var(--color-primary);
 }
