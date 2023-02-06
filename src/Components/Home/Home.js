@@ -1,6 +1,6 @@
 import React from "react";
 import SearchBar from "../SearchBar/SearchBar";
-import Logo from "../assets/DiscoverItLogo.svg";
+import Logo from '../../assets/DiscoverItLogo.svg';
 import Loader from "react-loaders";
 import "./Home.css";
 
