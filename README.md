@@ -15,8 +15,8 @@ here will live the general description of our application.
 <br>
 :earth_americas: [Contributors](#contributors)
 <br>
-### Homepage 
-[Take Me Home!](https://github.com/DiscoverIt-2208)
+### SplashPagepage 
+[Take Me SplashPage!](https://github.com/DiscoverIt-2208)
 
 ### Learning Goals
 - Interface with the BE team’s API(s) that serve JSON data and incorporate that data into your FE

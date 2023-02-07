@@ -2,12 +2,12 @@ import React from "react";
 import Logo from '../../assets/DiscoverItLogo.svg';
 
 import Loader from "react-loaders";
-import "./Home.scss";
+import "./SplashPage.scss";
 
-const Home = () => {
+const SplashPage = () => {
   return (
     <>
-      <div className="container home-page">
+      <div className="container SplashPage-page">
         <img src={Logo} alt="logo" />
         <button className="pick-button">Pick A City</button>
       </div>
@@ -16,4 +16,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default SplashPage;
