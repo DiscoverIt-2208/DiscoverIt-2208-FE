@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 25%;
+  width: 100%;
+  height: 90%;
+  min-height: 566px;
+  position: absolute;
+  opacity: 0;
+  margin: 0 auto;
+  z-index: 1;
+  transform-style: preserve-3d;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s;
+  
+  img {
+    width: 400px;
+  }
+
+  button {
+    cursor: pointer;
+    border: 1px solid #ffd700;
+    border-radius: 25px;
+    background-color: transparent;
+    height: 50px;
+    width: 200px;
+    color: #ffd700;
+    font-size: 1.5em;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform-style: preserve-3d;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2s;
+
+    &:hover {
+      color: #fff;
+      border-color: #fff;
+    }
+
+    &:after {
+      animation: pulse-animation 2s infinite;
+    }
+  }
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}

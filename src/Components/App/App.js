@@ -4,9 +4,11 @@ import "./App.scss";
 
 const App = () => {
   return (
-    <div>
-      <Home />
-    </div>
+    <>
+      <div className="app-container">
+        <Home />
+      </div>
+    </>
   );
 };
 
