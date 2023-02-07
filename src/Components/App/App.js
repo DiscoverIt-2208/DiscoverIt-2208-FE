@@ -1,12 +1,12 @@
 import React from "react";
-import Home from "../Home/Home";
+import SplashPage from "../SplashPage/SplashPage";
 import "./App.scss";
 
 const App = () => {
   return (
     <>
       <div className="app-container">
-        <Home />
+        <SplashPage />
       </div>
     </>
   );

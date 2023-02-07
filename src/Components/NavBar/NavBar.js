@@ -1,10 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import './Header.scss'
+import './NavBar.scss'
 
-const Header = () => {
+const NavBar = () => {
   return (
-    <div className='header-container'>
+    <div className='NavBar-container'>
       <div className='title-text'>
           <h1>DiscoverIt</h1>
       </div>
@@ -19,4 +19,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default NavBar
