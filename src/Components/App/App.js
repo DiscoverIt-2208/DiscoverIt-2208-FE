@@ -8,9 +8,6 @@ import SearchPage from "../SearchPage/SearchPage";
 const App = () => {
   return (
     <>
-      <div className="app-container">
-        <SplashPage />
-      </div>
       <Routes>
         <Route path='/' element={<SplashPage/>} />
         <Route path='/search-page' element={<SearchPage/>} />
