@@ -2,7 +2,7 @@ import React from "react";
 import Logo from '../../assets/DiscoverItLogo.svg';
 
 import Loader from "react-loaders";
-import "./Home.css";
+import "./Home.scss";
 
 const Home = () => {
   return (
