@@ -1,5 +1,6 @@
 html {
-  background: #000 url('./Components/assets/DiscoverItBackground.svg') no-repeat center  fixed;
+  background: #000 url("./assets/DiscoverItBackground.png") no-repeat center
+    fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
