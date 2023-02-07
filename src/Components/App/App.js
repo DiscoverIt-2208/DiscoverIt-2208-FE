@@ -11,7 +11,6 @@ const App = () => {
     <>
       <Routes>
         <Route path='/' element={<SplashPage/>} />
-        //Add route path for dashboard
         <Route path='/search-page' element={<SearchPage />} />
         <Route path='/saved-places' element={<SavedPlaces />} />
       </Routes>
