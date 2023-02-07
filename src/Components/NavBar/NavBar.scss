@@ -17,15 +17,8 @@
 
 .links-container {
     width: auto;
-
-    ul {
-        position: relative;
-        right: 120px;
-
-        li {
-            display: inline-block;
-            font-size: 20px;
-            padding: 20px;
-        }
-    }
+    position: relative;
+    right: 120px;
+    font-size: 20px;
+    padding: 20px;
 }
