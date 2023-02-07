@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from '../../assets/DiscoverItLogo.svg';
+import Logo from '../assets/DiscoverItLogo.svg';
 import { Link } from "react-router-dom";
 import Loader from "react-loaders";
 import "./SplashPage.scss";
