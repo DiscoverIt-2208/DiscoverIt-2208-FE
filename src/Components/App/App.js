@@ -3,6 +3,7 @@ import SplashPage from "../SplashPage/SplashPage";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import SearchPage from "../SearchPage/SearchPage";
+import SavedPlaces from "../SavedPlaces/SavedPlaces";
 
 
 const App = () => {
@@ -10,7 +11,9 @@ const App = () => {
     <>
       <Routes>
         <Route path='/' element={<SplashPage/>} />
-        <Route path='/search-page' element={<SearchPage/>} />
+        //Add route path for dashboard
+        <Route path='/search-page' element={<SearchPage />} />
+        <Route path='/saved-places' element={<SavedPlaces />} />
       </Routes>
     </>
   );
