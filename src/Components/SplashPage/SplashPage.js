@@ -10,7 +10,13 @@ const SplashPage = () => {
       <div className="container SplashPage-page">
         <img src={Logo} alt="logo" />
         <Link exact="true" to="/search-page">
-         <button className="pick-button">Pick A City</button>
+          <button className="pick-button">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Pick A City
+          </button>
         </Link>
       </div>
       <Loader type="ball-scale-multiple" />
