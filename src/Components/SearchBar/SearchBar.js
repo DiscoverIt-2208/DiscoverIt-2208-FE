@@ -5,13 +5,19 @@ const SearchBar = () => {
   const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
-
+//bring in the data and set it to state?! unless we do the GSM
   }, [])
 
   const handleChange = (e) => {
     e.preventDefault();
     setSearchInput(e.target.value);
+    // handleFilter()
   };
+
+  // const handleFilter = () => {
+  //   let noCityMatch = false;
+
+  // }
 
   return (
     <div className="searchBar">
