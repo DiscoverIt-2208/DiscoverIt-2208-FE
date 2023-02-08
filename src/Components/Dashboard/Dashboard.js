@@ -16,13 +16,13 @@ const Dashboard = () => {
   return (
     <>
       <NavBar />
-        <h1>{cityName}</h1>
+        <h1 className='city-name'>{cityName}</h1>
         <div className="buttons-container">
-          <button>Restaurant</button>
-          <button>Club</button>
-          <button>Bar</button>
-          <button>Event</button>
-          <button>Mall</button>
+          <button className='category-button'>Restaurant</button>
+          <button className='category-button'>Club</button>
+          <button className='category-button'>Bar</button>
+          <button className='category-button'>Event</button>
+          <button className='category-button'>Mall</button>
         </div>
         <PlaceCard places={cityPlaces}/>
     </>

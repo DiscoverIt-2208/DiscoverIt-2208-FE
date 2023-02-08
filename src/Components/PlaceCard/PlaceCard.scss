@@ -7,9 +7,9 @@
 
 .place-card-container {
   display: grid;
-  color: white;
+  color: #fff;
   text-align: center;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: space-evenly;
   justify-items: center;
   align-items: center;
@@ -17,8 +17,8 @@
 }
 
 .card-img {
-  border: solid 1px #868e96;
-  box-shadow: 0 0 20px #868e96;
+  border: solid 1px #8C8C8C;
+  box-shadow: 0 0 20px #8C8C8C;
   height: 30vh;
   width: 30vh;
   object-fit: cover;
