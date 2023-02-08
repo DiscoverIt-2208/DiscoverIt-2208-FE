@@ -7,7 +7,7 @@ const PlaceCard = ({places}) => {
     return (
       <div>
         <div className='card-container'>
-          <img src={place.image} alt={`${place.name}`}/>
+          <img className='card-img' src={place.image} alt={`${place.name}`}/>
         </div>
         <h3>{place.name}</h3>
       </div>

@@ -1,24 +1,26 @@
 .card-container {
-  border: solid 2px #868e96;
-  color: white;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  height: 30vh;
-  width: 20vw;
+  margin-top: 5vh;
 }
 
 .place-card-container {
   display: grid;
   color: white;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 3vw;
-  padding-left: 3vw;
+  text-align: center;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+  align-content: space-around;
 }
 
-img {
+.card-img {
+  border: solid 1px #868e96;
+  box-shadow: 0 0 20px #868e96;
   height: 30vh;
-  width: 20vw;
+  width: 30vh;
   object-fit: cover;
+  border-radius: 0.9em;
 }
