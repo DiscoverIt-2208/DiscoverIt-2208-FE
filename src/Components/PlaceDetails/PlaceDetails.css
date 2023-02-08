@@ -1,0 +1,89 @@
+.detailsPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.backButton {
+  display: flex;
+  width: 11vw;
+  height: 4.5vh;
+  font-size: 1.5vw;
+  border-radius: 45px;
+  align-self: flex-start;
+  border: solid #d6c118 2px;
+  color: #d6c118;
+  text-decoration: none;
+  margin: 1%;
+  justify-content: center;
+  align-items: center;
+}
+
+.detailsButtons {
+  display: flex;
+  width: 11vw;
+  height: 4.5vh;
+  font-size: 1.5vw;
+  border-radius: 45px;
+  border: solid #d6c118 2px;
+  color: #d6c118;
+  text-decoration: none;
+  margin: 3%;
+  margin-bottom: 0;
+  background-color: #d6c01800;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25%;
+}
+
+.detailsButtons:hover,
+.backButton:hover {
+  cursor: pointer;
+  border: solid #d51131 2px;
+  color: #d51131;
+}
+
+.detailsThumb {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.detailsTitle {
+  font-size: 6vw;
+  color: aliceblue;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 0;
+}
+
+.detailsInformation {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 90vw;
+  margin: 5%;
+}
+
+.detailsImage {
+  height: 40vh;
+  width: auto;
+  border-radius: 10%;
+  margin-right: 5%;
+  border: solid aliceblue 1px;
+  box-shadow: 1px 1px 12px 1px #000000;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.infoText {
+  font-size: 1.5vw;
+  color: aliceblue;
+}
