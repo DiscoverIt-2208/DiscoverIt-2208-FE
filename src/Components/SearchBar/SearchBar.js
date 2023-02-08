@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SearchBar.scss";
 
 const SearchBar = () => {
   const [searchInput, setSearchInput] = useState("");
+
+  useEffect(() => {
+
+  }, [])
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -13,9 +17,10 @@ const SearchBar = () => {
     <div className="searchBar">
       <input
         type="text"
-        placeholder="Enter City Name..."
-        onChange={handleChange}
+        placeholder="🔍 Enter City Name..."
         value={searchInput}
+        onChange={handleChange}
+        onKeyUp={handleChange}
       />
     </div>
   );
