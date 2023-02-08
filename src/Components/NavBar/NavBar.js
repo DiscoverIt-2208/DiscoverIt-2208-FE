@@ -10,9 +10,9 @@ const NavBar = () => {
           <NavLink className='nav-link' exact='true' to='/'><h1>DiscoverIt</h1></NavLink>
       </div>
       <nav className='links-container'>
-          <NavLink className='nav-link' activeclassname="active" exact="true" to={`/${city}/dashboard`}>Dashboard</NavLink>
-          <NavLink className='nav-link' activeclassname="active" exact="true" to="/search-page">Choose Locations</NavLink>
-          <NavLink className='nav-link' activeclassname="active" exact="true" to="/saved-places">Saved Places</NavLink>
+          <NavLink className='nav-link' activeclassname="active" exact="true" to={`/${city}/dashboard`}><h4>Dashboard</h4></NavLink>
+          <NavLink className='nav-link' activeclassname="active" exact="true" to="/search-page"><h4>Choose Locations</h4></NavLink>
+          <NavLink className='nav-link' activeclassname="active" exact="true" to="/saved-places"><h4>Saved Places</h4></NavLink>
       </nav>
     </div>
   )
