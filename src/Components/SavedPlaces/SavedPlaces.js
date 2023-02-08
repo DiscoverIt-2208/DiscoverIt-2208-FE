@@ -1,8 +1,15 @@
 import React from 'react'
+import './SavedPlaces.scss'
+import NavBar from '../NavBar/NavBar'
 
 const SavedPlaces = () => {
   return (
-    <div>SavedPlaces</div>
+    <>
+    <NavBar />
+      <div className='saved-container'>
+        
+      </div>
+    </>
   )
 }
 
