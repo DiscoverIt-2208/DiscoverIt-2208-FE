@@ -6,7 +6,7 @@ const PlaceCard = ({places}) => {
   places.map(place => {
     return (
       <div className='card-container'>
-        <img src={place.image} alt={`image of ${place.name}`}/>
+        <img src={place.image} alt={`${place.name}`}/>
         <h3>{place.name}</h3>
       </div>
     )
