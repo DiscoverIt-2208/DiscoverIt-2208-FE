@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <div className='NavBar-container'>
       <div className='title-text'>
-          <h1>DiscoverIt</h1>
+          <NavLink className='nav-link' exact='true' to='/'><h1>DiscoverIt</h1></NavLink>
       </div>
       <nav className='links-container'>
           <NavLink className='nav-link' activeclassname="active" exact="true" to={`/${city}/dashboard`}>Dashboard</NavLink>

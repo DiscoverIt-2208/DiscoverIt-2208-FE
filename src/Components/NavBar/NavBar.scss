@@ -8,12 +8,14 @@
     font-family: 'Abril Fatface', cursive;
     color: #fff;
     width: 100%;
-    height: 80px;
+    height: 70px;
 }
 
 .title-text {
     h1 {
         margin-left: 20px;
+        text-decoration: none;
+        color: #fdd700;
     }
 }
 
@@ -26,6 +28,12 @@
     text-decoration: none;
     margin: 0 20px;
     color: #fff;
+
+    h1 {
+        &:hover {
+            color: #fff;
+        }
+    }
 
     &:hover {
         color: #fdd700;
