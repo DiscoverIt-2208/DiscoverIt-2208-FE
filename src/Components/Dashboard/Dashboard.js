@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Dashboard.scss'
 import PlaceCard from '../PlaceCard/PlaceCard';
 import NavBar from '../NavBar/NavBar';
