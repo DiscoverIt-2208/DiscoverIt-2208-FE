@@ -39,10 +39,8 @@
 .detailsButtons:hover,
 .backButton:hover {
   cursor: pointer;
-  border: solid #fffb00 2px;
-  text-shadow: 10px, 10px, 20px, #fffb00;
-  color: #fffb00;
-  box-shadow: 0.5px 0.5px 5px 0.5px #fffb00;
+  border: solid #d51131 2px;
+  color: #d51131;
 }
 
 .detailsThumb {
@@ -73,6 +71,7 @@
   width: auto;
   border-radius: 10%;
   margin-right: 5%;
+  border: solid aliceblue 1px;
   box-shadow: 1px 1px 10px 1px #000000;
 }
 
