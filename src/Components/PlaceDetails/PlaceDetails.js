@@ -20,7 +20,7 @@ const PlaceDetails = () => {
 
   return (
     <div className="detailsPage">
-      <Link to="/dasboard" className="backButton detailsButtons">
+      <Link to="/dasboard" className="backButton">
         Back
       </Link>
       <div className="detailsThumb">
