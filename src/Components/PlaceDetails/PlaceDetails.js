@@ -7,7 +7,7 @@ import samplePlaces from "../sampleData/samplePlaces";
 const PlaceDetails = () => {
   const [details, setDetails] = useState({});
 
-  const { place } = useParams();
+  // const { place } = useParams();
 
   const getDetails = () => {
     //fetch based on place

@@ -8,8 +8,8 @@ import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import samplePlaces from "../sampleData/samplePlaces";
 
 const App = () => {
-  const [city, setCity] = useState("Denver");
-  const [places, setPlaces] = useState(samplePlaces);
+  // const [city, setCity] = useState("Denver");
+  // const [places, setPlaces] = useState(samplePlaces);
 
   return (
     <>
@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/" element={<SplashPage />} />
         <Route path="/search-page" element={<SearchPage />} />
         <Route path="/saved-places" element={<SavedPlaces />} />
-        <Route path={`/${city}/:place`} element={<PlaceDetails />} />
+        <Route path={`/:city/:place`} element={<PlaceDetails />} />
       </Routes>
     </>
   );
