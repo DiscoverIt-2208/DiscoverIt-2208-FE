@@ -16,7 +16,7 @@ const PlaceDetails = () => {
 
   useEffect(() => {
     setDetails(getDetails());
-  });
+  }, []);
 
   return (
     <div className="detailsPage">
