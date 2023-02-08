@@ -9,7 +9,7 @@ const PlaceCard = () => {
   useEffect(() => {
     setPlaces(SampleData)
     console.log(places)
-  })
+  }, [places])
 
   return (
     <div>PlaceCard</div>
