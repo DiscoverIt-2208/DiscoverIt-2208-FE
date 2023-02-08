@@ -4,7 +4,7 @@ const cities = [
     places: [
       {
         id: 1,
-        name: "dons tavern",
+        name: "Don's Tavern",
         category: "restaurant",
         address: "78923 dooby drive, Denver, CO",
         image:
@@ -26,7 +26,7 @@ const cities = [
       },
       {
         id: 3,
-        name: "Scruffy Murphy's",
+        name: "Scruffy Murphy's Irish Pub",
         category: "bar",
         address: "78923 dooby drive, Denver, CO",
         image:

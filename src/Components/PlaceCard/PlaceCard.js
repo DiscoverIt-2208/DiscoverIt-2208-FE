@@ -3,14 +3,22 @@ import './PlaceCard.scss';
 
 const PlaceCard = ({places}) => {
   
-  places.map(place => {
+  const eachPlace = places.map(place => {
     return (
-      <div className='card-container'>
-        <img src={place.image} alt={`${place.name}`}/>
+      <div>
+        <div className='card-container'>
+          <img src={place.image} alt={`${place.name}`}/>
+        </div>
         <h3>{place.name}</h3>
       </div>
     )
   })
+
+  return (
+    <div className='place-card-container'>
+      {eachPlace}
+    </div>
+  )
 }
 
 export default PlaceCard
