@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Dashboard.scss'
 import PlaceCard from '../PlaceCard/PlaceCard';
 import NavBar from '../NavBar/NavBar';
-import SampleData from '../../sampleData/samplePlaces.js';
+import SampleData from '../sampleData/samplePlaces';
 
 const Dashboard = () => {
   const [cityPlaces, setCityPlaces] = useState([])
