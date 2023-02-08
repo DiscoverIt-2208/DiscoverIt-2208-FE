@@ -1,0 +1,23 @@
+.city-name {
+  font-family: 'Abril Fatface', cursive;
+  color: #fff;
+  text-align: center;
+  font-size: 5em;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.category-button {
+  font-family: 'Abril Fatface', cursive;
+  color: #D6C118;
+  background: transparent;
+  border: solid 2px #D6C118;
+  border-radius: 0.9em;
+  height: 6vh;
+  width: 12vw;
+  font-size: 1.5em;
+  margin-bottom: 3vh;
+}

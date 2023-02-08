@@ -4,7 +4,7 @@ const cities = [
     places: [
       {
         id: 1,
-        name: "Dons Tavern",
+        name: "dons tavern",
         category: "restaurant",
         address: "78923 dooby drive, Denver, CO",
         image:
