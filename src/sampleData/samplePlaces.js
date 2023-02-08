@@ -1,4 +1,4 @@
-cities: [
+const cities = [
   {
     name: "Denver",
     places: [
