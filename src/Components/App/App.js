@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import SplashPage from "../SplashPage/SplashPage";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import SearchPage from "../SearchPage/SearchPage";
 import SavedPlaces from "../SavedPlaces/SavedPlaces";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
-import samplePlaces from "../sampleData/samplePlaces";
 
 const App = () => {
   // const [city, setCity] = useState("Denver");
