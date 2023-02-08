@@ -8,7 +8,7 @@ const SplashPage = () => {
   return (
     <>
       <div className="container SplashPage-page">
-        <img src={Logo} alt="logo" />
+        <img className='splash-logo' src={Logo} alt="logo" />
         <Link exact="true" to="/search-page">
           <button className="pick-button">
             <span></span>

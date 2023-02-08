@@ -14,25 +14,9 @@
   transform-style: preserve-3d;
   animation: fadeIn 1s forwards;
   animation-delay: 1s;
-  
-  img {
-    width: 400px;
   }
+}
 
-  button {
-    cursor: pointer;
-    border: 1px solid #ffd700;
-    border-radius: 25px;
-    background-color: transparent;
-    height: 50px;
-    width: 200px;
-    color: #ffd700;
-    font-size: 1.5em;
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    transform-style: preserve-3d;
-    animation: fadeIn 1s forwards;
-    animation-delay: 2s;
-  }
-  }
+.searchPage-logo {
+  width: 40%;
 }

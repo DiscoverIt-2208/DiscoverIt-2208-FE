@@ -9,7 +9,7 @@ const SearchPage = () => {
     <>
       <NavBar />
       <div className="container search-page">
-        <img src={Logo} alt="logo" />
+        <img className='searchPage-logo' src={Logo} alt="logo" />
         <SearchBar/>
       </div>
     </>
