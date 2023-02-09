@@ -20,7 +20,9 @@ const Dashboard = ({ city, places, setPlaces }) => {
         <button className="category-button">Event</button>
         <button className="category-button">Mall</button>
       </div>
-      <PlaceCard places={places} city={city} />
+      <div className="place-card-container">
+        <PlaceCard places={places} city={city} />
+      </div>
     </>
   );
 };
