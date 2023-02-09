@@ -11,8 +11,8 @@ import samplePlaces from "../sampleData/samplePlaces";
 const App = () => {
   const [city, setCity] = useState("Denver");
   const [places, setPlaces] = useState(samplePlaces);
-  const [error, setError] = useState(false);
-  const [loading, setLoad] = useState(false);
+  // const [error, setError] = useState(false);
+  // const [loading, setLoad] = useState(false);
 
   return (
     <>
