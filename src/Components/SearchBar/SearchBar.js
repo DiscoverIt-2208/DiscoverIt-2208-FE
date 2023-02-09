@@ -25,7 +25,9 @@ const SearchBar = () => {
 
   useEffect(() => {
     getLive();
-    console.log(foundPlaces);
+    if (searchInput === "") {
+      setFoundPlaces([]);
+    }
   }, [searchInput]);
 
   const handleChange = (e) => {
