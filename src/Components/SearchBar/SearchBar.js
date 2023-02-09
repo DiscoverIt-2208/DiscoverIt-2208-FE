@@ -35,7 +35,7 @@ const SearchBar = () => {
 
   const showFound = foundPlaces.map((place, index) => {
     return (
-      <p key={index} id={index}>
+      <p className='search-result' key={index} id={index}>
         {place.properties.formatted},{" "}
       </p>
     );
@@ -45,6 +45,7 @@ const SearchBar = () => {
     <div>
       <div className="searchBar">
         <input
+        className="search-input"
           type="text"
           placeholder="🔍 Enter City Name..."
           value={searchInput}

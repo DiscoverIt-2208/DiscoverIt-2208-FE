@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
 
-    input {
+    .search-input {
         border-radius: 13px;
         border-color: var(--color-primary);
         border: none;
@@ -28,4 +28,15 @@
     border: none;
     border-bottom-right-radius: 13px;
     border-bottom-left-radius: 13px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.search-result {
+    &:hover {
+        color: #fdd700;
+        cursor: pointer;
+    }
 }
