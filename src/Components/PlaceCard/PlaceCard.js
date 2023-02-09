@@ -1,24 +1,20 @@
-import React from 'react';
-import './PlaceCard.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./PlaceCard.scss";
 
-const PlaceCard = ({places}) => {
-  
-  const eachPlace = places.map(place => {
+const PlaceCard = ({ places, city }) => {
+  const eachPlace = places.map((place) => {
     return (
-      <div>
-        <div className='card-container'>
-          <img className='card-img' src={place.image} alt={`${place.name}`}/>
+      <Link to={`/${city}/${place.id}`} key={place.name}>
+        <div id={`${place.id}`} className="card-container">
+          <img className="card-img" src={place.image} alt={`${place.name}`} />
         </div>
         <h3>{place.name}</h3>
-      </div>
-    )
-  })
+      </Link>
+    );
+  });
 
-  return (
-    <div className='place-card-container'>
-      {eachPlace}
-    </div>
-  )
-}
+  return <div className="place-card-container">{eachPlace}</div>;
+};
 
-export default PlaceCard
+export default PlaceCard;
