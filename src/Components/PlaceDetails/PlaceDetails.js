@@ -1,26 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./PlaceDetails.css";
 //delete later
 import samplePlaces from "../sampleData/samplePlaces";
 
-const PlaceDetails = () => {
+const PlaceDetails = ({ city }) => {
   const [details, setDetails] = useState({});
 
-  // const { place } = useParams();
+  const { id } = useParams();
 
   const getDetails = () => {
     //fetch based on place
-    return samplePlaces[0].places[0];
+    const places = samplePlaces[0].places;
+    const found = places.find((place) => place.id === +id);
+    return found;
   };
 
   useEffect(() => {
     setDetails(getDetails());
-  }, []);
+  }, [details]);
 
   return (
     <div className="detailsPage">
-      <Link to="/dasboard" className="backButton">
+      <Link to={`/${city}/dashboard`} className="backButton">
         Back
       </Link>
       <div className="detailsThumb">
