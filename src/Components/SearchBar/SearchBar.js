@@ -12,7 +12,7 @@ const SearchBar = () => {
       };
 
       fetch(
-        `https://api.geoapify.com/v1/geocode/autocomplete?type=city&text=${searchInput}&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d`,
+        `https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=${searchInput}&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d`,
         requestOptions
       )
         .then((response) => response.json())
@@ -25,7 +25,9 @@ const SearchBar = () => {
 
   useEffect(() => {
     getLive();
-    console.log(foundPlaces);
+    if (searchInput === "") {
+      setFoundPlaces([]);
+    }
   }, [searchInput]);
 
   const handleChange = (e) => {
@@ -35,7 +37,7 @@ const SearchBar = () => {
 
   const showFound = foundPlaces.map((place, index) => {
     return (
-      <p className='search-result' key={index} id={index}>
+      <p className="search-result" key={index} id={index}>
         {place.properties.formatted},{" "}
       </p>
     );
@@ -45,9 +47,9 @@ const SearchBar = () => {
     <div>
       <div className="searchBar">
         <input
-        className="search-input"
+          className="search-input"
           type="text"
-          placeholder="🔍 Enter City Name..."
+          placeholder="Enter City Name..."
           value={searchInput}
           onChange={handleChange}
           onKeyUp={handleChange}

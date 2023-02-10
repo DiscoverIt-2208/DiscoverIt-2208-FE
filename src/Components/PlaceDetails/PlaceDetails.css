@@ -6,6 +6,7 @@
 }
 
 .backButton {
+  font-family: Georgia, "Times New Roman", Times, serif;
   display: flex;
   width: 11vw;
   height: 4.5vh;
@@ -21,12 +22,13 @@
 }
 
 .detailsButtons {
+  font-family: Georgia, "Times New Roman", Times, serif;
   display: flex;
   width: 11vw;
-  height: 4.5vh;
+  height: 5vh;
   font-size: 1.5vw;
-  border-radius: 45px;
-  border: solid #d6c118 2px;
+  border-radius: 22px;
+  border: solid #d6c118 0.1rem;
   color: #d6c118;
   text-decoration: none;
   margin: 3%;
@@ -68,12 +70,12 @@
 }
 
 .detailsImage {
-  height: 40vh;
-  width: auto;
-  border-radius: 10%;
+  height: auto;
+  width: 40vw;
+  border-radius: 2rem;
   margin-right: 5%;
-  border: solid aliceblue 1px;
-  box-shadow: 1px 1px 12px 1px #000000;
+  border: solid 1px #585858;
+  box-shadow: 0 0 2rem #585858;
 }
 
 .information {

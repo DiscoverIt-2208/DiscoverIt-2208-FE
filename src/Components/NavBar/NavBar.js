@@ -26,7 +26,7 @@ const NavBar = () => {
           exact="true"
           to="/search-page"
         >
-          <h4>Choose Locations</h4>
+          <h4>Pick A City</h4>
         </NavLink>
         <NavLink
           className="nav-link"
