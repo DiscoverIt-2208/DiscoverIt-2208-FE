@@ -1,6 +1,8 @@
 import React from 'react'
 import './SavedPlaces.scss'
 import NavBar from '../NavBar/NavBar'
+import Death from '../assets/deathandco.jpg'
+
 
 const SavedPlaces = () => {
   return (
@@ -9,11 +11,62 @@ const SavedPlaces = () => {
       <div className='saved-container'>
         <h1 className='saved-title'>Saved Places</h1>
         <div className='saved-places-container'>
-          <div className='saved-plaace-card'>
-            <img src='https://static01.nyt.com/images/2016/08/19/dining/19DEATH-WEB/19DEATH-WEB-superJumbo.jpg' alt='death and co'>
+
+          <div className='saved-place-card'>
+            <img className='saved-image' src={Death} alt='death and co' />
             <h3>Denver</h3>
             <p>Death & Co.</p>
           </div>
+          
+          <div className='saved-place-card'>
+            <img className='saved-image' src={Death} alt='death and co' />
+            <h3>Denver</h3>
+            <p>Death & Co.</p>
+          </div>
+          
+          <div className='saved-place-card'>
+            <img className='saved-image' src={Death} alt='death and co' />
+            <h3>Denver</h3>
+            <p>Death & Co.</p>
+          </div>
+          
+          <div className='saved-place-card'>
+            <img className='saved-image' src={Death} alt='death and co' />
+            <h3>Denver</h3>
+            <p>Death & Co.</p>
+          </div>
+          
+          <div className='saved-place-card'>
+            <img className='saved-image' src={Death} alt='death and co' />
+            <h3>Denver</h3>
+            <p>Death & Co.</p>
+          </div>
+          
+          <div className='saved-place-card'>
+            <img className='saved-image' src={Death} alt='death and co' />
+            <h3>Denver</h3>
+            <p>Death & Co.</p>
+          </div>
+          
+          <div className='saved-place-card'>
+            <img className='saved-image' src={Death} alt='death and co' />
+            <h3>Denver</h3>
+            <p>Death & Co.</p>
+          </div>
+          
+          <div className='saved-place-card'>
+            <img className='saved-image' src={Death} alt='death and co' />
+            <h3>Denver</h3>
+            <p>Death & Co.</p>
+          </div>
+          
+          <div className='saved-place-card'>
+            <img className='saved-image' src={Death} alt='death and co' />
+            <h3>Denver</h3>
+            <p>Death & Co.</p>
+          </div>
+
+        </div>
       </div>
     </>
   )
