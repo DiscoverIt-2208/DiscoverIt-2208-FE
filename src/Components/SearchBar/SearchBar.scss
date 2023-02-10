@@ -5,13 +5,12 @@
   align-items: center;
 
   .search-input {
-    border-radius: 13px;
-    border-color: var(--color-primary);
+    border-radius: 22px;
     border: none;
-    width: 400px;
-    height: 45px;
+    width: 40vw;
+    height: 6vh;
     background-color: rgba(255, 255, 255, 0.1);
-    color: var(--color-primary);
+    color: #fdd700;
     padding: 0 2%;
     font-size: 2vw;
     background-image: url(../assets/Search.png);
