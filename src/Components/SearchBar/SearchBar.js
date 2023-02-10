@@ -49,7 +49,7 @@ const SearchBar = () => {
         <input
           className="search-input"
           type="text"
-          placeholder="🔍 Enter City Name..."
+          placeholder="Enter City Name..."
           value={searchInput}
           onChange={handleChange}
           onKeyUp={handleChange}
