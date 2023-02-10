@@ -1,0 +1,20 @@
+.saved-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .saved-title {
+        color: #fff;
+        font-family: "Abril Fatface", cursive;
+        font-size: 5em;
+    }
+}
+
+.saved-places-container {
+    height: auto;
+    width: 40%;
+    background-color: #00000071;
+    color:#fff;
+    border-radius: 2rem;
+}
