@@ -4,6 +4,7 @@ import "./NavBar.scss";
 
 const NavBar = () => {
   const city = "Denver";
+
   return (
     <div className="NavBar-container">
       <div className="title-text">

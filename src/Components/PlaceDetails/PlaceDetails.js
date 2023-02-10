@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import "./PlaceDetails.css";
+import "./PlaceDetails.scss";
 //delete later
 import samplePlaces from "../sampleData/samplePlaces";
 
