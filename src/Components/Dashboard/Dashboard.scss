@@ -29,7 +29,11 @@
 }
 
 .place-card-container {
-  width: 98vw;
+  background-color: #00000071;
+  color:#fff;
+  border-radius: 2rem;
+  padding: 20px;
+  width: fit fit-content;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
