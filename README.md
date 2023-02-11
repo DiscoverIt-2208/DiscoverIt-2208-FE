@@ -13,7 +13,7 @@ here will live the general description of our application.
 <br>
 :earth_americas: [Contributors](#contributors)
 <br>
-### SplashPagepage 
+### SplashPage
 [Take Me SplashPage!](https://github.com/DiscoverIt-2208)
 
 ### Learning Goals
