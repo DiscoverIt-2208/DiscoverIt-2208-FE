@@ -33,10 +33,15 @@
   color:#fff;
   border-radius: 2rem;
   padding: 20px;
-  width: fit fit-content;
+  width: fit-content;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   align-items: center;
   gap: 2rem;
+}
+
+.place-card-box {
+  display: flex;
+  justify-content: center;
 }
