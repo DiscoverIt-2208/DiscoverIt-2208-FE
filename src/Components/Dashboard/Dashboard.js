@@ -4,7 +4,9 @@ import PlaceCard from "../PlaceCard/PlaceCard";
 import NavBar from "../NavBar/NavBar";
 import SampleData from "../sampleData/samplePlaces";
 
+
 const Dashboard = ({ city, places, setPlaces }) => {
+
   useEffect(() => {
     setPlaces(SampleData[0].places);
   }, [places, city]);
