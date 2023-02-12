@@ -12,8 +12,8 @@ const PlaceCard = ({ places, city }) => {
       >
         <div id={`${place.id}`} className="card-container">
           <img className="card-img" src={place.image} alt={`${place.name}`} />
+          <h3>{place.name}</h3>
         </div>
-        <h3>{place.name}</h3>
       </Link>
     );
   });

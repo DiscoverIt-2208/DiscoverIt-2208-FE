@@ -4,7 +4,9 @@ import PlaceCard from "../PlaceCard/PlaceCard";
 import NavBar from "../NavBar/NavBar";
 import SampleData from "../sampleData/samplePlaces";
 
+
 const Dashboard = ({ city, places, setPlaces }) => {
+
   useEffect(() => {
     setPlaces(SampleData[0].places);
   }, [places, city]);
@@ -20,8 +22,10 @@ const Dashboard = ({ city, places, setPlaces }) => {
         <button className="category-button">Event</button>
         <button className="category-button">Mall</button>
       </div>
-      <div className="place-card-container">
-        <PlaceCard places={places} city={city} />
+      <div className="place-card-box">
+        <div className="place-card">
+          <PlaceCard places={places} city={city} />
+        </div>
       </div>
     </>
   );

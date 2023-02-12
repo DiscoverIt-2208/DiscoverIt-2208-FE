@@ -1,0 +1,38 @@
+.saved-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .saved-title {
+        color: #fff;
+        font-family: "Abril Fatface", cursive;
+        font-size: 5em;
+    }
+}
+
+.saved-places-container {
+    // height: auto;
+    width: fit-content;
+    background-color: #00000071;
+    color:#fff;
+    border-radius: 2rem;
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    row-gap: 40px;
+}
+
+.saved-place-card {
+    box-sizing: border-box;
+    border: 2px solid #fdd700;
+    border-radius: 2rem;
+    padding: 10px;
+}
+
+.saved-image {
+    height: 200px;
+    width: 200px;
+}

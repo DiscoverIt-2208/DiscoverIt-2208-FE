@@ -14,15 +14,18 @@
   flex-direction: column;
   margin-top: 5vh;
   text-align: center;
+  border: 2px solid #fdd700;
+  border-radius: 2rem;
 }
 
 .card-img {
-  border: solid 1px #585858;
-  box-shadow: 0 0 2rem #585858;
+  // border: solid 1px #585858;
+  // box-shadow: 0 0 2rem #585858;
   height: 30vh;
   width: 30vh;
   object-fit: cover;
-  border-radius: 0.9em;
+  border-radius: 2rem;
+  padding: 10px 10px;
 }
 
 .card-img:hover {
