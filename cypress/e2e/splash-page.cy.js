@@ -1,4 +1,4 @@
-describe('Splash Page Flows', () => {
+describe('Splash Page User Flows', () => {
   beforeEach(() => {
     // cy.intercept('', {
     //   method: 'GET',
