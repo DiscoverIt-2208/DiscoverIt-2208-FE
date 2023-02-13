@@ -1,11 +1,11 @@
-const { toContainElement } = require("@testing-library/jest-dom/dist/matchers")
-
 describe('Search Page User Flows', () => {
   beforeEach(() => {
     // cy.intercept('', {
     //   method: 'GET',
     //   fixture: '../fixtures/.json'
     // })
+    cy.visit('http://localhost:3000')
+    cy.get('.pick-button').click()
     cy.visit('http://localhost:3000/search-page')
   })
 
