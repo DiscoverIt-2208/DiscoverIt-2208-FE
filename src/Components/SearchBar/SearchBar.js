@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./SearchBar.scss";
 
-const SearchBar = () => {
+const SearchBar = ({ setCity, city }) => {
   const [searchInput, setSearchInput] = useState("");
   const [foundPlaces, setFoundPlaces] = useState([]);
 
