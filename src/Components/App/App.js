@@ -12,8 +12,8 @@ import BadURL from "../BadURL/BadURL";
 const App = () => {
   const [city, setCity] = useState("Denver");
   const [places, setPlaces] = useState(samplePlaces);
-  // const [error, setError] = useState(false);
-  // const [loading, setLoad] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoad] = useState(false);
 
   return (
     <>
@@ -42,7 +42,6 @@ const App = () => {
           }
         />
         <Route path="/*" element={<BadURL />} />
-        {/*need to make dashboard path dynamic by city; using Denver for now*/}
       </Routes>
     </>
   );

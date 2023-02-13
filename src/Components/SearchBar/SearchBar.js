@@ -35,9 +35,16 @@ const SearchBar = ({ setCity, city }) => {
     setSearchInput(e.target.value);
   };
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    setCity(foundPlaces[e.target.id]);
+    setFoundPlaces([]);
+    setSearchInput("");
+  };
+
   const showFound = foundPlaces.map((place, index) => {
     return (
-      <p className="search-result" key={index} id={index}>
+      <p className="search-result" key={index} id={index} onClick={handleClick}>
         {place.properties.formatted},{" "}
       </p>
     );
