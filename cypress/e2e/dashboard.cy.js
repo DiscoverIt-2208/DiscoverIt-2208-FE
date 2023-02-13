@@ -22,6 +22,7 @@ describe('Dashboard User Flows', () => {
       .get('.city-name').should('be.visible').and('contain', 'Denver')
       //modify when city name is dynamic and test multiple cities
       .get('.buttons-container').should('be.visible')
+      .get('.place-thumb').should('have.length', 5)
       .get('.buttons-container > :nth-child(1)').should('contain', 'Restaurant')
       .get('.buttons-container > :nth-child(2)').should('contain', 'Club')
       .get('.buttons-container > :nth-child(3)').should('contain', 'Bar')
