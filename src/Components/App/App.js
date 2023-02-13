@@ -7,6 +7,7 @@ import SavedPlaces from "../SavedPlaces/SavedPlaces";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import Dashboard from "../Dashboard/Dashboard";
 import samplePlaces from "../sampleData/samplePlaces";
+import BadURL from '../BadURL/BadURL'
 
 const App = () => {
   const [city, setCity] = useState("Denver");
@@ -32,6 +33,7 @@ const App = () => {
             <Dashboard city={city} places={places} setPlaces={setPlaces} />
           }
         />
+        <Route path='/*' element={<BadURL />} />
         {/*need to make dashboard path dynamic by city; using Denver for now*/}
       </Routes>
     </>
