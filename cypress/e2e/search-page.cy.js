@@ -35,11 +35,11 @@ describe('Search Page User Flows', () => {
 
   it('should display live search results as user types', () => {
     cy.get('[placeholder="Enter City Name..."]')
-      .type('Denver,')
+      .type('Den')
       .get('.auto-complete-items').should('be.visible')
       .get('#0.search-result').should('contain', 'Denver, CO, United States of America')
-      .get('#1.search-result').should('contain', 'Denver, IA 50622, United States of America')
-      .get('#2.search-result').should('contain', 'Denver City, TX 79323, United States of America')
+      .get('#1.search-result').should('contain', 'Denison, TX 75020, United States of America')
+      .get('#2.search-result').should('contain', 'Denton, TX, United States of America')
       //does three search results feel like enough to test here?
   })
 
@@ -53,7 +53,7 @@ describe('Search Page User Flows', () => {
   })
 
   it('should navigate to dashboard if user clicks dashboard in nav bar', () => {
-    cy.get('[href="/Denver/dashboard]" > h4').click()
+    cy.get('[href="/Denver/dashboard"] > h4').click()
     //link above will change to be dynamic
     cy.visit('http://localhost:3000/Denver/dashboard')
     //Need to change this once the dashboard is dynamic as it will not be Denver dashboard
@@ -61,7 +61,7 @@ describe('Search Page User Flows', () => {
   })
 
   it('should navigate to saved places page if user clicks saved places in nav bar', () => {
-    cy.get('[href="/Denver/saved-places]" > h4').click()
+    cy.get('[href="/Denver/saved-places"] > h4').click()
     //link above will change to be dynamic 
     cy.visit('http://localhost:3000/Denver/saved-places')
     //Need to change this once the dashboard is dynamic as it will not be Denver saved places
