@@ -30,6 +30,8 @@ describe('Dashboard User Flows', () => {
   })
 
   it('should display all places for the selected city', () => {
+    //add fixtures for Denver then intercept and stub once actual site is connected to backend
+    //add data for and test for another city
     cy.get('.place-card-container').should('be.visible')
       .get('[href="/Denver/1"]').should('exist')
       .get('[href="/Denver/1"]').find('.card-img').should('have.attr', 'alt', 'dons tavern')
@@ -43,4 +45,26 @@ describe('Dashboard User Flows', () => {
       .get('[href="/Denver/5"]').find('.card-img').should('have.attr', 'alt', 'Cherry Creek Mall')
   })
 
+  it('should navigate to splash page if user clicks DiscoverIt in nav bar', () => {
+    cy.get('.discoverIt-title').click()
+    cy.visit('http://localhost:3000')
+  })
+
+  it('should navigate to saved places page if user clicks saved places in nav bar', () => {
+    cy.get('[href="/Denver/saved-places"] > h4').click()
+    //link above will change to be dynamic 
+    cy.visit('http://localhost:3000/Denver/saved-places')
+    //Need to change this once the dashboard is dynamic as it will not be Denver saved places
+    //What will display if no places have been saved (sad path)
+  })
+
+  it('should navigate to details page for a specific place when user clicks to select', () => {
+    cy.get('[href="/Denver/4"]').click()
+    cy.visit('http://localhost:3000/Denver/4')
+  })
+
+  it('should navigate to details page for another place when user clicks to select', () => {
+    cy.get('[href="/Denver/3"]').click()
+    cy.visit('http://localhost:3000/Denver/3')
+  })
 })
