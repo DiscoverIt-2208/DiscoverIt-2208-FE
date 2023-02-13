@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Dashboard.scss";
 import PlaceCard from "../PlaceCard/PlaceCard";
 import NavBar from "../NavBar/NavBar";
 import SampleData from "../sampleData/samplePlaces";
 
-
 const Dashboard = ({ city, places, setPlaces }) => {
-
+  
   useEffect(() => {
     setPlaces(SampleData[0].places);
   }, [places, city]);
@@ -30,5 +29,4 @@ const Dashboard = ({ city, places, setPlaces }) => {
     </>
   );
 };
-
 export default Dashboard;
