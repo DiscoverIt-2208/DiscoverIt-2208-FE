@@ -19,8 +19,6 @@
 }
 
 .card-img {
-  // border: solid 1px #585858;
-  // box-shadow: 0 0 2rem #585858;
   height: 30vh;
   width: 30vh;
   object-fit: cover;
@@ -28,10 +26,10 @@
   padding: 10px 10px;
 }
 
-.card-img:hover {
-  border: solid 1px #ff636e;
-  box-shadow: 0 0 2rem #ff636e;
-}
+// .card-container:hover {
+//   border: solid 1px #ff636e;
+//   box-shadow: 0 0 2rem #ff636e;
+// }
 
 .place-thumb:hover {
   color: #b6202b;
