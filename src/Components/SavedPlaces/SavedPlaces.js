@@ -23,16 +23,14 @@ const SavedPlaces = ({ city, places }) => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
-    console.log(data);
-
     return data.user.favorites.map((place) => {
       return (
         <Link
-          to={`/${city}/${place.id}`}
-          key={place.name}
+          to={`/${city}/${place.ninjaId}`}
+          key={place.ninjaId}
           className="place-thumb"
         >
-          <div id={`${place.id}`} className="saved-place-card">
+          <div id={`${place.ninjaId}`} className="saved-place-card">
             <img className="saved-image" src={Death} alt="death and co" />
             <p>{place.placeName}</p>
           </div>
