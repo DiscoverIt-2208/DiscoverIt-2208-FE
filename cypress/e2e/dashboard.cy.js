@@ -45,6 +45,14 @@ describe('Dashboard User Flows', () => {
       .get('[href="/Denver/5"]').find('.card-img').should('have.attr', 'alt', 'Cherry Creek Mall')
   })
 
+  it('should only display places that match a given category that user selects', () => {
+    //add tests for filter here AFTER stubbing and modifying data
+  })
+
+  it('should only display places that match another category that user selects', () => {
+     //add tests for filter here AFTER stubbing and modifying data
+  })
+
   it('should navigate to splash page if user clicks DiscoverIt in nav bar', () => {
     cy.get('.discoverIt-title').click()
     cy.visit('http://localhost:3000')
