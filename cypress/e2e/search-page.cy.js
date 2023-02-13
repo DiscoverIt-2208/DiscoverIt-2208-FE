@@ -43,6 +43,16 @@ describe('Search Page User Flows', () => {
       //does three search results feel like enough to test here?
   })
 
+  it('should not display live search results if there are more than 60 results', () => {
+    //is 60 the right number above?
+    cy.get('[placeholder="Enter City Name..."]')
+      .type('De')
+      .get('.auto-complete-items').should('exist')
+      .get('#0.search-result').should('not.exist')
+      .get('#1.search-result').should('not.exist')
+      .get('#2.search-result').should('not.exist')
+  })
+
   it('should navigate to dashboard for city that user selects upon click', () => {
     //not yet functional, come back later to add test
   })
