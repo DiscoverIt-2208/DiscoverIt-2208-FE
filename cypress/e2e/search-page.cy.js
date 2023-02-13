@@ -13,8 +13,10 @@ describe('Search Page User Flows', () => {
     cy.get('.NavBar-container').should('be.visible')
       .get('.discoverIt-title').should('be.visible')
       .get('[href="/Denver/dashboard"] > h4').should('be.visible')
+      //link above will change to be dynamic - should test for multiple cities
       .get('.active > h4').should('be.visible')
       .get('[href="/Denver/saved-places"]').should('be.visible')
+          //link above will change to be dynamic - should test for multiple cities
   })
 
   it('should display background, logo, and live search bar upon page load', () => {
@@ -43,5 +45,26 @@ describe('Search Page User Flows', () => {
 
   it('should navigate to dashboard for city that user selects upon click', () => {
     //not yet functional, come back later to add test
+  })
+
+  it('should navigate to splash page if user clicks DiscoverIt in nav bar', () => {
+    cy.get('.discoverIt-title').click()
+    cy.visit('http://localhost:3000')
+  })
+
+  it('should navigate to dashboard if user clicks dashboard in nav bar', () => {
+    cy.get('[href="/Denver/dashboard]" > h4').click()
+    //link above will change to be dynamic
+    cy.visit('http://localhost:3000/Denver/dashboard')
+    //Need to change this once the dashboard is dynamic as it will not be Denver dashboard
+    //Where will it go if no city has been chosen yet for this user? (sad path)
+  })
+
+  it('should navigate to saved places page if user clicks saved places in nav bar', () => {
+    cy.get('[href="/Denver/saved-places]" > h4').click()
+    //link above will change to be dynamic 
+    cy.visit('http://localhost:3000/Denver/saved-places')
+    //Need to change this once the dashboard is dynamic as it will not be Denver saved places
+    //What will display if no places have been saved (sad path)
   })
 })
