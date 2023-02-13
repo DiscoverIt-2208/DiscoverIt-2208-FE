@@ -46,11 +46,13 @@ describe('Dashboard User Flows', () => {
   })
 
   it('should only display places that match a given category that user selects', () => {
-    //add tests for filter here AFTER stubbing and modifying data
+    //add tests for filter here AFTER functionality added in code
+    //Stub and modify data, too, before adding tests
   })
 
   it('should only display places that match another category that user selects', () => {
-     //add tests for filter here AFTER stubbing and modifying data
+     //add tests for filter here AFTER functionality added in code
+      //Stub and modify data, too, before adding tests
   })
 
   it('should navigate to splash page if user clicks DiscoverIt in nav bar', () => {
