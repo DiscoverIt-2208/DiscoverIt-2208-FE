@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useQuery, gql } from "@apollo/client";
 import SplashPage from "../SplashPage/SplashPage";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
