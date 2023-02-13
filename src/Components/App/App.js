@@ -7,6 +7,7 @@ import SavedPlaces from "../SavedPlaces/SavedPlaces";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import Dashboard from "../Dashboard/Dashboard";
 import samplePlaces from "../sampleData/samplePlaces";
+import BadURL from '../BadURL/BadURL'
 
 const App = () => {
   const [city, setCity] = useState("Denver");
@@ -19,7 +20,7 @@ const App = () => {
       <Routes>
         <Route exact path="/" element={<SplashPage />} />
         <Route exact path="/search-page" element={<SearchPage />} />
-        <Route exact path={`/${city}/saved-places`} element={<SavedPlaces />} />
+        <Route exact path={`/${city}/saved-places`} element={<SavedPlaces city={city} places={places}/>} />
         <Route
           exact
           path={`/${city}/:id`}
@@ -32,6 +33,7 @@ const App = () => {
             <Dashboard city={city} places={places} setPlaces={setPlaces} />
           }
         />
+        <Route path='/*' element={<BadURL />} />
         {/*need to make dashboard path dynamic by city; using Denver for now*/}
       </Routes>
     </>

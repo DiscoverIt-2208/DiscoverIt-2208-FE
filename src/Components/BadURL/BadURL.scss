@@ -1,0 +1,30 @@
+.badURL-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+
+    .badURL-title {
+        color: #fff;
+        text-align: center;
+    }
+
+    .home-button {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        color: #d6c118;
+        background: transparent;
+        border: solid 0.1rem #d6c118;
+        border-radius: 2rem;
+        height: 5vh;
+        width: 11vw;
+        font-size: 1.5vw;
+        margin-bottom: 3vh;
+
+        &:hover {
+            color: #fff;
+            border-color: #fff;
+            cursor: pointer;
+        }
+    }
+}
