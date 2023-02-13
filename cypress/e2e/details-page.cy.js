@@ -20,8 +20,9 @@ describe('Details Page User Flows', () => {
       .get('[href="/Denver/saved-places"]').should('be.visible')
   })
 
-  it ('should display back and save buttons upon page load', () => {
-    cy.get('.backButton').should('be.visible')
+  it ('should display background, back button, and save button upon page load', () => {
+    cy.get('html').should('have.css', 'background').and('include', 'http://localhost:3000/static/media/DiscoverItBackground.9076687e3ac2cae6ea07.png')
+      .get('.backButton').should('be.visible')
       .get('.detailsButtons').should('be.visible')
   })
 
