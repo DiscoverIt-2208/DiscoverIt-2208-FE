@@ -5,14 +5,13 @@ import NavBar from "../NavBar/NavBar";
 import SampleData from "../sampleData/samplePlaces";
 
 const Dashboard = ({ city, places, setPlaces }) => {
-  
   useEffect(() => {
     setPlaces(SampleData[0].places);
   }, [places, city]);
 
   return (
     <>
-      <NavBar />
+      <NavBar city={city} />
       <h1 className="city-name">{city}</h1>
       <div className="buttons-container">
         <button className="category-button">Restaurant</button>

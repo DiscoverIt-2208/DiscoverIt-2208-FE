@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import "./PlaceDetails.scss";
 //delete later
 import samplePlaces from "../sampleData/samplePlaces";
-import NavBar from '../NavBar/NavBar'
+import NavBar from "../NavBar/NavBar";
 
 const PlaceDetails = ({ city }) => {
   const [details, setDetails] = useState({});
@@ -23,7 +23,7 @@ const PlaceDetails = ({ city }) => {
 
   return (
     <>
-      <NavBar />
+      <NavBar city={city} />
       <div className="detailsPage">
         <Link to={`/${city}/dashboard`} className="backButton">
           Back
