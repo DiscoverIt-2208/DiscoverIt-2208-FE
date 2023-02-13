@@ -9,7 +9,10 @@ const SavedPlaces = ({ city, places }) => {
   const GET_USER = gql`
     query GetUser {
       user(id: "1") {
-        favorites
+        favorites {
+          ninjaId
+          placeName
+        }
       }
     }
   `;
@@ -20,7 +23,9 @@ const SavedPlaces = ({ city, places }) => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
-    return data.map((place) => {
+    console.log(data);
+
+    return data.user.favorites.map((place) => {
       return (
         <Link
           to={`/${city}/${place.id}`}
@@ -29,8 +34,7 @@ const SavedPlaces = ({ city, places }) => {
         >
           <div id={`${place.id}`} className="saved-place-card">
             <img className="saved-image" src={Death} alt="death and co" />
-            <h3>{city}</h3>
-            <p>{place.name}</p>
+            <p>{place.placeName}</p>
           </div>
         </Link>
       );
@@ -57,7 +61,7 @@ const SavedPlaces = ({ city, places }) => {
     <>
       <NavBar city={city} />
       <div className="saved-container">
-        <h1 className="saved-title">Saved Places</h1>
+        <h1 className="saved-title">{city} Saved Places</h1>
         <div className="saved-places-container">{<DisplayUser />}</div>
       </div>
     </>
