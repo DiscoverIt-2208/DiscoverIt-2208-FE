@@ -19,7 +19,11 @@ const App = () => {
     <>
       <Routes>
         <Route exact path="/" element={<SplashPage />} />
-        <Route exact path="/search-page" element={<SearchPage city={city} />} />
+        <Route
+          exact
+          path="/search-page"
+          element={<SearchPage city={city} setCity={setCity} />}
+        />
         <Route
           exact
           path={`/:city/saved-places`}
