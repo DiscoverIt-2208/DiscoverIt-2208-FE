@@ -60,6 +60,11 @@ describe('Dashboard User Flows', () => {
     cy.visit('http://localhost:3000')
   })
 
+  it('should navigate to search page if user clicks Pick a City in nav bar', () => {
+    cy.get('[href="/search-page"] > h4').click()
+    cy.visit('http://localhost:3000/search-page')
+  })
+
   it('should navigate to saved places page if user clicks saved places in nav bar', () => {
     cy.get('[href="/Denver/saved-places"] > h4').click()
     //link above will change to be dynamic 
