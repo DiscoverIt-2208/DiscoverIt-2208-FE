@@ -29,4 +29,18 @@ describe('Dashboard User Flows', () => {
       .get('.buttons-container > :nth-child(5)').should('contain', 'Mall')
   })
 
+  it('should display all places for the selected city', () => {
+    cy.get('.place-card-container').should('be.visible')
+      .get('[href="/Denver/1"]').should('exist')
+      .get('[href="/Denver/1"]').find('.card-img').should('have.attr', 'alt', 'dons tavern')
+      .get('[href="/Denver/2"]').should('exist')
+      .get('[href="/Denver/2"]').find('.card-img').should('have.attr', 'alt', 'Larimer Lounge')
+      .get('[href="/Denver/3"]').should('exist')
+      .get('[href="/Denver/3"]').find('.card-img').should('have.attr', 'alt', "Scruffy Murphy'\s")
+      .get('[href="/Denver/4"]').should('exist')
+      .get('[href="/Denver/4"]').find('.card-img').should('have.attr', 'alt', 'Meow Wolf')
+      .get('[href="/Denver/5"]').should('exist')
+      .get('[href="/Denver/5"]').find('.card-img').should('have.attr', 'alt', 'Cherry Creek Mall')
+  })
+
 })
