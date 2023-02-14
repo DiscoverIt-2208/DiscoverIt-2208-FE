@@ -29,7 +29,12 @@ const PlaceDetails = ({ city }) => {
   const CREATE_USER_FAVORITE = gql`
     mutation CreateUserFavorite {
       createUserFavorite(
-        input: { userId: 1, ninjaId: "3049", placeName: "Larimer Lounge" }
+        input: {
+          userId: 1
+          ninjaId: "3049"
+          placeName: "Larimer Lounge"
+          thumbnailUrl: "www.image.com"
+        }
       ) {
         success
       }
@@ -42,6 +47,8 @@ const PlaceDetails = ({ city }) => {
 
     if (loading) console.log("Submitting...");
     if (error) console.log(`Submission error! ${error.message}`);
+
+    console.log(data);
 
     return (
       <button
