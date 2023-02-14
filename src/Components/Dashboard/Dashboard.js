@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./Dashboard.scss";
 import PlaceCard from "../PlaceCard/PlaceCard";
 import NavBar from "../NavBar/NavBar";
-import SampleData from "../sampleData/samplePlaces";
 import Death from "../assets/deathandco.jpg";
 
 const Dashboard = ({ city, places, setPlaces }) => {
@@ -15,10 +14,6 @@ const Dashboard = ({ city, places, setPlaces }) => {
   const [cafeSelcted, setCafeSelected] = useState(false);
   const [popularSelected, setPopularSelected] = useState(true);
   const [accessibilitySelected, setAccessibilitySelected] = useState(false);
-
-  // useEffect(() => {
-  //   setPlaces(SampleData[0].places);
-  // }, [places, city]);
 
   const FETCH_PLACES = gql`
     query FetchPlaces {
