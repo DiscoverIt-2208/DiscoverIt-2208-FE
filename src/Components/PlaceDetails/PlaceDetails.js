@@ -24,6 +24,10 @@ const PlaceDetails = ({ city }) => {
       $ninjaId: String!
       $placeName: String!
       $thumbnailUrl: String!
+      $city: String!
+      $state: String!
+      $country: String!
+      $address: String!
     ) {
       createUserFavorite(
         input: {
@@ -31,6 +35,10 @@ const PlaceDetails = ({ city }) => {
           ninjaId: $ninjaId
           placeName: $placeName
           thumbnailUrl: $thumbnailUrl
+          city: $city
+          state: $state
+          country: $country
+          address: $address
         }
       ) {
         success
@@ -48,6 +56,10 @@ const PlaceDetails = ({ city }) => {
           ninjaId: String(details.id),
           placeName: details.name,
           thumbnailUrl: details.image,
+          city: city.properties.city,
+          state: city.properties.state,
+          country: city.properties.country,
+          address: details.address,
         },
       },
       {
@@ -57,8 +69,7 @@ const PlaceDetails = ({ city }) => {
 
     if (loading) console.log("Submitting...");
     if (error) console.log(`Submission error! ${error.message}`);
-
-    console.log(data);
+    if (data) console.log(data);
 
     return (
       <button
@@ -79,14 +90,13 @@ const PlaceDetails = ({ city }) => {
 
   return (
     <>
-      <NavBar city={city} />
+      <NavBar city={city.properties.city} />
       <div className="detailsPage">
-        <Link to={`/${city}/dashboard`} className="backButton">
+        <Link to={`/${city.properties.city}/dashboard`} className="backButton">
           Back
         </Link>
         <div className="detailsThumb" alt={details.name}>
           <h1 className="detailsTitle">{details.name}</h1>
-          {/* <button className="detailsButtons">Save</button> */}
           <CreateUserFavorite />
           <div className="detailsInformation">
             <img

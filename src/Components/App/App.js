@@ -35,7 +35,7 @@ const App = () => {
         <Route
           exact
           path={`/:city/:id`}
-          element={<PlaceDetails city={city.properties.city} />}
+          element={<PlaceDetails city={city} />}
         />
         <Route
           exact
