@@ -12,7 +12,7 @@ import BadURL from "../BadURL/BadURL";
 
 const App = () => {
   const [city, setCity] = useState({
-    properties: { city: "Please pick a city!" },
+    properties: { city: "Unknown" },
   });
   const [places, setPlaces] = useState(samplePlaces);
   const [error, setError] = useState(false);

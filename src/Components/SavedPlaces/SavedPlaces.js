@@ -29,22 +29,6 @@ const SavedPlaces = ({ city, places }) => {
     });
   };
 
-  // const placeDetails = places.map((place) => {
-  //   return (
-  //     <Link
-  //       to={`/${city}/${place.id}`}
-  //       key={place.name}
-  //       className="place-thumb"
-  //     >
-  //       <div id={`${place.id}`} className="saved-place-card">
-  //         <img className="saved-image" src={Death} alt="death and co" />
-  //         <h3>{city}</h3>
-  //         <p>{place.name}</p>
-  //       </div>
-  //     </Link>
-  //   );
-  // });
-
   return (
     <>
       <NavBar city={city} />
