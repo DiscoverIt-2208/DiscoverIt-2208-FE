@@ -36,7 +36,6 @@ describe('Search Page User Flows', () => {
   })
 
   it('should not display live search results if there are more than 60 results', () => {
-    //is 60 the right number above?
     cy.get('[placeholder="Enter City Name..."]')
       .type('De')
       .get('.auto-complete-items').should('exist')
