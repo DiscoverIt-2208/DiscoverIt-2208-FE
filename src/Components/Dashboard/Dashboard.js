@@ -8,12 +8,12 @@ import SampleData from "../sampleData/samplePlaces";
 import Death from "../assets/deathandco.jpg";
 
 const Dashboard = ({ city, places, setPlaces }) => {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(["tourism.attraction"]);
   const [restaurantSelected, setRestaurantSelected] = useState(false);
   const [entertainmentSelected, setEntertainmentSelected] = useState(false);
   const [historySelected, setHistorySelected] = useState(false);
   const [cafeSelcted, setCafeSelected] = useState(false);
-  const [popularSelected, setPopularSelected] = useState(false);
+  const [popularSelected, setPopularSelected] = useState(true);
   const [accessibilitySelected, setAccessibilitySelected] = useState(false);
 
   // useEffect(() => {
@@ -62,7 +62,14 @@ const Dashboard = ({ city, places, setPlaces }) => {
     );
   };
 
-  const changeCategory = (e) => [setCategories([e.target.value])];
+  const changeCategory = (e) => {
+    if (accessibilitySelected) {
+      setCategories([e.target.value, "wheelchair"]);
+    } else {
+      setCategories([e.target.value]);
+    }
+  };
+
   const clearSelected = () => {
     setRestaurantSelected(false);
     setEntertainmentSelected(false);
@@ -82,7 +89,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
           onClick={(e) => {
             changeCategory(e);
             clearSelected();
-            setRestaurantSelected(!restaurantSelected);
+            setRestaurantSelected(true);
           }}
         >
           Restaurant
@@ -93,7 +100,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
           onClick={(e) => {
             changeCategory(e);
             clearSelected();
-            setEntertainmentSelected(!entertainmentSelected);
+            setEntertainmentSelected(true);
           }}
         >
           Entertainment
@@ -104,7 +111,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
           onClick={(e) => {
             changeCategory(e);
             clearSelected();
-            setHistorySelected(!historySelected);
+            setHistorySelected(true);
           }}
         >
           History
@@ -115,26 +122,33 @@ const Dashboard = ({ city, places, setPlaces }) => {
           onClick={(e) => {
             changeCategory(e);
             clearSelected();
-            setCafeSelected(!cafeSelcted);
+            setCafeSelected(true);
           }}
         >
           Cafe
         </button>
         <button
           className={popularSelected ? "selected" : "category-button"}
-          value={"tourism.attraction, tourism.sights"}
+          value={"tourism.attraction"}
           onClick={(e) => {
             changeCategory(e);
             clearSelected();
-            setPopularSelected(!popularSelected);
+            setPopularSelected(true);
           }}
         >
           Popular
         </button>
         <button
           className={accessibilitySelected ? "selected" : "category-button"}
-          onClick={() => {
+          value="wheelchair"
+          onClick={(e) => {
             setAccessibilitySelected(!accessibilitySelected);
+            if (!accessibilitySelected) {
+              setCategories([categories[0]]);
+              setCategories([...categories, "wheelchair"]);
+            } else {
+              setCategories([categories[0]]);
+            }
           }}
         >
           Accessibility
