@@ -30,7 +30,7 @@
 
 .place-card-container {
   background-color: #00000071;
-  color:#fff;
+  color: #fff;
   border-radius: 2rem;
   padding: 20px;
   width: fit-content;
@@ -44,4 +44,9 @@
 .place-card-box {
   display: flex;
   justify-content: center;
+}
+
+.error {
+  text-align: center;
+  color: aliceblue;
 }
