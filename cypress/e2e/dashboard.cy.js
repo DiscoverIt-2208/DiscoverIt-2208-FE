@@ -1,11 +1,16 @@
 describe('Dashboard User Flows', () => {
   beforeEach(() => {
-    // cy.intercept('', {
-    //   method: 'GET',
-    //   fixture: '../fixtures/.json'
-    // })
+    cy.intercept('https://discover-it.herokuapp.com/graphql', {
+      method: 'GET',
+      fixture: 'places.json'
+    })
+    cy.visit('http://localhost:3000/')
+    cy.get('.pick-button').click()
+    cy.visit('http://localhost:3000/search-page')
+    cy.get('[placeholder="Enter City Name..."]')
+      .type('Den')
+      .get('#0.search-result').click()
     cy.visit('http://localhost:3000/Denver/dashboard')
-    //modify this for actual user flow once city is dynamic based on live search
   })
 
   it('should display nav bar upon page load', () => {
@@ -14,13 +19,11 @@ describe('Dashboard User Flows', () => {
       .get('.active > h4').should('be.visible')
       .get('[href="/search-page"]').should('be.visible')
       .get('[href="/Denver/saved-places"]').should('be.visible')
-      //link above will change to be dynamic - should test for multiple cities
   })
 
   it('should display background, city title, and category buttons', () => {
     cy.get('html').should('have.css', 'background').and('include', 'http://localhost:3000/static/media/DiscoverItBackground.9076687e3ac2cae6ea07.png')
       .get('.city-name').should('be.visible').and('contain', 'Denver')
-      //modify when city name is dynamic and test multiple cities
       .get('.buttons-container').should('be.visible')
       .get('.place-thumb').should('have.length', 5)
       .get('.buttons-container > :nth-child(1)').should('contain', 'Restaurant')
@@ -31,8 +34,6 @@ describe('Dashboard User Flows', () => {
   })
 
   it('should display all places for the selected city', () => {
-    //add fixtures for Denver then intercept and stub once actual site is connected to backend
-    //add data for and test for another city
     cy.get('.place-card-container').should('be.visible')
       .get('[href="/Denver/1"]').should('exist')
       .get('[href="/Denver/1"]').find('.card-img').should('have.attr', 'alt', 'dons tavern')

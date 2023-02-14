@@ -36,6 +36,10 @@ describe('Search Page User Flows', () => {
   })
 
   it('should not display live search results if there are more than 60 results', () => {
+    cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=${searchInput}&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {
+      method: 'GET',
+      fixture: 'citysearch.json'
+    })    
     cy.get('[placeholder="Enter City Name..."]')
       .type('De')
       .get('.auto-complete-items').should('exist')
@@ -45,9 +49,13 @@ describe('Search Page User Flows', () => {
   })
 
   it('should navigate to dashboard for city that user selects upon click', () => {
+    cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=${searchInput}&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {
+      method: 'GET',
+      fixture: 'citysearch[0].json'
+    }) 
     cy.get('[placeholder="Enter City Name..."]')
       .type('Den')
       .get('#0.search-result').click()
-    cy.visit('http://localhost:3000/Denver/dashboard')
+    cy.visit(`http://localhost:3000/Denver/dashboard`)
   })
 })
