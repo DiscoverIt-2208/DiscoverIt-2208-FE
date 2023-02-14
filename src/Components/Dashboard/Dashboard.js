@@ -9,6 +9,12 @@ import Death from "../assets/deathandco.jpg";
 
 const Dashboard = ({ city, places, setPlaces }) => {
   const [categories, setCategories] = useState([]);
+  const [restaurantSelected, setRestaurantSelected] = useState(false);
+  const [entertainmentSelected, setEntertainmentSelected] = useState(false);
+  const [historySelected, setHistorySelected] = useState(false);
+  const [cafeSelcted, setCafeSelected] = useState(false);
+  const [popularSelected, setPopularSelected] = useState(false);
+  const [accessibilitySelected, setAccessibilitySelected] = useState(false);
 
   // useEffect(() => {
   //   setPlaces(SampleData[0].places);
@@ -57,6 +63,13 @@ const Dashboard = ({ city, places, setPlaces }) => {
   };
 
   const changeCategory = (e) => [setCategories([e.target.value])];
+  const clearSelected = () => {
+    setRestaurantSelected(false);
+    setEntertainmentSelected(false);
+    setHistorySelected(false);
+    setCafeSelected(false);
+    setPopularSelected(false);
+  };
 
   return (
     <>
@@ -64,41 +77,68 @@ const Dashboard = ({ city, places, setPlaces }) => {
       <h1 className="city-name">{city.properties.city}</h1>
       <div className="buttons-container">
         <button
-          className="category-button"
+          className={restaurantSelected ? "selected" : "category-button"}
           value={"catering.restaurant"}
-          onClick={changeCategory}
+          onClick={(e) => {
+            changeCategory(e);
+            clearSelected();
+            setRestaurantSelected(!restaurantSelected);
+          }}
         >
           Restaurant
         </button>
         <button
-          className="category-button"
+          className={entertainmentSelected ? "selected" : "category-button"}
           value={"entertainment"}
-          onClick={changeCategory}
+          onClick={(e) => {
+            changeCategory(e);
+            clearSelected();
+            setEntertainmentSelected(!entertainmentSelected);
+          }}
         >
           Entertainment
         </button>
         <button
-          className="category-button"
+          className={historySelected ? "selected" : "category-button"}
           value={"building.historic"}
-          onClick={changeCategory}
+          onClick={(e) => {
+            changeCategory(e);
+            clearSelected();
+            setHistorySelected(!historySelected);
+          }}
         >
           History
         </button>
         <button
-          className="category-button"
+          className={cafeSelcted ? "selected" : "category-button"}
           value={"catering.cafe"}
-          onClick={changeCategory}
+          onClick={(e) => {
+            changeCategory(e);
+            clearSelected();
+            setCafeSelected(!cafeSelcted);
+          }}
         >
           Cafe
         </button>
         <button
-          className="category-button"
+          className={popularSelected ? "selected" : "category-button"}
           value={"tourism.attraction, tourism.sights"}
-          onClick={changeCategory}
+          onClick={(e) => {
+            changeCategory(e);
+            clearSelected();
+            setPopularSelected(!popularSelected);
+          }}
         >
           Popular
         </button>
-        <button className="category-button">Accessibility</button>
+        <button
+          className={accessibilitySelected ? "selected" : "category-button"}
+          onClick={() => {
+            setAccessibilitySelected(!accessibilitySelected);
+          }}
+        >
+          Accessibility
+        </button>
       </div>
       <DisplayPlaces />
     </>
