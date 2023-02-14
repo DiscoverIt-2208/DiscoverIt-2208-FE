@@ -13,8 +13,6 @@ const PlaceDetails = ({ city }) => {
   const { id } = useParams();
 
   const getDetails = () => {
-    console.log(details);
-    //fetch based on place
     const places = samplePlaces[0].places;
     const found = places.find((place) => place.id === +id);
     return found;
@@ -41,20 +39,6 @@ const PlaceDetails = ({ city }) => {
     }
   `;
 
-  // const CreateUserFavorite = () => {
-  // const [createUserFavorite, { data, loading, error }] = useMutation(
-  //   CREATE_USER_FAVORITE,
-  //   {
-  //     variables: {
-  //       ninjaId: id,
-  //       placeName: details.name,
-  //       thumbnail: details.image,
-  //     },
-  //   },
-  //   {
-  //     refetchQueries: [{ query: GET_USER }, "GetUser"],
-  //   }
-  // );
   const CreateUserFavorite = () => {
     const [createUserFavorite, { data, loading, error }] = useMutation(
       CREATE_USER_FAVORITE,
