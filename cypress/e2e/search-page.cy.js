@@ -26,9 +26,8 @@ describe('Search Page User Flows', () => {
       method: 'GET',
       fixture: 'citysearch.json'
     })
-    
     cy.get('[placeholder="Enter City Name..."]')
-      .type('Denver')
+      .type('Den')
       .get('.auto-complete-items').should('be.visible')
       .get('.search-result').should('have.length', 10)
       .get('#0.search-result').should('contain', 'Denver, CO, United States of America')
@@ -47,6 +46,9 @@ describe('Search Page User Flows', () => {
   })
 
   it('should navigate to dashboard for city that user selects upon click', () => {
-    //not yet functional, come back later to add test
+    cy.get('[placeholder="Enter City Name..."]')
+      .type('Den')
+      .get('#0.search-result').click()
+    cy.visit('http://localhost:3000/Denver/dashboard')
   })
 })
