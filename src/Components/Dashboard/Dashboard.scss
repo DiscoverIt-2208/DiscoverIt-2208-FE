@@ -24,13 +24,11 @@
 
 .category-button:hover {
   cursor: pointer;
-  border: solid #d51131 2px;
-  color: #d51131;
 }
 
 .place-card-container {
   background-color: #00000071;
-  color:#fff;
+  color: #fff;
   border-radius: 2rem;
   padding: 20px;
   width: fit-content;
@@ -44,4 +42,25 @@
 .place-card-box {
   display: flex;
   justify-content: center;
+}
+
+.error {
+  text-align: center;
+  color: aliceblue;
+}
+
+.selected {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #d51131;
+  background: transparent;
+  border: solid 0.1rem #d51131;
+  border-radius: 2rem;
+  height: 5vh;
+  width: 11vw;
+  font-size: 1.5vw;
+  margin-bottom: 3vh;
+}
+
+.selected:hover {
+  cursor: pointer;
 }

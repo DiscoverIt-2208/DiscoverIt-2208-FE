@@ -41,11 +41,7 @@ const App = () => {
           exact
           path={`/:city/dashboard`}
           element={
-            <Dashboard
-              city={city.properties.city}
-              places={places}
-              setPlaces={setPlaces}
-            />
+            <Dashboard city={city} places={places} setPlaces={setPlaces} />
           }
         />
         <Route path="/*" element={<BadURL />} />
