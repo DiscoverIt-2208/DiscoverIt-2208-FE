@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./SearchBar.scss";
 
-const SearchBar = () => {
+const SearchBar = ({ setCity, city }) => {
   const [searchInput, setSearchInput] = useState("");
   const [foundPlaces, setFoundPlaces] = useState([]);
 
@@ -35,9 +35,16 @@ const SearchBar = () => {
     setSearchInput(e.target.value);
   };
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    setCity(foundPlaces[e.target.id]);
+    setFoundPlaces([]);
+    setSearchInput("");
+  };
+
   const showFound = foundPlaces.map((place, index) => {
     return (
-      <p className="search-result" key={index} id={index}>
+      <p className="search-result" key={index} id={index} onClick={handleClick}>
         {place.properties.formatted},{" "}
       </p>
     );
