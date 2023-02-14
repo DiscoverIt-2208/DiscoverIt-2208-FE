@@ -1,22 +1,10 @@
 describe('Search Page User Flows', () => {
   beforeEach(() => {
-    // cy.intercept('', {
-    //   method: 'GET',
-    //   fixture: '../fixtures/.json'
-    // })
-    cy.visit('http://localhost:3000')
-    cy.get('.pick-button').click()
+    cy.intercept('https://discover-it.herokuapp.com/graphql', {
+      method: 'GET',
+      fixture: 'places.json'
+    })
     cy.visit('http://localhost:3000/search-page')
-  })
-
-  it('should display nav bar upon page load', () => {
-    cy.get('.NavBar-container').should('be.visible')
-      .get('.discoverIt-title').should('be.visible')
-      .get('[href="/Denver/dashboard"] > h4').should('be.visible')
-      //link above will change to be dynamic - should test for multiple cities
-      .get('.active > h4').should('be.visible')
-      .get('[href="/Denver/saved-places"]').should('be.visible')
-          //link above will change to be dynamic - should test for multiple cities
   })
 
   it('should display background, logo, and live search bar upon page load', () => {
@@ -34,13 +22,18 @@ describe('Search Page User Flows', () => {
   })
 
   it('should display live search results as user types', () => {
+    cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=${searchInput}&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {
+      method: 'GET',
+      fixture: 'citysearch.json'
+    })
+    
     cy.get('[placeholder="Enter City Name..."]')
-      .type('Den')
+      .type('Denver')
       .get('.auto-complete-items').should('be.visible')
+      .get('.search-result').should('have.length', 10)
       .get('#0.search-result').should('contain', 'Denver, CO, United States of America')
       .get('#1.search-result').should('contain', 'Denison, TX 75020, United States of America')
       .get('#2.search-result').should('contain', 'Denton, TX, United States of America')
-      //does three search results feel like enough to test here?
   })
 
   it('should not display live search results if there are more than 60 results', () => {
@@ -55,26 +48,5 @@ describe('Search Page User Flows', () => {
 
   it('should navigate to dashboard for city that user selects upon click', () => {
     //not yet functional, come back later to add test
-  })
-
-  it('should navigate to splash page if user clicks DiscoverIt in nav bar', () => {
-    cy.get('.discoverIt-title').click()
-    cy.visit('http://localhost:3000')
-  })
-
-  it('should navigate to dashboard if user clicks dashboard in nav bar', () => {
-    cy.get('[href="/Denver/dashboard"] > h4').click()
-    //link above will change to be dynamic
-    cy.visit('http://localhost:3000/Denver/dashboard')
-    //Need to change this once the dashboard is dynamic as it will not be Denver dashboard
-    //Where will it go if no city has been chosen yet for this user? (sad path)
-  })
-
-  it('should navigate to saved places page if user clicks saved places in nav bar', () => {
-    cy.get('[href="/Denver/saved-places"] > h4').click()
-    //link above will change to be dynamic 
-    cy.visit('http://localhost:3000/Denver/saved-places')
-    //Need to change this once the dashboard is dynamic as it will not be Denver saved places
-    //What will display if no places have been saved (sad path)
   })
 })
