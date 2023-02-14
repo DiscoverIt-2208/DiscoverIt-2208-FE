@@ -15,10 +15,10 @@ const Dashboard = ({ city, places, setPlaces }) => {
       <h1 className="city-name">{city}</h1>
       <div className="buttons-container">
         <button className="category-button">Restaurant</button>
-        <button className="category-button">Club</button>
-        <button className="category-button">Bar</button>
-        <button className="category-button">Event</button>
-        <button className="category-button">Mall</button>
+        <button className="category-button">Entertainment</button>
+        <button className="category-button">History</button>
+        <button className="category-button">Cafe</button>
+        <button className="category-button">Popular</button>
       </div>
       <div className="place-card-box">
         <div className="place-card">

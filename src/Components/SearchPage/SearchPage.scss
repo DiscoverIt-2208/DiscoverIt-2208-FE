@@ -1,22 +1,46 @@
 .container {
   .search-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  top: 25%;
-  width: 100%;
-  height: 90%;
-  min-height: 566px;
-  position: absolute;
-  opacity: 0;
-  margin: 0 auto;
-  z-index: 1;
-  transform-style: preserve-3d;
-  animation: fadeIn 1s forwards;
-  animation-delay: 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 25%;
+    width: 100%;
+    height: 90%;
+    min-height: 566px;
+    position: absolute;
+    opacity: 0;
+    margin: 0 auto;
+    z-index: 1;
+    transform-style: preserve-3d;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1s;
   }
 }
 
 .searchPage-logo {
   width: 40%;
+}
+
+.exploreCity {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  width: 6vw;
+  height: 2vh;
+  font-size: 1.5vw;
+  border-radius: 22rem;
+  border: solid #d6c118 0.1rem;
+  color: #d6c118;
+  text-decoration: none;
+  margin: 3%;
+  margin-bottom: 0;
+  background-color: #d6c01800;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25%;
+}
+
+.exploreCity:hover {
+  cursor: pointer;
+  border: solid #d51131 2px;
+  color: #d51131;
 }

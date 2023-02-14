@@ -15,17 +15,17 @@ const NavBar = ({ city }) => {
           className="nav-link"
           activeclassname="active"
           exact="true"
-          to={`/${city}/dashboard`}
+          to="/search-page"
         >
-          <h4>Dashboard</h4>
+          <h4>Pick A City</h4>
         </NavLink>
         <NavLink
           className="nav-link"
           activeclassname="active"
           exact="true"
-          to="/search-page"
+          to={`/${city}/dashboard`}
         >
-          <h4>Pick A City</h4>
+          <h4>Dashboard</h4>
         </NavLink>
         <NavLink
           className="nav-link"
