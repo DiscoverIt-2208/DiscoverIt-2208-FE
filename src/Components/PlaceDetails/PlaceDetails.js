@@ -61,8 +61,6 @@ const PlaceDetails = ({ city }) => {
           country: city.properties.country,
           address: details.address,
         },
-      },
-      {
         refetchQueries: [{ query: GET_USER }, "GetUser"],
       }
     );
