@@ -4,19 +4,9 @@ import "./SavedPlaces.scss";
 import NavBar from "../NavBar/NavBar";
 import Death from "../assets/deathandco.jpg";
 import { useQuery, gql } from "@apollo/client";
+import { GET_USER } from "../Queries";
 
 const SavedPlaces = ({ city, places }) => {
-  const GET_USER = gql`
-    query GetUser {
-      user(id: "1") {
-        favorites {
-          ninjaId
-          placeName
-        }
-      }
-    }
-  `;
-
   const DisplayUser = () => {
     const { loading, error, data } = useQuery(GET_USER);
 

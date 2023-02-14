@@ -5,6 +5,7 @@ import "./PlaceDetails.scss";
 //delete later
 import samplePlaces from "../sampleData/samplePlaces";
 import NavBar from "../NavBar/NavBar";
+import { GET_USER } from "../Queries";
 
 const PlaceDetails = ({ city }) => {
   const [details, setDetails] = useState({});
@@ -12,38 +13,63 @@ const PlaceDetails = ({ city }) => {
   const { id } = useParams();
 
   const getDetails = () => {
+    console.log(details);
     //fetch based on place
     const places = samplePlaces[0].places;
     const found = places.find((place) => place.id === +id);
     return found;
   };
 
-  // argument :user_id, Integer, required: true
-  // argument :ninja_id, String, required: true
-  // argument :place_name, String, required: true
-  // argument :thumbnail_url, String, required: false
-  // # argument :city, String, required: true
-  // # argument :state, String, required: false
-  // # argument :country, String, required: true
-
   const CREATE_USER_FAVORITE = gql`
-    mutation CreateUserFavorite {
+    mutation CreateUserFavorite(
+      $userId: Int!
+      $ninjaId: String!
+      $placeName: String!
+      $thumbnailUrl: String!
+    ) {
       createUserFavorite(
         input: {
-          userId: 1
-          ninjaId: "3049"
-          placeName: "Larimer Lounge"
-          thumbnailUrl: "www.image.com"
+          userId: $userId
+          ninjaId: $ninjaId
+          placeName: $placeName
+          thumbnailUrl: $thumbnailUrl
         }
       ) {
         success
+        error
       }
     }
   `;
 
+  // const CreateUserFavorite = () => {
+  // const [createUserFavorite, { data, loading, error }] = useMutation(
+  //   CREATE_USER_FAVORITE,
+  //   {
+  //     variables: {
+  //       ninjaId: id,
+  //       placeName: details.name,
+  //       thumbnail: details.image,
+  //     },
+  //   },
+  //   {
+  //     refetchQueries: [{ query: GET_USER }, "GetUser"],
+  //   }
+  // );
   const CreateUserFavorite = () => {
-    const [createUserFavorite, { data, loading, error }] =
-      useMutation(CREATE_USER_FAVORITE);
+    const [createUserFavorite, { data, loading, error }] = useMutation(
+      CREATE_USER_FAVORITE,
+      {
+        variables: {
+          userId: 1,
+          ninjaId: String(details.id),
+          placeName: details.name,
+          thumbnailUrl: details.image,
+        },
+      },
+      {
+        refetchQueries: [{ query: GET_USER }, "GetUser"],
+      }
+    );
 
     if (loading) console.log("Submitting...");
     if (error) console.log(`Submission error! ${error.message}`);
