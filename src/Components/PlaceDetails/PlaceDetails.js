@@ -6,6 +6,7 @@ import "./PlaceDetails.scss";
 import samplePlaces from "../sampleData/samplePlaces";
 import NavBar from "../NavBar/NavBar";
 import { GET_USER } from "../Queries";
+import { CREATE_USER_FAVORITE } from "../Queries";
 
 const PlaceDetails = ({ city }) => {
   const [details, setDetails] = useState({});
@@ -17,35 +18,6 @@ const PlaceDetails = ({ city }) => {
     const found = places.find((place) => place.id === +id);
     return found;
   };
-
-  const CREATE_USER_FAVORITE = gql`
-    mutation CreateUserFavorite(
-      $userId: Int!
-      $ninjaId: String!
-      $placeName: String!
-      $thumbnailUrl: String!
-      $city: String!
-      $state: String!
-      $country: String!
-      $address: String!
-    ) {
-      createUserFavorite(
-        input: {
-          userId: $userId
-          ninjaId: $ninjaId
-          placeName: $placeName
-          thumbnailUrl: $thumbnailUrl
-          city: $city
-          state: $state
-          country: $country
-          address: $address
-        }
-      ) {
-        success
-        error
-      }
-    }
-  `;
 
   const CreateUserFavorite = () => {
     const [createUserFavorite, { data, loading, error }] = useMutation(
