@@ -3,7 +3,7 @@ const cities = [
     name: "Denver",
     places: [
       {
-        id: 1,
+        id: 5678,
         name: "dons tavern",
         category: "restaurant",
         address: "78923 dooby drive, Denver, CO",
@@ -14,7 +14,7 @@ const cities = [
         hours: "0900 - 2200",
       },
       {
-        id: 2,
+        id: 6908,
         name: "Larimer Lounge",
         category: "club",
         address: "78923 dooby drive, Denver, CO",
@@ -25,7 +25,7 @@ const cities = [
         hours: "0900 - 2200",
       },
       {
-        id: 3,
+        id: 7423,
         name: "Scruffy Murphy's",
         category: "bar",
         address: "78923 dooby drive, Denver, CO",
@@ -36,7 +36,7 @@ const cities = [
         hours: "0900 - 2200",
       },
       {
-        id: 4,
+        id: 8546,
         name: "Meow Wolf",
         category: "event",
         address: "78923 dooby drive, Denver, CO",
@@ -47,7 +47,7 @@ const cities = [
         hours: "0900 - 2200",
       },
       {
-        id: 5,
+        id: 34569,
         name: "Cherry Creek Mall",
         category: "mall",
         address: "78923 dooby drive, Denver, CO",

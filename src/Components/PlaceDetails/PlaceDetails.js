@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { gql, useMutation } from "@apollo/client";
 import { Link, useParams } from "react-router-dom";
 import "./PlaceDetails.scss";
 //delete later
@@ -17,6 +18,44 @@ const PlaceDetails = ({ city }) => {
     return found;
   };
 
+  // argument :user_id, Integer, required: true
+  // argument :ninja_id, String, required: true
+  // argument :place_name, String, required: true
+  // argument :thumbnail_url, String, required: false
+  // # argument :city, String, required: true
+  // # argument :state, String, required: false
+  // # argument :country, String, required: true
+
+  const CREATE_USER_FAVORITE = gql`
+    mutation CreateUserFavorite {
+      createUserFavorite(
+        input: { userId: 1, ninjaId: "3049", placeName: "Larimer Lounge" }
+      ) {
+        success
+      }
+    }
+  `;
+
+  const CreateUserFavorite = () => {
+    const [createUserFavorite, { data, loading, error }] =
+      useMutation(CREATE_USER_FAVORITE);
+
+    if (loading) console.log("Submitting...");
+    if (error) console.log(`Submission error! ${error.message}`);
+
+    return (
+      <button
+        className="detailsButtons"
+        onClick={(e) => {
+          e.preventDefault();
+          createUserFavorite();
+        }}
+      >
+        Save
+      </button>
+    );
+  };
+
   useEffect(() => {
     setDetails(getDetails());
   }, [details]);
@@ -28,9 +67,10 @@ const PlaceDetails = ({ city }) => {
         <Link to={`/${city}/dashboard`} className="backButton">
           Back
         </Link>
-        <div className="detailsThumb">
+        <div className="detailsThumb" alt={details.name}>
           <h1 className="detailsTitle">{details.name}</h1>
-          <button className="detailsButtons">Save</button>
+          {/* <button className="detailsButtons">Save</button> */}
+          <CreateUserFavorite />
           <div className="detailsInformation">
             <img
               className="detailsImage"
