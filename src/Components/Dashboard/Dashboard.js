@@ -141,6 +141,10 @@ const Dashboard = ({ city, places, setPlaces }) => {
         </button>
       </div>
       <DisplayPlaces />
+      <div className="back-forward">
+        <button className="backPage">Back</button>
+        <button className="nextPage">Next</button>
+      </div>
     </>
   );
 };
