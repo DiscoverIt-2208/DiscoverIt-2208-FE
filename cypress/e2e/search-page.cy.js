@@ -1,9 +1,5 @@
 describe('Search Page User Flows', () => {
   beforeEach(() => {
-    cy.intercept('https://discover-it.herokuapp.com/graphql', {
-      method: 'GET',
-      fixture: 'places.json'
-    })
     cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=${searchInput}&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {
       method: 'GET',
       fixture: 'citysearch.json'
@@ -48,10 +44,6 @@ describe('Search Page User Flows', () => {
     cy.get('[placeholder="Enter City Name..."]')
       .type('Den')
       .get('#0.search-result').click()
-      cy.intercept('https://discover-it.herokuapp.com/graphql', {
-        method: 'GET',
-        fixture: 'places.json'
-      })
       .get('.exploreCity').click()
   })
 })

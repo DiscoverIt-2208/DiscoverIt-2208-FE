@@ -1,22 +1,31 @@
-describe('Dashboard User Flows', () => {
+import { aliasQuery, hasOperationName } from "../utilities/graphql-test-utilities";
+
+context('Dashboard User Flows', () => {
   beforeEach(() => {
-    cy.intercept('https://discover-it.herokuapp.com/graphql', {
-      method: 'GET',
-      fixture: 'places.json'
-    })
+    // cy.intercept('https://discover-it.herokuapp.com/graphql', {
+    //   method: 'GET',
+    //   fixture: 'places.json'
+    // })
     cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=${searchInput}&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {
       method: 'GET',
       fixture: 'citysearch.json'
     })
     cy.visit('http://localhost:3000/search-page')
     cy.get('[placeholder="Enter City Name..."]')
-    .type('Den')
-    .get('#0.search-result').click()
+      .type('Den')
+      .get('#0.search-result').click()
     // cy.intercept('https://discover-it.herokuapp.com/graphql', {
     //   method: 'GET',
     //   fixture: 'places.json'
     // })
-    .get('.exploreCity').click()
+    cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
+      aliasQuery(req, 'FetchPlaces')
+      req.reply({
+        fixture: 'places.json'
+      });
+    })
+    cy.get('.exploreCity').click()
+    cy.wait('@gqlusersQuery')
   })
 
   it('should display nav bar upon page load', () => {

@@ -44,9 +44,9 @@ const Dashboard = ({ city, places, setPlaces }) => {
       return <p className="error">Submission error! {error.message}</p>;
     }
 
-    console.log(data);
+    console.log(data.places);
 
-    const eachPlace = data.map((place) => {
+    const eachPlace = data.places.map((place) => {
       <PlaceCard place={place} city={city.properties.city} />;
     });
 

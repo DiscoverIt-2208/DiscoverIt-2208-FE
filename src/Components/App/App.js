@@ -11,8 +11,9 @@ import samplePlaces from "../sampleData/samplePlaces";
 import BadURL from "../BadURL/BadURL";
 
 const App = () => {
+  const defaultCity = window.location.pathname.split("/")
   const [city, setCity] = useState({
-    properties: { city: "Unknown" },
+    properties: { city: defaultCity[1] },
   });
   const [places, setPlaces] = useState(samplePlaces);
   const [error, setError] = useState(false);

@@ -1,3 +1,5 @@
+import { operationName } from "@apollo/client";
+
 // Utility to match GraphQL mutation based on the operation name
 export const hasOperationName = (req, operationName) => {
   const { body } = req
