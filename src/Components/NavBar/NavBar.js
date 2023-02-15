@@ -23,7 +23,7 @@ const NavBar = ({ city }) => {
           className="nav-link"
           activeclassname="active"
           exact="true"
-          to={`/${city}/dashboard`}
+          to={`/dashboard`}
         >
           <h4>Dashboard</h4>
         </NavLink>
@@ -31,7 +31,7 @@ const NavBar = ({ city }) => {
           className="nav-link"
           activeclassname="active"
           exact="true"
-          to={`/${city}/saved-places`}
+          to={`/saved-places`}
         >
           <h4>Saved Places</h4>
         </NavLink>

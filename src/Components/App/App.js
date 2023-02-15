@@ -30,7 +30,7 @@ const App = () => {
         />
         <Route
           exact
-          path={`/:city/saved-places`}
+          path={`/saved-places`}
           element={<SavedPlaces city={city.properties.city} places={places} />}
         />
         <Route
@@ -40,7 +40,7 @@ const App = () => {
         />
         <Route
           exact
-          path={`/:city/dashboard`}
+          path={`/dashboard`}
           element={
             <Dashboard city={city} places={places} setPlaces={setPlaces} />
           }
