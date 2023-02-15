@@ -1,18 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./PlaceCard.scss";
+import Death from "../assets/deathandco.jpg";
 
 const PlaceCard = ({ place, city }) => {
+  console.log(place);
   return (
-    <Link to={`/${city}/${place.id}`} className="place-thumb" key={place.id}>
-      <div id={`${place.id}`} className="card-container" key={place.name}>
-        <img className="card-img" src={place.image} alt={`${place.name}`} />
+    <Link
+      to={`/${city}/${place.placeId}`}
+      className="place-thumb"
+      key={place.placeId}
+    >
+      <div id={`${place.placeId}`} className="card-container" key={place.name}>
+        <img className="card-img" src={Death} alt={`${place.name}`} />
         <h3>{place.name}</h3>
       </div>
     </Link>
   );
-
-  //   return <div className="place-card-container">{eachPlace}</div>;
 };
 
 export default PlaceCard;

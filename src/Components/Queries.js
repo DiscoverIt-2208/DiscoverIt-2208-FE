@@ -40,3 +40,16 @@ export const CREATE_USER_FAVORITE = gql`
     }
   }
 `;
+
+export const FETCH_PLACES = gql`
+  query FetchPlaces($city: String!, $country: String!, $categories: [String!]) {
+    places(city: $city, country: $country, categories: $categories) {
+      name
+      address
+      placeId
+      categories
+      lat
+      lon
+    }
+  }
+`;
