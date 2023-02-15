@@ -36,18 +36,22 @@ const Dashboard = ({ city, places, setPlaces }) => {
     const { data, loading, error } = useQuery(FETCH_PLACES);
 
     if (loading) {
-      console.log("Submitting...");
       return <p className="error">Submitting...</p>;
     }
     if (error) {
-      console.log(`Submission error! ${error.message}`);
       return <p className="error">Submission error! {error.message}</p>;
     }
 
     console.log(data.places);
 
     const eachPlace = data.places.map((place) => {
-      <PlaceCard place={place} city={city.properties.city} />;
+      return (
+        <PlaceCard
+          key={place.placeId}
+          place={place}
+          city={city.properties.city}
+        />
+      );
     });
 
     return (
