@@ -19,7 +19,9 @@ const SavedDetails = ({ city }) => {
 
     return (
       <Link to="/saved-places">
-        <button className="delete-button">Delete</button>
+        <button className="delete-button" onClick={() => deleteUserFavorite()}>
+          Delete
+        </button>
       </Link>
     );
   };

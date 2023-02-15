@@ -9,6 +9,7 @@ import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import Dashboard from "../Dashboard/Dashboard";
 import samplePlaces from "../sampleData/samplePlaces";
 import BadURL from "../BadURL/BadURL";
+import SavedDetails from "../SavedPlaces/SavedPlaces";
 
 const App = () => {
   const [city, setCity] = useState({});
@@ -34,6 +35,11 @@ const App = () => {
           exact
           path={`/:city/:id`}
           element={<PlaceDetails city={city} />}
+        />
+        <Route
+          exact
+          path={`/:city/:id/saved`}
+          element={<SavedDetails city={city} />}
         />
         <Route
           exact
