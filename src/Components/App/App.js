@@ -5,6 +5,7 @@ import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import SearchPage from "../SearchPage/SearchPage";
 import SavedPlaces from "../SavedPlaces/SavedPlaces";
+import SavedDetails from '../SavedDetails/SavedDetails'
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import Dashboard from "../Dashboard/Dashboard";
 import samplePlaces from "../sampleData/samplePlaces";
@@ -32,6 +33,11 @@ const App = () => {
           exact
           path={`/saved-places`}
           element={<SavedPlaces city={city.properties.city} places={places} />}
+        />
+        <Route
+          exact
+          path={`/:city/:id/saved`}
+          element={<SavedDetails city={city.properties.city} places={places} />}
         />
         <Route
           exact
