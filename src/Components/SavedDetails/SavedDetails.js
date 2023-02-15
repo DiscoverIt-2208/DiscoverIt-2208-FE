@@ -31,7 +31,8 @@ const SavedDetails = ({ city }) => {
     }
 
   return (
-    <div className='saved-details-container'>
+    <div className='saved-details-page'>
+        <DeleteUserFavorite />
         HELLLO
     </div>
   )
