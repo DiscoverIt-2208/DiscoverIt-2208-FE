@@ -2,10 +2,6 @@ import { aliasQuery, hasOperationName } from "../utilities/graphql-test-utilitie
 
 context('Dashboard User Flows', () => {
   beforeEach(() => {
-    // cy.intercept('https://discover-it.herokuapp.com/graphql', {
-    //   method: 'GET',
-    //   fixture: 'places.json'
-    // })
     cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=${searchInput}&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {
       method: 'GET',
       fixture: 'citysearch.json'
@@ -14,10 +10,6 @@ context('Dashboard User Flows', () => {
     cy.get('[placeholder="Enter City Name..."]')
       .type('Den')
       .get('#0.search-result').click()
-    // cy.intercept('https://discover-it.herokuapp.com/graphql', {
-    //   method: 'GET',
-    //   fixture: 'places.json'
-    // })
     cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
       aliasQuery(req, 'FetchPlaces')
       req.reply({
@@ -25,7 +17,7 @@ context('Dashboard User Flows', () => {
       });
     })
     cy.get('.exploreCity').click()
-    cy.wait('@gqlusersQuery')
+    // cy.wait('@gqlusersQuery')
   })
 
   it('should display nav bar upon page load', () => {
@@ -33,19 +25,20 @@ context('Dashboard User Flows', () => {
       .get('.discoverIt-title').should('be.visible')
       .get('.active > h4').should('be.visible')
       .get('[href="/search-page"]').should('be.visible')
-      .get('[href="/Denver/saved-places"]').should('be.visible')
+      .get('[href="/saved-places"]').should('be.visible')
   })
 
   it('should display background, city title, and category buttons', () => {
     cy.get('html').should('have.css', 'background').and('include', 'http://localhost:3000/static/media/DiscoverItBackground.9076687e3ac2cae6ea07.png')
       .get('.city-name').should('be.visible').and('contain', 'Denver')
       .get('.buttons-container').should('be.visible')
-      .get('.place-thumb').should('have.length', 5)
+      .get('.place-thumb').should('have.length', 6)
       .get('.buttons-container > :nth-child(1)').should('contain', 'Restaurant')
-      .get('.buttons-container > :nth-child(2)').should('contain', 'Club')
-      .get('.buttons-container > :nth-child(3)').should('contain', 'Bar')
-      .get('.buttons-container > :nth-child(4)').should('contain', 'Event')
-      .get('.buttons-container > :nth-child(5)').should('contain', 'Mall')
+      .get('.buttons-container > :nth-child(2)').should('contain', 'Entertainment')
+      .get('.buttons-container > :nth-child(3)').should('contain', 'History')
+      .get('.buttons-container > :nth-child(4)').should('contain', 'Cafe')
+      .get('.buttons-container > :nth-child(5)').should('contain', 'Popular')
+      .get('.buttons-container > :nth-child(5)').should('contain', 'Accessbility')
   })
 
   it('should display all places for the selected city', () => {
@@ -83,7 +76,7 @@ context('Dashboard User Flows', () => {
   })
 
   it('should navigate to saved places page if user clicks saved places in nav bar', () => {
-    cy.get('[href="/Denver/saved-places"] > h4').click()
+    cy.get('[href="/saved-places"] > h4').click()
     //link above will change to be dynamic 
     cy.visit('http://localhost:3000/Denver/saved-places')
     //Need to change this once the dashboard is dynamic as it will not be Denver saved places

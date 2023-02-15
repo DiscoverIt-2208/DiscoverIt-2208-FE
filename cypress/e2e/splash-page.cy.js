@@ -1,9 +1,5 @@
 describe('Splash Page User Flows', () => {
   beforeEach(() => {
-    cy.intercept('https://discover-it.herokuapp.com/graphql', {
-      method: 'GET',
-      fixture: 'places.json'
-    })
     cy.visit('http://localhost:3000')
   })
 

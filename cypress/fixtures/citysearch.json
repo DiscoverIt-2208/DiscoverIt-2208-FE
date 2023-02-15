@@ -1,44 +1,545 @@
 {
-  "citysearch": [
-    {
-      "address_line1": "Denver, CO",
-      "address_line2": "United States of America"
-    },
-    {
-      "address_line1": "Denison, TX 75020",
-      "address_line2": "United States of America"
-    }, 
-    {
-      "address_line1": "Denton, TX",
-      "address_line2": "United States of America"
-    }, 
-    {
-      "address_line1": "Dent, MN",
-      "address_line2": "United States of America"
-    }, 
-    {
-      "address_line1": "Denham, MN",
-      "address_line2": "United States of America"
-    }, 
-    {
-      "address_line1": "Denison, IA 51442",
-      "address_line2": "United States of America"
-    }, 
-    {
-      "address_line1": "Dennison, MN",
-      "address_line2": "United States of America"
-    }, 
-    {
-      "address_line1": "Denison, KS",
-      "address_line2": "United States of America"
-    }, 
-    {
-      "address_line1": "Denver City, TX 79323",
-      "address_line2": "United States of America"
-    },
-    {
-      "address_line1": "Denison, TX 79323",
-      "address_line2": "United States of America"
-    }
-  ]
+  "type": "FeatureCollection",
+  "features": [
+      {
+          "type": "Feature",
+          "properties": {
+              "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright"
+              },
+              "country": "United States",
+              "country_code": "us",
+              "state": "Colorado",
+              "city": "Denver",
+              "lon": -104.984862,
+              "lat": 39.7392364,
+              "state_code": "CO",
+              "formatted": "Denver, CO, United States of America",
+              "address_line1": "Denver, CO",
+              "address_line2": "United States of America",
+              "category": "administrative",
+              "timezone": {
+                  "name": "America/Denver",
+                  "offset_STD": "-07:00",
+                  "offset_STD_seconds": -25200,
+                  "offset_DST": "-06:00",
+                  "offset_DST_seconds": -21600,
+                  "abbreviation_STD": "MST",
+                  "abbreviation_DST": "MDT"
+              },
+              "result_type": "city",
+              "rank": {
+                  "importance": 0.595475873909579,
+                  "confidence": 1,
+                  "confidence_city_level": 1,
+                  "match_type": "full_match"
+              },
+              "place_id": "51af44a0fa073f5ac059a301614c9fde4340f00101f9010b89150000000000c00208"
+          },
+          "geometry": {
+              "type": "Point",
+              "coordinates": [
+                  -104.984862,
+                  39.7392364
+              ]
+          },
+          "bbox": [
+              -105.1098845,
+              39.6143154,
+              -104.5996997,
+              39.9142087
+          ]
+      },
+      {
+          "type": "Feature",
+          "properties": {
+              "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright"
+              },
+              "country": "United States",
+              "country_code": "us",
+              "state": "Texas",
+              "county": "Grayson County",
+              "city": "Denison",
+              "postcode": "75020",
+              "lon": -96.536658,
+              "lat": 33.7556593,
+              "state_code": "TX",
+              "formatted": "Denison, TX 75020, United States of America",
+              "address_line1": "Denison, TX 75020",
+              "address_line2": "United States of America",
+              "category": "administrative",
+              "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+              },
+              "result_type": "postcode",
+              "rank": {
+                  "importance": 0.5246261173264296,
+                  "confidence": 1,
+                  "confidence_city_level": 1,
+                  "match_type": "full_match"
+              },
+              "place_id": "51c1c8cb9a582258c0598935a671b9e04040f00101f90194c2010000000000c00207"
+          },
+          "geometry": {
+              "type": "Point",
+              "coordinates": [
+                  -96.536658,
+                  33.7556593
+              ]
+          },
+          "bbox": [
+              -96.6812585,
+              33.6946547,
+              -96.4811533,
+              33.8584167
+          ]
+      },
+      {
+          "type": "Feature",
+          "properties": {
+              "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright"
+              },
+              "country": "United States",
+              "country_code": "us",
+              "state": "Texas",
+              "county": "Denton County",
+              "city": "Denton",
+              "lon": -97.1330516,
+              "lat": 33.2150386,
+              "state_code": "TX",
+              "formatted": "Denton, TX, United States of America",
+              "address_line1": "Denton, TX",
+              "address_line2": "United States of America",
+              "category": "administrative",
+              "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+              },
+              "result_type": "city",
+              "rank": {
+                  "importance": 0.524315625992819,
+                  "confidence": 1,
+                  "confidence_city_level": 1,
+                  "match_type": "full_match"
+              },
+              "place_id": "518dabdbea834858c05956308562869b4040f00101f90150c2010000000000c00208"
+          },
+          "geometry": {
+              "type": "Point",
+              "coordinates": [
+                  -97.1330516,
+                  33.2150386
+              ]
+          },
+          "bbox": [
+              -97.2666409,
+              33.116875,
+              -97.023813,
+              33.358306
+          ]
+      },
+      {
+          "type": "Feature",
+          "properties": {
+              "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright"
+              },
+              "country": "United States",
+              "country_code": "us",
+              "state": "Minnesota",
+              "county": "Otter Tail County",
+              "city": "Dent",
+              "lon": -95.716435,
+              "lat": 46.553571,
+              "state_code": "MN",
+              "formatted": "Dent, MN, United States of America",
+              "address_line1": "Dent, MN",
+              "address_line2": "United States of America",
+              "category": "administrative",
+              "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+              },
+              "result_type": "city",
+              "rank": {
+                  "importance": 0.4345159667941681,
+                  "confidence": 1,
+                  "confidence_city_level": 1,
+                  "match_type": "full_match"
+              },
+              "place_id": "516dad2f12daed57c059cb811e6adb464740f00101f901101a020000000000c00208"
+          },
+          "geometry": {
+              "type": "Point",
+              "coordinates": [
+                  -95.716435,
+                  46.553571
+              ]
+          },
+          "bbox": [
+              -95.7255875,
+              46.5472396,
+              -95.709871,
+              46.5598473
+          ]
+      },
+      {
+          "type": "Feature",
+          "properties": {
+              "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright"
+              },
+              "country": "United States",
+              "country_code": "us",
+              "state": "Minnesota",
+              "county": "Pine County",
+              "city": "Denham",
+              "lon": -92.9429827,
+              "lat": 46.3638345,
+              "state_code": "MN",
+              "formatted": "Denham, MN, United States of America",
+              "address_line1": "Denham, MN",
+              "address_line2": "United States of America",
+              "category": "administrative",
+              "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+              },
+              "result_type": "city",
+              "rank": {
+                  "importance": 0.4269620155557563,
+                  "confidence": 1,
+                  "confidence_city_level": 1,
+                  "match_type": "full_match"
+              },
+              "place_id": "51674c1cd4593c57c0590954ff20922e4740f00101f901e116020000000000c00208"
+          },
+          "geometry": {
+              "type": "Point",
+              "coordinates": [
+                  -92.9429827,
+                  46.3638345
+              ]
+          },
+          "bbox": [
+              -92.954314,
+              46.35392,
+              -92.927847,
+              46.37214
+          ]
+      },
+      {
+          "type": "Feature",
+          "properties": {
+              "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright"
+              },
+              "country": "United States",
+              "country_code": "us",
+              "state": "Iowa",
+              "county": "Crawford County",
+              "city": "Denison",
+              "postcode": "51442",
+              "lon": -95.3553286,
+              "lat": 42.0177718,
+              "state_code": "IA",
+              "formatted": "Denison, IA 51442, United States of America",
+              "address_line1": "Denison, IA 51442",
+              "address_line2": "United States of America",
+              "category": "administrative",
+              "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+              },
+              "result_type": "postcode",
+              "rank": {
+                  "importance": 0.4505255350998821,
+                  "confidence": 1,
+                  "confidence_city_level": 1,
+                  "match_type": "full_match"
+              },
+              "place_id": "5158152bb4bdd657c05941e5a95846024540f00101f90184f5010000000000c00207"
+          },
+          "geometry": {
+              "type": "Point",
+              "coordinates": [
+                  -95.3553286,
+                  42.0177718
+              ]
+          },
+          "bbox": [
+              -95.3917596,
+              41.9801762,
+              -95.3148896,
+              42.0367895
+          ]
+      },
+      {
+          "type": "Feature",
+          "properties": {
+              "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright"
+              },
+              "country": "United States",
+              "country_code": "us",
+              "state": "Minnesota",
+              "county": "Goodhue County",
+              "city": "Dennison",
+              "lon": -93.0396206,
+              "lat": 44.4072933,
+              "state_code": "MN",
+              "formatted": "Dennison, MN, United States of America",
+              "address_line1": "Dennison, MN",
+              "address_line2": "United States of America",
+              "category": "administrative",
+              "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+              },
+              "result_type": "city",
+              "rank": {
+                  "importance": 0.4333286158990056,
+                  "confidence": 1,
+                  "confidence_city_level": 1,
+                  "match_type": "full_match"
+              },
+              "place_id": "51de4fd724894257c059a1b0d52f22344640f00101f901b418020000000000c00208"
+          },
+          "geometry": {
+              "type": "Point",
+              "coordinates": [
+                  -93.0396206,
+                  44.4072933
+              ]
+          },
+          "bbox": [
+              -93.0421045,
+              44.3997677,
+              -93.0198381,
+              44.417891
+          ]
+      },
+      {
+          "type": "Feature",
+          "properties": {
+              "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright"
+              },
+              "country": "United States",
+              "country_code": "us",
+              "state": "Kansas",
+              "county": "Jackson County",
+              "city": "Denison",
+              "lon": -95.628036,
+              "lat": 39.391664,
+              "state_code": "KS",
+              "formatted": "Denison, KS, United States of America",
+              "address_line1": "Denison, KS",
+              "address_line2": "United States of America",
+              "category": "administrative",
+              "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+              },
+              "result_type": "city",
+              "rank": {
+                  "importance": 0.4145539033267181,
+                  "confidence": 1,
+                  "confidence_city_level": 1,
+                  "match_type": "full_match"
+              },
+              "place_id": "517b2de8bd31e857c059a182c30b22b24340f00101f90105fb010000000000c00208"
+          },
+          "geometry": {
+              "type": "Point",
+              "coordinates": [
+                  -95.628036,
+                  39.391664
+              ]
+          },
+          "bbox": [
+              -95.630788,
+              39.389367,
+              -95.626374,
+              39.397384
+          ]
+      },
+      {
+          "type": "Feature",
+          "properties": {
+              "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright"
+              },
+              "country": "United States",
+              "country_code": "us",
+              "state": "Texas",
+              "county": "Yoakum County",
+              "city": "Denver City",
+              "postcode": "79323",
+              "lon": -102.8293851,
+              "lat": 32.9679571,
+              "state_code": "TX",
+              "formatted": "Denver City, TX 79323, United States of America",
+              "address_line1": "Denver City, TX 79323",
+              "address_line2": "United States of America",
+              "category": "administrative",
+              "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+              },
+              "result_type": "postcode",
+              "rank": {
+                  "importance": 0.43738796623463627,
+                  "confidence": 1,
+                  "confidence_city_level": 1,
+                  "match_type": "full_match"
+              },
+              "place_id": "518a123ea514b559c0592b37ac04e67b4040f00101f90183f07a0000000000c00207"
+          },
+          "geometry": {
+              "type": "Point",
+              "coordinates": [
+                  -102.8293851,
+                  32.9679571
+              ]
+          },
+          "bbox": [
+              -102.854631,
+              32.956367,
+              -102.81749,
+              32.982421
+          ]
+      },
+      {
+          "type": "Feature",
+          "properties": {
+              "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright"
+              },
+              "country": "United States",
+              "country_code": "us",
+              "state": "Texas",
+              "county": "Grayson County",
+              "city": "Denison",
+              "lon": -96.59394275009335,
+              "lat": 33.7364432,
+              "state_code": "TX",
+              "name": "Denison",
+              "formatted": "Denison, TX, United States of America",
+              "address_line1": "Denison, TX",
+              "address_line2": "United States of America",
+              "category": "administrative",
+              "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+              },
+              "result_type": "city",
+              "rank": {
+                  "importance": 0.35000999999999993,
+                  "confidence": 1,
+                  "confidence_city_level": 1,
+                  "match_type": "full_match"
+              },
+              "place_id": "5139d67328032658c05948ae51c543de4040f00102f901f1ff432400000000c0020892030744656e69736f6e"
+          },
+          "geometry": {
+              "type": "Point",
+              "coordinates": [
+                  -96.59394275009335,
+                  33.7364432
+              ]
+          },
+          "bbox": [
+              -96.6020215,
+              33.7254697,
+              -96.5878145,
+              33.7474567
+          ]
+      }
+  ],
+  "query": {
+      "text": "den",
+      "parsed": {
+          "city": "den",
+          "expected_type": "unknown"
+      }
+  }
 }
