@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const SearchPage = ({ city, setCity }) => {
   const exploreCity =
     city != "Unknown" ? (
-      <Link to={`/${city}/dashboard`} className="exploreCity">
+      <Link to={`/dashboard`} className="exploreCity">
         GO!
       </Link>
     ) : null;

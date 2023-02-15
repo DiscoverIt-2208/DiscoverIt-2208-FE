@@ -11,8 +11,9 @@ import samplePlaces from "../sampleData/samplePlaces";
 import BadURL from "../BadURL/BadURL";
 
 const App = () => {
+  const defaultCity = window.location.pathname.split("/")
   const [city, setCity] = useState({
-    properties: { city: "Unknown" },
+    properties: { city: defaultCity[1] },
   });
   const [places, setPlaces] = useState(samplePlaces);
   const [error, setError] = useState(false);
@@ -29,7 +30,7 @@ const App = () => {
         />
         <Route
           exact
-          path={`/:city/saved-places`}
+          path={`/saved-places`}
           element={<SavedPlaces city={city.properties.city} places={places} />}
         />
         <Route
@@ -39,7 +40,7 @@ const App = () => {
         />
         <Route
           exact
-          path={`/:city/dashboard`}
+          path={`/dashboard`}
           element={
             <Dashboard city={city} places={places} setPlaces={setPlaces} />
           }
