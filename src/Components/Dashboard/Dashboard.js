@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Dashboard.scss";
 import PlaceCard from "../PlaceCard/PlaceCard";
 import NavBar from "../NavBar/NavBar";
-import Death from "../assets/deathandco.jpg";
+import { FETCH_PLACES } from "../Queries";
 
 const Dashboard = ({ city, places, setPlaces }) => {
   const [categories, setCategories] = useState(["tourism.attraction"]);
@@ -15,25 +15,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
   const [popularSelected, setPopularSelected] = useState(true);
   const [accessibilitySelected, setAccessibilitySelected] = useState(false);
 
-  const FETCH_PLACES = gql`
-    query FetchPlaces(
-      $city: String!
-      $country: String!
-      $categories: [String!]
-    ) {
-      places(city: $city, country: $country, categories: $categories) {
-        name
-        address
-        placeId
-        categories
-        lat
-        lon
-      }
-    }
-  `;
-
   const DisplayPlaces = () => {
-    console.log(city);
     const { data, loading, error } = useQuery(FETCH_PLACES, {
       variables: {
         city: city.properties.city,
@@ -48,8 +30,6 @@ const Dashboard = ({ city, places, setPlaces }) => {
     if (error) {
       return <p className="error">Submission error! {error.message}</p>;
     }
-
-    console.log(data.places);
 
     const eachPlace = data.places.map((place) => {
       return (
