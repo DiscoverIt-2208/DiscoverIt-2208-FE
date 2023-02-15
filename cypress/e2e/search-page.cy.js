@@ -48,6 +48,10 @@ describe('Search Page User Flows', () => {
     cy.get('[placeholder="Enter City Name..."]')
       .type('Den')
       .get('#0.search-result').click()
+      cy.intercept('https://discover-it.herokuapp.com/graphql', {
+        method: 'GET',
+        fixture: 'places.json'
+      })
       .get('.exploreCity').click()
   })
 })

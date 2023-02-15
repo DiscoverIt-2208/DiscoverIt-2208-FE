@@ -4,13 +4,19 @@ describe('Dashboard User Flows', () => {
       method: 'GET',
       fixture: 'places.json'
     })
-    cy.visit('http://localhost:3000/')
-    cy.get('.pick-button').click()
+    cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=${searchInput}&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {
+      method: 'GET',
+      fixture: 'citysearch.json'
+    })
     cy.visit('http://localhost:3000/search-page')
     cy.get('[placeholder="Enter City Name..."]')
-      .type('Den')
-      .get('#0.search-result').click()
-      .get('.exploreCity').click()
+    .type('Den')
+    .get('#0.search-result').click()
+    // cy.intercept('https://discover-it.herokuapp.com/graphql', {
+    //   method: 'GET',
+    //   fixture: 'places.json'
+    // })
+    .get('.exploreCity').click()
   })
 
   it('should display nav bar upon page load', () => {
