@@ -1,8 +1,10 @@
-import { aliasQuery, hasOperationName } from "../utilities/graphql-test-utilities";
+import { aliasQuery, operationName } from "../utilities/graphql-test-utilities";
 
 context('Dashboard User Flows', () => {
   beforeEach(() => {
-    cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=${searchInput}&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {
+    cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=D&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {})
+    cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=De&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {})
+    cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=Den&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {
       method: 'GET',
       fixture: 'citysearch.json'
     })
@@ -10,14 +12,25 @@ context('Dashboard User Flows', () => {
     cy.get('[placeholder="Enter City Name..."]')
       .type('Den')
       .get('#0.search-result').click()
+    
+      // cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
+    //   aliasQuery(req, 'FetchPlaces')
+    //   req.reply({
+    //     fixture: 'places.json'
+    //   });
+    // })
+
     cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
-      aliasQuery(req, 'FetchPlaces')
-      req.reply({
-        fixture: 'places.json'
-      });
+      if (req.body.operationName === 'FetchPlaces') {
+          req.reply({
+            fixture: 'places.json'
+        });
+      }
     })
+
     cy.get('.exploreCity').click()
-    // cy.wait('@gqlusersQuery')
+    // cy.wait(30000)
+    // cy.wait('@FetchPlaces')
   })
 
   it('should display nav bar upon page load', () => {

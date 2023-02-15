@@ -23,14 +23,13 @@ const Dashboard = ({ city, places, setPlaces }) => {
         categories: categories,
       },
     });
-
     if (loading) {
       return <p className="error">Submitting...</p>;
     }
     if (error) {
       return <p className="error">Submission error! {error.message}</p>;
     }
-
+    console.log(data)
     const eachPlace = data.places.map((place) => {
       return (
         <PlaceCard
