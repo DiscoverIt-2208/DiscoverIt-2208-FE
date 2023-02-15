@@ -26,7 +26,7 @@ const SavedPlaces = ({ city, places }) => {
       <h2>{city}</h2>
       const places = favoritesByCity[city].map((place) => {
         return (
-          <Link to={`/${city}/${place.ninjaId}`} 
+          <Link to={`/${city}/${place.ninjaId}/saved`} 
             key={place.ninjaId}
             className="place-thumb"
           >
