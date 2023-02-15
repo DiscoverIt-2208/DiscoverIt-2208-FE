@@ -64,3 +64,11 @@ export const FETCH_PLACES = gql`
     }
   }
 `;
+
+export const DELETE_USER_FAVORITE = gql`
+  mutation DeleteUserFavorite($id: Int!) {
+    deleteUserFavorite(input: { id: $id }) {
+      success
+    }
+  }
+`;
