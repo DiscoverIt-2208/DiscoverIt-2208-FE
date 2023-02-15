@@ -26,8 +26,6 @@ const Dashboard = ({ city, places, setPlaces }) => {
       },
     });
 
-    console.log(currentPage);
-
     if (loading) {
       return <p className="error">Loading...</p>;
     }

@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { gql, useMutation } from "@apollo/client";
+import React, { useState } from "react";
+import { gql, useMutation, useQuery } from "@apollo/client";
 import { Link, useParams } from "react-router-dom";
 import "./PlaceDetails.scss";
-//delete later
-import samplePlaces from "../sampleData/samplePlaces";
 import NavBar from "../NavBar/NavBar";
 import { GET_USER } from "../Queries";
 import { CREATE_USER_FAVORITE } from "../Queries";
@@ -13,10 +11,31 @@ const PlaceDetails = ({ city }) => {
 
   const { id } = useParams();
 
-  const getDetails = () => {
-    const places = samplePlaces[0].places;
-    const found = places.find((place) => place.id === +id);
-    return found;
+  const FETCH_DETAILS = gql`
+    query FetchDetails($id: String!) {
+      places(
+        city: $city
+        country: $country
+        categories: $categories
+        page: $page
+      ) {
+        name
+        address
+        placeId
+        categories
+        lat
+        lon
+      }
+    }
+  `;
+
+  const DisplayDetails = () => {
+    const { loading, error, data } = useQuery(FETCH_DETAILS);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error.message}</p>;
+
+    //
   };
 
   const CreateUserFavorite = () => {
@@ -54,15 +73,11 @@ const PlaceDetails = ({ city }) => {
     );
   };
 
-  useEffect(() => {
-    setDetails(getDetails());
-  }, [details]);
-
   return (
     <>
       <NavBar city={city.properties.city} />
       <div className="detailsPage">
-        <Link to={`/${city.properties.city}/dashboard`} className="backButton">
+        <Link to={`/dashboard`} className="backButton">
           Back
         </Link>
         <div className="detailsThumb" alt={details.name}>
