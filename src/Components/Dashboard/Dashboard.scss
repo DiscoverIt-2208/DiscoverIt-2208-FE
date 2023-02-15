@@ -90,3 +90,10 @@
   align-items: center;
   padding: 1.25%;
 }
+
+.backPage:hover,
+.nextPage:hover {
+  cursor: pointer;
+  border: solid #d51131 2px;
+  color: #d51131;
+}

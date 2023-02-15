@@ -14,6 +14,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
   const [cafeSelcted, setCafeSelected] = useState(false);
   const [popularSelected, setPopularSelected] = useState(true);
   const [accessibilitySelected, setAccessibilitySelected] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const DisplayPlaces = () => {
     const { data, loading, error } = useQuery(FETCH_PLACES, {
@@ -21,8 +22,11 @@ const Dashboard = ({ city, places, setPlaces }) => {
         city: city.properties.city,
         country: city.properties.country,
         categories: categories,
+        page: currentPage,
       },
     });
+
+    console.log(currentPage);
 
     if (loading) {
       return <p className="error">Submitting...</p>;
@@ -142,8 +146,28 @@ const Dashboard = ({ city, places, setPlaces }) => {
       </div>
       <DisplayPlaces />
       <div className="back-forward">
-        <button className="backPage">Back</button>
-        <button className="nextPage">Next</button>
+        <button
+          className="backPage"
+          onClick={() => {
+            if (currentPage !== 0) {
+              const newCurrent = currentPage - 1;
+              setCurrentPage(newCurrent);
+              console.log(currentPage);
+            }
+          }}
+        >
+          Back
+        </button>
+        <button
+          className="nextPage"
+          onClick={() => {
+            const newCurrent = currentPage + 1;
+            setCurrentPage(newCurrent);
+            console.log(currentPage);
+          }}
+        >
+          Next
+        </button>
       </div>
     </>
   );
