@@ -4,7 +4,6 @@ import "./PlaceCard.scss";
 import Death from "../assets/deathandco.jpg";
 
 const PlaceCard = ({ place, city }) => {
-  console.log(place);
   return (
     <Link
       to={`/${city}/${place.placeId}`}
@@ -13,7 +12,7 @@ const PlaceCard = ({ place, city }) => {
     >
       <div id={`${place.placeId}`} className="card-container" key={place.name}>
         <img className="card-img" src={Death} alt={`${place.name}`} />
-        <h3>{place.name}</h3>
+        <h3 className="placeName">{place.name}</h3>
       </div>
     </Link>
   );

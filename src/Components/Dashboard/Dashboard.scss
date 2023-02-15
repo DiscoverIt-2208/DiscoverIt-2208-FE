@@ -1,3 +1,10 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .city-name {
   font-family: "Abril Fatface", cursive;
   color: #fff;
@@ -8,6 +15,7 @@
 .buttons-container {
   display: flex;
   justify-content: space-evenly;
+  width: 100vw;
 }
 
 .category-button {
@@ -26,7 +34,8 @@
   cursor: pointer;
 }
 
-.place-card-container {
+.place-card-box {
+  margin: 4%;
   background-color: #00000071;
   color: #fff;
   border-radius: 2rem;
@@ -37,11 +46,6 @@
   justify-items: center;
   align-items: center;
   gap: 2rem;
-}
-
-.place-card-box {
-  display: flex;
-  justify-content: center;
 }
 
 .error {
@@ -70,6 +74,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 50vw;
 }
 
 .backPage,

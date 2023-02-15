@@ -21,13 +21,14 @@ const SavedPlaces = ({ city, places }) => {
       return acc;
     }, {});
 
-    const cities = Object.keys(favoritesByCity)
+    const cities = Object.keys(favoritesByCity);
     const placesByCity = cities.map((city) => {
-      <h2>{city}</h2>
+      <h2>{city}</h2>;
       const places = favoritesByCity[city].map((place) => {
         return (
-          <Link to={`/${city}/${place.ninjaId}`} 
-            key={place.ninjaId}
+          <Link
+            to={`/${city}/${place.id}`}
+            key={place.id}
             className="place-thumb"
           >
             <div id={`${place.placeName}`} className="saved-place-card">
@@ -35,17 +36,17 @@ const SavedPlaces = ({ city, places }) => {
               <p>{place.placeName}</p>
             </div>
           </Link>
-          )
-      })
+        );
+      });
       return (
         <div>
           <h2>{city}</h2>
           {places}
         </div>
-      )
-    })
-    return placesByCity
-  }
+      );
+    });
+    return placesByCity;
+  };
   return (
     <>
       <NavBar city={city} />

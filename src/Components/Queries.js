@@ -4,6 +4,7 @@ export const GET_USER = gql`
   query GetUser {
     user(id: "1") {
       favorites {
+        id
         ninjaId
         placeName
         city

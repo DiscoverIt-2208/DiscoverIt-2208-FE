@@ -44,12 +44,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
         />
       );
     });
-
-    return (
-      <div className="place-card-box">
-        <div className="place-card">{eachPlace}</div>
-      </div>
-    );
+    return <div className="place-card-box">{eachPlace}</div>;
   };
 
   const changeCategory = (e) => {
@@ -69,7 +64,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
   };
 
   return (
-    <>
+    <div className="dashboard">
       <NavBar city={city.properties.city} />
       <h1 className="city-name">{city.properties.city}</h1>
       <div className="buttons-container">
@@ -169,7 +164,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
           Next
         </button>
       </div>
-    </>
+    </div>
   );
 };
 export default Dashboard;
