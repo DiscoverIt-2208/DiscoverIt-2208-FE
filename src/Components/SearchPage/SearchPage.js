@@ -6,8 +6,9 @@ import NavBar from "../NavBar/NavBar";
 import { Link } from "react-router-dom";
 
 const SearchPage = ({ city, setCity }) => {
+  const cityKeys = Object.keys(city);
   const exploreCity =
-    city != "Unknown" ? (
+    cityKeys.length !== 0 ? (
       <Link to={`/dashboard`} className="exploreCity">
         GO!
       </Link>
@@ -15,7 +16,7 @@ const SearchPage = ({ city, setCity }) => {
 
   return (
     <>
-      <NavBar city={city} />
+      {/* <NavBar city={city} /> */}
       <div className="container search-page">
         <img className="searchPage-logo" src={Logo} alt="logo" />
         <SearchBar setCity={setCity} city={city} />

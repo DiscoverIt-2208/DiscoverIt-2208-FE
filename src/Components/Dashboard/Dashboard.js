@@ -16,12 +16,12 @@ const Dashboard = ({ city, places, setPlaces }) => {
   const [accessibilitySelected, setAccessibilitySelected] = useState(false);
 
   const FETCH_PLACES = gql`
-    query FetchPlaces {
-      places(
-        city: "Denver"
-        country: "US"
-        categories: ["production.brewery", "education.library"]
-      ) {
+    query FetchPlaces(
+      $city: String!
+      $country: String!
+      $categories: [String!]
+    ) {
+      places(city: $city, country: $country, categories: $categories) {
         name
         address
         placeId
@@ -33,7 +33,14 @@ const Dashboard = ({ city, places, setPlaces }) => {
   `;
 
   const DisplayPlaces = () => {
-    const { data, loading, error } = useQuery(FETCH_PLACES);
+    console.log(city);
+    const { data, loading, error } = useQuery(FETCH_PLACES, {
+      variables: {
+        city: city.properties.city,
+        country: city.properties.country,
+        categories: categories,
+      },
+    });
 
     if (loading) {
       return <p className="error">Submitting...</p>;
