@@ -25,6 +25,7 @@ const SavedPlaces = ({ city, places }) => {
     const placesByCity = cities.map((city) => {
       <h2>{city}</h2>
       const places = favoritesByCity[city].map((place) => {
+        console.log(place, 'what is this')
         return (
           <Link to={`/${city}/${place.id}/saved`} 
             key={place.id}

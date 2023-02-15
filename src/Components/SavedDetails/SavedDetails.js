@@ -1,6 +1,6 @@
 import React from 'react'
 import './SavedDetails.scss'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { GET_USER } from "../Queries";
 import { DELETE_USER_FAVORITE } from "../Queries";
 import { gql, useMutation } from "@apollo/client";
@@ -8,6 +8,8 @@ import NavBar from '../NavBar/NavBar'
 
 
 const SavedDetails = ({ city }) => {
+
+    const { id } = useParams()
 
     const DeleteUserFavorite = () => {
         const deleteUserFavorite = useMutation(
@@ -21,12 +23,9 @@ const SavedDetails = ({ city }) => {
         )
 
         return (
-            <Link>
+            <Link to='/saved-places'>
                 <button 
                     className='delete-button' 
-                    onClick={(e) => {
-                        deleteUserFavorite()
-                    }}
                 >
                     Delete
                 </button>
@@ -38,7 +37,7 @@ const SavedDetails = ({ city }) => {
     <>
         <NavBar />
         <div className='saved-details-page'>
-            <Link to={`/${city.properties.city}/dashboard`} className="backButton">
+            <Link to={`/saved-places`} className="backButton">
             Back
             </Link>
             <h1 className='saved-details-title'>Title of place</h1>
