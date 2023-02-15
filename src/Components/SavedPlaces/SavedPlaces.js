@@ -39,9 +39,9 @@ const SavedPlaces = ({ city, places }) => {
         );
       });
       return (
-        <div>
-          <h2>{city}</h2>
-          {places}
+        <div key={city}>
+          <h2 className="cityName">{city}</h2>
+          <div className="cityPlaces">{places}</div>
         </div>
       );
     });

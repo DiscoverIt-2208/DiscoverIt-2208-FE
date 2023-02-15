@@ -29,10 +29,10 @@ const Dashboard = ({ city, places, setPlaces }) => {
     console.log(currentPage);
 
     if (loading) {
-      return <p className="error">Submitting...</p>;
+      return <p className="error">Loading...</p>;
     }
     if (error) {
-      return <p className="error">Submission error! {error.message}</p>;
+      return <p className="error">Error! {error.message}</p>;
     }
 
     const eachPlace = data.places.map((place) => {
