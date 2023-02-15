@@ -2,6 +2,13 @@ import { aliasQuery, operationName } from "../utilities/graphql-test-utilities";
 
 context('Dashboard User Flows', () => {
   beforeEach(() => {
+    cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
+      if (req.body.operationName === 'FetchPlaces') {
+          req.reply({
+            fixture: 'places.json'
+        });
+      }
+    })
     cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=D&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {})
     cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=De&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {})
     cy.intercept('https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=Den&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d', {
@@ -12,25 +19,14 @@ context('Dashboard User Flows', () => {
     cy.get('[placeholder="Enter City Name..."]')
       .type('Den')
       .get('#0.search-result').click()
-    
-      // cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
+    // cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
     //   aliasQuery(req, 'FetchPlaces')
     //   req.reply({
     //     fixture: 'places.json'
     //   });
     // })
-
-    cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
-      if (req.body.operationName === 'FetchPlaces') {
-          req.reply({
-            fixture: 'places.json'
-        });
-      }
-    })
-
     cy.get('.exploreCity').click()
-    // cy.wait(30000)
-    // cy.wait('@FetchPlaces')
+    cy.wait('@FetchPlaces')
   })
 
   it('should display nav bar upon page load', () => {
@@ -57,15 +53,15 @@ context('Dashboard User Flows', () => {
   it('should display all places for the selected city', () => {
     cy.get('.place-card-container').should('be.visible')
       .get('[href="/Denver/1"]').should('exist')
-      .get('[href="/Denver/1"]').find('.card-img').should('have.attr', 'alt', 'dons tavern')
+      .get('[href="/Denver/1"]').find('.card-img').should('have.attr', 'alt', 'Colorado Cattlemen\'s Plaque')
       .get('[href="/Denver/2"]').should('exist')
-      .get('[href="/Denver/2"]').find('.card-img').should('have.attr', 'alt', 'Larimer Lounge')
+      .get('[href="/Denver/2"]').find('.card-img').should('have.attr', 'alt', 'National Society of the Army of the Philippines')
       .get('[href="/Denver/3"]').should('exist')
-      .get('[href="/Denver/3"]').find('.card-img').should('have.attr', 'alt', "Scruffy Murphy'\s")
+      .get('[href="/Denver/3"]').find('.card-img').should('have.attr', 'alt', "Richard Castro")
       .get('[href="/Denver/4"]').should('exist')
-      .get('[href="/Denver/4"]').find('.card-img').should('have.attr', 'alt', 'Meow Wolf')
+      .get('[href="/Denver/4"]').find('.card-img').should('have.attr', 'alt', 'William Lee Knous')
       .get('[href="/Denver/5"]').should('exist')
-      .get('[href="/Denver/5"]').find('.card-img').should('have.attr', 'alt', 'Cherry Creek Mall')
+      .get('[href="/Denver/5"]').find('.card-img').should('have.attr', 'alt', 'John D. Vanderhoof')
   })
 
   it('should only display places that match a given category that user selects', () => {

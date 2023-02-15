@@ -1,5 +1,5 @@
 {
-  "data.places": [
+  "places": [
       {
           "__typename": "Place",
           "name": "Colorado Cattlemen's Plaque",
@@ -64,19 +64,6 @@
           ],
           "lat": 39.7391667,
           "lon": -104.9848303
-      },
-      {
-          "__typename": "Place",
-          "name": "\"Woman\"",
-          "address": "200 East Colfax Avenue, Denver, CO 80203, United States of America",
-          "placeId": "514ef4af9b083f5ac059e6a52d019dde4340f00103f9011f0b7e4f0100000092030722576f6d616e22",
-          "categories": [
-              "tourism",
-              "tourism.attraction",
-              "tourism.attraction.artwork"
-          ],
-          "lat": 39.7391664,
-          "lon": -104.9849004
       }
   ]
 }
