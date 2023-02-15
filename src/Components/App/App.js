@@ -5,10 +5,9 @@ import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import SearchPage from "../SearchPage/SearchPage";
 import SavedPlaces from "../SavedPlaces/SavedPlaces";
-import SavedDetails from '../SavedDetails/SavedDetails'
+import SavedDetails from "../SavedDetails/SavedDetails";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import Dashboard from "../Dashboard/Dashboard";
-import samplePlaces from "../sampleData/samplePlaces";
 import BadURL from "../BadURL/BadURL";
 
 const App = () => {

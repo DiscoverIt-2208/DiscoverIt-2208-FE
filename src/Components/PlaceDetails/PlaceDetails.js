@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { gql, useMutation } from "@apollo/client";
 import { Link, useParams } from "react-router-dom";
 import "./PlaceDetails.scss";
-//delete later
-import samplePlaces from "../sampleData/samplePlaces";
 import NavBar from "../NavBar/NavBar";
 import { GET_USER } from "../Queries";
 import { CREATE_USER_FAVORITE } from "../Queries";
@@ -12,12 +10,6 @@ const PlaceDetails = ({ city }) => {
   const [details, setDetails] = useState({});
 
   const { id } = useParams();
-
-  const getDetails = () => {
-    const places = samplePlaces[0].places;
-    const found = places.find((place) => place.id === +id);
-    return found;
-  };
 
   const CreateUserFavorite = () => {
     const [createUserFavorite, { data, loading, error }] = useMutation(
@@ -53,10 +45,6 @@ const PlaceDetails = ({ city }) => {
       </button>
     );
   };
-
-  useEffect(() => {
-    setDetails(getDetails());
-  }, [details]);
 
   return (
     <>
