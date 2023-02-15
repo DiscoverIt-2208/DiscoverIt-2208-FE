@@ -10,7 +10,7 @@ describe('Dashboard User Flows', () => {
     cy.get('[placeholder="Enter City Name..."]')
       .type('Den')
       .get('#0.search-result').click()
-    cy.visit('http://localhost:3000/Denver/dashboard')
+      .get('.exploreCity').click()
   })
 
   it('should display nav bar upon page load', () => {
