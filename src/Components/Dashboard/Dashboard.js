@@ -14,6 +14,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
   const [cafeSelcted, setCafeSelected] = useState(false);
   const [popularSelected, setPopularSelected] = useState(true);
   const [accessibilitySelected, setAccessibilitySelected] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const DisplayPlaces = () => {
     const { data, loading, error } = useQuery(FETCH_PLACES, {
@@ -21,14 +22,17 @@ const Dashboard = ({ city, places, setPlaces }) => {
         city: city.properties.city,
         country: city.properties.country,
         categories: categories,
+        page: currentPage,
       },
     });
 
+    console.log(currentPage);
+
     if (loading) {
-      return <p className="error">Submitting...</p>;
+      return <p className="error">Loading...</p>;
     }
     if (error) {
-      return <p className="error">Submission error! {error.message}</p>;
+      return <p className="error">Error! {error.message}</p>;
     }
 
     const eachPlace = data.places.map((place) => {
@@ -40,12 +44,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
         />
       );
     });
-
-    return (
-      <div className="place-card-box">
-        <div className="place-card">{eachPlace}</div>
-      </div>
-    );
+    return <div className="place-card-box">{eachPlace}</div>;
   };
 
   const changeCategory = (e) => {
@@ -65,7 +64,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
   };
 
   return (
-    <>
+    <div className="dashboard">
       <NavBar city={city.properties.city} />
       <h1 className="city-name">{city.properties.city}</h1>
       <div className="buttons-container">
@@ -141,7 +140,31 @@ const Dashboard = ({ city, places, setPlaces }) => {
         </button>
       </div>
       <DisplayPlaces />
-    </>
+      <div className="back-forward">
+        <button
+          className="backPage"
+          onClick={() => {
+            if (currentPage !== 0) {
+              const newCurrent = currentPage - 1;
+              setCurrentPage(newCurrent);
+              console.log(currentPage);
+            }
+          }}
+        >
+          Back
+        </button>
+        <button
+          className="nextPage"
+          onClick={() => {
+            const newCurrent = currentPage + 1;
+            setCurrentPage(newCurrent);
+            console.log(currentPage);
+          }}
+        >
+          Next
+        </button>
+      </div>
+    </div>
   );
 };
 export default Dashboard;
