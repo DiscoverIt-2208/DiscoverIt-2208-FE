@@ -1,11 +1,14 @@
 import React from 'react'
 import './SavedDetails.scss'
+import { Link } from "react-router-dom";
 import { GET_USER } from "../Queries";
 import { DELETE_USER_FAVORITE } from "../Queries";
 import { gql, useMutation } from "@apollo/client";
+import NavBar from '../NavBar/NavBar'
 
 
 const SavedDetails = ({ city }) => {
+
     const DeleteUserFavorite = () => {
         const deleteUserFavorite = useMutation(
             DELETE_USER_FAVORITE,
@@ -18,23 +21,33 @@ const SavedDetails = ({ city }) => {
         )
 
         return (
-            <button 
-                className='delete-button' 
-                onClick={(e) => {
-                    e.preventDefault()
-                    deleteUserFavorite()
-                }}
-            >
-                Delete
-            </button>
+            <Link>
+                <button 
+                    className='delete-button' 
+                    onClick={(e) => {
+                        deleteUserFavorite()
+                    }}
+                >
+                    Delete
+                </button>
+            </Link>
         )
     }
 
   return (
-    <div className='saved-details-page'>
-        <DeleteUserFavorite />
-        HELLLO
-    </div>
+    <>
+        <NavBar />
+        <div className='saved-details-page'>
+            <Link to={`/${city.properties.city}/dashboard`} className="backButton">
+            Back
+            </Link>
+            <h1 className='saved-details-title'>Title of place</h1>
+            <div className='saved-details-container'>
+
+            </div>
+            <DeleteUserFavorite />
+        </div>
+    </>
   )
 }
 
