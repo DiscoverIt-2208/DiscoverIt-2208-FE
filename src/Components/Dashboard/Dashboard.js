@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Dashboard.scss";
 import PlaceCard from "../PlaceCard/PlaceCard";
 import NavBar from "../NavBar/NavBar";
-import Death from "../assets/deathandco.jpg";
+import { FETCH_PLACES } from "../Queries";
 
 const Dashboard = ({ city, places, setPlaces }) => {
   const [categories, setCategories] = useState(["tourism.attraction"]);
@@ -15,39 +15,30 @@ const Dashboard = ({ city, places, setPlaces }) => {
   const [popularSelected, setPopularSelected] = useState(true);
   const [accessibilitySelected, setAccessibilitySelected] = useState(false);
 
-  const FETCH_PLACES = gql`
-    query FetchPlaces {
-      places(
-        city: "Denver"
-        country: "US"
-        categories: ["production.brewery", "education.library"]
-      ) {
-        name
-        address
-        placeId
-        categories
-        lat
-        lon
-      }
-    }
-  `;
-
   const DisplayPlaces = () => {
-    const { data, loading, error } = useQuery(FETCH_PLACES);
+    const { data, loading, error } = useQuery(FETCH_PLACES, {
+      variables: {
+        city: city.properties.city,
+        country: city.properties.country,
+        categories: categories,
+      },
+    });
 
     if (loading) {
-      console.log("Submitting...");
       return <p className="error">Submitting...</p>;
     }
     if (error) {
-      console.log(`Submission error! ${error.message}`);
       return <p className="error">Submission error! {error.message}</p>;
     }
 
-    console.log(data.places);
-
     const eachPlace = data.places.map((place) => {
-      <PlaceCard place={place} city={city.properties.city} />;
+      return (
+        <PlaceCard
+          key={place.placeId}
+          place={place}
+          city={city.properties.city}
+        />
+      );
     });
 
     return (

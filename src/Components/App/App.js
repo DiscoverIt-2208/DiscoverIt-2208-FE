@@ -11,11 +11,8 @@ import samplePlaces from "../sampleData/samplePlaces";
 import BadURL from "../BadURL/BadURL";
 
 const App = () => {
-  const defaultCity = window.location.pathname.split("/")
-  const [city, setCity] = useState({
-    properties: { city: defaultCity[1] },
-  });
-  const [places, setPlaces] = useState(samplePlaces);
+  const [city, setCity] = useState({});
+  const [places, setPlaces] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoad] = useState(false);
 
@@ -26,12 +23,12 @@ const App = () => {
         <Route
           exact
           path="/search-page"
-          element={<SearchPage city={city.properties.city} setCity={setCity} />}
+          element={<SearchPage city={city} setCity={setCity} />}
         />
         <Route
           exact
           path={`/saved-places`}
-          element={<SavedPlaces city={city.properties.city} places={places} />}
+          element={<SavedPlaces city={city} places={places} />}
         />
         <Route
           exact
