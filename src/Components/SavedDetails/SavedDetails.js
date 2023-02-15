@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import samplePlaces from "../sampleData/samplePlaces";
 import NavBar from "../NavBar/NavBar";
 import { GET_USER } from "../Queries";
-import { CREATE_USER_FAVORITE } from "../Queries";
+import { DELETE_USER_FAVORITE } from "../Queries";
 
 
 const SavedDetails = () => {
@@ -13,50 +13,44 @@ const SavedDetails = () => {
 
     const { id } = useParams();
   
-    const getDetails = () => {
+    const getSavedDetails = () => {
       const savedPlaces = samplePlaces[0].places;
       const found = savedPlaces.find((place) => place.id === +id);
       return found;
     };
   
-    const CreateUserFavorite = () => {
-        const [createUserFavorite, { data, loading, error }] = useMutation(
-          CREATE_USER_FAVORITE,
+    const DeleteUserFavorite = () => {
+        const deleteUserFavorite = useMutation(
+          DELETE_USER_FAVORITE,
           {
             variables: {
-              userId: 1,
-              ninjaId: String(details.id),
-              placeName: details.name,
-              thumbnailUrl: details.image,
-              city: city.properties.city,
-              state: city.properties.state,
-              country: city.properties.country,
-              address: details.address,
+                id: 1
             },
             refetchQueries: [{ query: GET_USER }, "GetUser"],
           }
         );
-    
-        if (loading) console.log("Submitting...");
-        if (error) console.log(`Submission error! ${error.message}`);
-        if (data) console.log(data);
-    
+
         return (
           <button
             className="detailsButtons"
             onClick={(e) => {
               e.preventDefault();
-              createUserFavorite();
+              deleteUserFavorite();
             }}
           >
-            Save
+            Delete
           </button>
         );
       };
 
+      useEffect(() => {
+        setSavedDetails(getSavedDetails());
+      }, [savedDetails]);
+
   return (
     <div>
         <h1>HELLO</h1>
+        <DeleteUserFavorite />
     </div>
   )
 }
