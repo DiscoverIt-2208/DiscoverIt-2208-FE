@@ -13,30 +13,48 @@ const SavedPlaces = ({ city, places }) => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
-    return data.user.favorites.map((place) => {
-      return (
-        <Link
-          to={`/${city}/${place.ninjaId}`}
-          key={place.ninjaId}
-          className="place-thumb"
-        >
-          <div id={`${place.ninjaId}`} className="saved-place-card">
-            <img className="saved-image" src={Death} alt="death and co" />
-            <p>{place.placeName}</p>
-          </div>
-        </Link>
-      );
-    });
-  };
+    const favoritesByCity = data.user.favorites.reduce((acc, value) => {
+      if (!acc[value.city]) {
+        acc[value.city] = [];
+      }
+      acc[value.city].push(value);
+      return acc;
+    }, {});
 
+    const cities = Object.keys(favoritesByCity)
+    const placesByCity = cities.map((city) => {
+      <h2>{city}</h2>
+      const places = favoritesByCity[city].map((place) => {
+        return (
+          <Link to={`/${city}/${place.ninjaId}`} 
+            key={place.ninjaId}
+            className="place-thumb"
+          >
+            <div id={`${place.placeName}`} className="saved-place-card">
+              <img className="saved-image" src={Death} alt="death and co" />
+              <p>{place.placeName}</p>
+            </div>
+          </Link>
+          )
+      })
+      return (
+        <div>
+          <h2>{city}</h2>
+          {places}
+        </div>
+      )
+    })
+    return placesByCity
+  }
   return (
     <>
       <NavBar city={city} />
       <div className="saved-container">
-        <h1 className="saved-title">{city} Saved Places</h1>
+        <h1 className="saved-title">Saved Places</h1>
         <div className="saved-places-container">{<DisplayUser />}</div>
       </div>
     </>
   );
 };
+
 export default SavedPlaces;

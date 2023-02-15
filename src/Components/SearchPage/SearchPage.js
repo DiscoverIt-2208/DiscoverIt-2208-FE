@@ -8,14 +8,14 @@ import { Link } from "react-router-dom";
 const SearchPage = ({ city, setCity }) => {
   const exploreCity =
     city != "Unknown" ? (
-      <Link to={`/${city}/dashboard`} className="exploreCity">
+      <Link to={`/dashboard`} className="exploreCity">
         GO!
       </Link>
     ) : null;
 
   return (
     <>
-      {/* <NavBar city={city} /> */}
+      <NavBar city={city} />
       <div className="container search-page">
         <img className="searchPage-logo" src={Logo} alt="logo" />
         <SearchBar setCity={setCity} city={city} />
