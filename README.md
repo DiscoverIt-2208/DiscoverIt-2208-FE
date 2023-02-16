@@ -12,7 +12,7 @@ here will live the general description of our application.
 :earth_americas: [Contributors](#contributors)
 <br>
 ### SplashPage
-[Take Me SplashPage!](https://github.com/DiscoverIt-2208)
+[Take Me To the Endpoints!](https://github.com/DiscoverIt-2208)
 
 ### Learning Goals
 - Interface with the BE team’s API(s) that serve JSON data and incorporate that data into your FE
