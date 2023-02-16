@@ -30,22 +30,37 @@ describe('Saved Places Page User Flow', () => {
   
   it('should save place when user clicks the save button', () => {
     cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
-      if (req.body.operationName === 'GetUsers') {
+      if (req.body.operationName ==='CreateUserFavorite') {
           req.reply({
-             fixture: 'getuser.json'
+             fixture: 'saveplace.json'
          });
        }
     });
     cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
-      if (req.body.operationName ==='createUserFavorite') {
+      if (req.body.operationName === 'GetUser') {
           req.reply({
-             fixture: 'saveplace.json'
+             fixture: 'getuser.json'
          });
        }
     });
     cy.get('.detailsButtons').click()
   })
   it('should navigate to saved places page if user clicks saved places in nav bar', () => {
+    // cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
+    //   if (req.body.operationName ==='CreateUserFavorite') {
+    //       req.reply({
+    //          fixture: 'saveplace.json'
+    //      });
+    //    }
+    // });
+    // cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
+    //   if (req.body.operationName === 'GetUsers') {
+    //       req.reply({
+    //          fixture: 'getuser.json'
+    //      });
+    //    }
+    // });
+    // cy.get('.detailsButtons').click()
     cy.get('[href="/saved-places"] > h4').click()
     cy.visit('http://localhost:3000/saved-places')
   })

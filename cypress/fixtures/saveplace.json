@@ -8,6 +8,9 @@
       "city": "Denver", 
     	"state": "Colorado",
   		"country": "United States",
-  		"address": "Richard Castro, 200 East Colfax Avenue, Denver, CO 80203, United States of America"}
+  		"address": "Richard Castro, 200 East Colfax Avenue, Denver, CO 80203, United States of America",
+      "success": "Richard Castro has been added to favorites!",
+      "error": null
+      }
     }
   }
