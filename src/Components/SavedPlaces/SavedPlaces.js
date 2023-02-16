@@ -33,7 +33,7 @@ const SavedPlaces = ({ city, places }) => {
           >
             <div id={`${place.placeName}`} className="saved-place-card">
               <img className="saved-image" src={Death} alt="death and co" />
-              <p>{place.placeName}</p>
+              <p className="place-text">{place.placeName}</p>
             </div>
           </Link>
         );
