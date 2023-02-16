@@ -5,6 +5,7 @@ import NavBar from "../NavBar/NavBar";
 import { GET_USER } from "../Queries";
 import { CREATE_USER_FAVORITE } from "../Queries";
 import { FETCH_PLACE_DETAILS } from "../Queries";
+import Death from "../assets/deathandco.jpg";
 
 const PlaceDetails = ({ city }) => {
   const { id } = useParams();
@@ -18,21 +19,28 @@ const PlaceDetails = ({ city }) => {
     if (loading) return <p>"Loading..."</p>;
     if (error) return <p>Error: {error.message}</p>;
 
+    const imageDis =
+      data.imageData == null ? (
+        <img className="detailsImage" src={Death} alt="Default" />
+      ) : (
+        <img
+          className="detailsImage"
+          src={data.placeDetails.imageData}
+          alt={data.placeDetails.name}
+        />
+      );
+
     return (
       <div className="detailsThumb" alt={data.placeDetails.name}>
         <h1 className="detailsTitle">{data.placeDetails.name}</h1>
         <CreateUserFavorite dataDetails={data.placeDetails} />
         <div className="detailsInformation">
-          <img
-            className="detailsImage"
-            src={data.placeDetails.imageData}
-            alt={data.placeDetails.name}
-          />
+          {imageDis}
           <div className="information">
             <p className="infoText">Phone: {data.placeDetails.phone}</p>
             <p className="infoText">Hours: {data.placeDetails.hours}</p>
             <p className="infoText">Address: {data.placeDetails.address}</p>
-            <p className="infoText">Address: {data.placeDetails.website}</p>
+            <p className="infoText">Website: {data.placeDetails.website}</p>
             <p className="infoText">
               Categories: {data.placeDetails.categories}
             </p>

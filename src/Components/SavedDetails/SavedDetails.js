@@ -5,6 +5,7 @@ import { DELETE_USER_FAVORITE } from "../Queries";
 import { useMutation, useQuery } from "@apollo/client";
 import NavBar from "../NavBar/NavBar";
 import { FETCH_PLACE_DETAILS } from "../Queries";
+import Death from "../assets/deathandco.jpg";
 
 const SavedDetails = ({ city }) => {
   const { id } = useParams();
@@ -18,16 +19,23 @@ const SavedDetails = ({ city }) => {
     if (loading) return <p>"Loading..."</p>;
     if (error) return <p>Error: {error.message}</p>;
 
+    const imageDis =
+      data.placeDetails.imageData == null ? (
+        <img className="detailsImage" src={Death} alt="Default!" />
+      ) : (
+        <img
+          className="detailsImage"
+          src={data.placeDetails.imageData}
+          alt={data.placeDetails.name}
+        />
+      );
+
     return (
       <div className="detailsThumb" alt={data.placeDetails.name}>
         <h1 className="detailsTitle">{data.placeDetails.name}</h1>
         <DeleteUserFavorite />
         <div className="detailsInformation">
-          <img
-            className="detailsImage"
-            src={data.placeDetails.imageData}
-            alt={data.placeDetails.name}
-          />
+          {imageDis}
           <div className="information">
             <p className="infoText">Phone: {data.placeDetails.phone}</p>
             <p className="infoText">Hours: {data.placeDetails.hours}</p>
