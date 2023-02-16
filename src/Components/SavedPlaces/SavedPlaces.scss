@@ -44,16 +44,29 @@
   border-radius: 2rem;
   padding: 1rem;
   margin: 4%;
+  font-size: 14px;
+  word-wrap: break-word;
+  width: 160px;
 }
 
 .saved-image {
-  height: 200px;
-  width: 200px;
+  height: 120px;
+  width: 120px;
+  border-radius: 2rem;
 }
 
 @media(max-width: 768px) {
   .cityPlaces {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+  }
+
+  .cityName {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .saved-title {
+    text-align: center;
   }
 }
