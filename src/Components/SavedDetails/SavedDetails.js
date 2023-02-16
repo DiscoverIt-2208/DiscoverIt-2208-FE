@@ -40,7 +40,7 @@ const SavedDetails = ({ city }) => {
             <p className="infoText">Phone: {data.placeDetails.phone}</p>
             <p className="infoText">Hours: {data.placeDetails.hours}</p>
             <p className="infoText">Address: {data.placeDetails.address}</p>
-            <p className="infoText">Address: {data.placeDetails.website}</p>
+            <p className="infoText">Website: {data.placeDetails.website}</p>
             <p className="infoText">
               Categories: {data.placeDetails.categories}
             </p>
