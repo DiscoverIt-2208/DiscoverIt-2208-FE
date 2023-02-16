@@ -11,48 +11,55 @@ const PlaceDetails = ({ city }) => {
 
   const { id } = useParams();
 
-  const FETCH_PLACE = gql`
-    query FetchPlace($id: String!) {
-      name
-      city
-      state
-      country
-      phone
-      website
-      hours
-      categories
-      address
-      lat
-      lon
+  const FETCH_PLACE_DETAILS = gql`
+    query PlaceDetails($placeId: String!) {
+      placeDetails(placeId: $placeId) {
+        name
+        city
+        state
+        country
+        phone
+        website
+        hours
+        categories
+        address
+        lat
+        lon
+        imageData
+      }
     }
   `;
 
   const DisplayPlace = () => {
-    const { loading, error, data } = useQuery(FETCH_PLACE, {
+    const { loading, error, data } = useQuery(FETCH_PLACE_DETAILS, {
       variables: {
-        id: id,
+        placeId: id,
       },
     });
     if (loading) return <p>"Loading..."</p>;
     if (error) return <p>Error: {error.message}</p>;
 
     console.log(data);
+    setDetails(data.placeDetails);
 
     return (
-      <div className="detailsThumb" alt={details.name}>
-        <h1 className="detailsTitle">{details.name}</h1>
+      <div className="detailsThumb" alt={data.placeDetails.name}>
+        <h1 className="detailsTitle">{data.placeDetails.name}</h1>
         <CreateUserFavorite />
         <div className="detailsInformation">
           <img
             className="detailsImage"
-            src={details.image}
-            alt={details.name}
+            src={data.placeDetails.imageData}
+            alt={data.placeDetails.name}
           />
           <div className="information">
-            <p className="infoText">Phone: {details.phoneNumber}</p>
-            <p className="infoText">Hours: {details.hours}</p>
-            <p className="infoText">Address: {details.address}</p>
-            <p className="infoText">Description: {details.description}</p>
+            <p className="infoText">Phone: {data.placeDetails.phone}</p>
+            <p className="infoText">Hours: {data.placeDetails.hours}</p>
+            <p className="infoText">Address: {data.placeDetails.address}</p>
+            <p className="infoText">Address: {data.placeDetails.website}</p>
+            <p className="infoText">
+              Categories: {data.placeDetails.categories}
+            </p>
           </div>
         </div>
       </div>
@@ -65,9 +72,9 @@ const PlaceDetails = ({ city }) => {
       {
         variables: {
           userId: 1,
-          ninjaId: String(details.id),
+          placeId: id,
           placeName: details.name,
-          thumbnailUrl: details.image,
+          thumbnailUrl: `${details.imageData}`,
           city: city.properties.city,
           state: city.properties.state,
           country: city.properties.country,

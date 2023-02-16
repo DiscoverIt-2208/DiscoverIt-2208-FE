@@ -145,7 +145,6 @@ const Dashboard = ({ city, places, setPlaces }) => {
             if (currentPage !== 0) {
               const newCurrent = currentPage - 1;
               setCurrentPage(newCurrent);
-              console.log(currentPage);
             }
           }}
         >
@@ -156,7 +155,6 @@ const Dashboard = ({ city, places, setPlaces }) => {
           onClick={() => {
             const newCurrent = currentPage + 1;
             setCurrentPage(newCurrent);
-            console.log(currentPage);
           }}
         >
           Next

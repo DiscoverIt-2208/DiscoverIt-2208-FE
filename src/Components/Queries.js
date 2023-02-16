@@ -5,7 +5,6 @@ export const GET_USER = gql`
     user(id: "1") {
       favorites {
         id
-        ninjaId
         placeName
         city
       }
@@ -16,7 +15,7 @@ export const GET_USER = gql`
 export const CREATE_USER_FAVORITE = gql`
   mutation CreateUserFavorite(
     $userId: Int!
-    $ninjaId: String!
+    $placeId: String!
     $placeName: String!
     $thumbnailUrl: String!
     $city: String!
@@ -27,7 +26,7 @@ export const CREATE_USER_FAVORITE = gql`
     createUserFavorite(
       input: {
         userId: $userId
-        ninjaId: $ninjaId
+        placeId: $placeId
         placeName: $placeName
         thumbnailUrl: $thumbnailUrl
         city: $city

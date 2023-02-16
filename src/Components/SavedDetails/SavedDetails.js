@@ -3,7 +3,7 @@ import "./SavedDetails.scss";
 import { Link, useParams } from "react-router-dom";
 import { GET_USER } from "../Queries";
 import { DELETE_USER_FAVORITE } from "../Queries";
-import { gql, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import NavBar from "../NavBar/NavBar";
 
 const SavedDetails = ({ city }) => {
@@ -22,8 +22,6 @@ const SavedDetails = ({ city }) => {
 
     if (loading) console.log("Loading...");
     if (error) console.log(`Error: ${error.message}`);
-
-    console.log(data);
 
     return (
       <Link to="/saved-places">
