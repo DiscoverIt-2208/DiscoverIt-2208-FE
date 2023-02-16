@@ -16,8 +16,8 @@ const PlaceDetails = ({ city }) => {
         placeId: id,
       },
     });
-    if (loading) return <p>"Loading..."</p>;
-    if (error) return <p>Error: {error.message}</p>;
+    if (loading) return <p className="errorMessage">"Loading..."</p>;
+    if (error) return <p className="errorMessage">Error: {error.message}</p>;
 
     const imageDis =
       data.imageData == null ? (
