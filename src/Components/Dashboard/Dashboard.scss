@@ -1,7 +1,4 @@
-$high-tide: 500px;
-$ex-presidents: 600px 800px;
-$surfboard-width: max-width 1000px;
-$surfboard-height: (min-height 1000px) (orientation portrait);
+
 
 
 .dashboard {
@@ -15,13 +12,16 @@ $surfboard-height: (min-height 1000px) (orientation portrait);
   font-family: "Abril Fatface", cursive;
   color: #fff;
   text-align: center;
-  font-size: 5em;
+  font-size: 80px;
+  word-wrap: break-word;
 }
 
 .buttons-container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 100vw;
+  width: 80%;
 }
 
 .category-button {
@@ -31,8 +31,8 @@ $surfboard-height: (min-height 1000px) (orientation portrait);
   border: solid 0.1rem #d6c118;
   border-radius: 2rem;
   height: 5vh;
-  width: 11vw;
-  font-size: 1.5vw;
+  width: 130px;
+  font-size: 14px;
   padding: 0;
 }
 
@@ -57,6 +57,7 @@ $surfboard-height: (min-height 1000px) (orientation portrait);
 .error {
   text-align: center;
   color: aliceblue;
+  font-size: 14px;;
 }
 
 .selected {
@@ -66,8 +67,8 @@ $surfboard-height: (min-height 1000px) (orientation portrait);
   border: solid 0.1rem #d51131;
   border-radius: 2rem;
   height: 5vh;
-  width: 11vw;
-  font-size: 1.5vw;
+  width: 130px;
+  font-size: 14px;
   margin-bottom: 3vh;
 }
 
@@ -89,7 +90,7 @@ $surfboard-height: (min-height 1000px) (orientation portrait);
   display: flex;
   width: 11vw;
   height: 5vh;
-  font-size: 1.5vw;
+  font-size: 14px;
   border-radius: 22px;
   border: solid #d6c118 0.1rem;
   color: #d6c118;
@@ -113,5 +114,9 @@ $surfboard-height: (min-height 1000px) (orientation portrait);
   .place-card-box {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+  }
+
+  .city-name {
+    font-size: 50px;
   }
 }
