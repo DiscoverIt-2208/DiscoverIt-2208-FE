@@ -16,8 +16,8 @@ const SavedDetails = ({ city }) => {
         placeId: id,
       },
     });
-    if (loading) return <p>"Loading..."</p>;
-    if (error) return <p>Error: {error.message}</p>;
+    if (loading) return <p className="errorMessage">"Loading..."</p>;
+    if (error) return <p className="errorMessage">Error: {error.message}</p>;
 
     const imageDis =
       data.placeDetails.imageData == null ? (
@@ -40,7 +40,7 @@ const SavedDetails = ({ city }) => {
             <p className="infoText">Phone: {data.placeDetails.phone}</p>
             <p className="infoText">Hours: {data.placeDetails.hours}</p>
             <p className="infoText">Address: {data.placeDetails.address}</p>
-            <p className="infoText">Address: {data.placeDetails.website}</p>
+            <p className="infoText">Website: {data.placeDetails.website}</p>
             <p className="infoText">
               Categories: {data.placeDetails.categories}
             </p>

@@ -12,17 +12,15 @@ const SearchBar = ({ setCity, city }) => {
         const requestOptions = {
           method: "GET",
         };
-       fetch(
+        const response = await fetch(
           `https://api.geoapify.com/v1/geocode/autocomplete?lang=en&limit=10&type=city&text=${searchInput}&apiKey=7ea7d5b3e7214f178782e2a2fc4cf79d`,
           requestOptions
-        ).then((response) => response.json())
-          .then((result) => {
-            setFoundPlaces(result.features)
-          })
-          .catch((error) => console.log("error", error))
+        );
+        const data = await response.json();
+        setFoundPlaces(data.features);
       }
     };
-    
+
     getLiveSearch();
     if (searchInput === "") {
       setFoundPlaces([]);

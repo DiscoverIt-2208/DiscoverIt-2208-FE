@@ -16,8 +16,8 @@ const PlaceDetails = ({ city }) => {
         placeId: id,
       },
     });
-    if (loading) return <p>"Loading..."</p>;
-    if (error) return <p>Error: {error.message}</p>;
+    if (loading) return <p className="errorMessage">"Loading..."</p>;
+    if (error) return <p className="errorMessage">Error: {error.message}</p>;
 
     const imageDis =
       data.imageData == null ? (
@@ -29,9 +29,7 @@ const PlaceDetails = ({ city }) => {
           alt={data.placeDetails.name}
         />
       );
-        console.log("CITY", city)
-        console.log("Data", data)
-        console.log("Data Place Details", data.placeDetails)
+
     return (
       <div className="detailsThumb" alt={data.placeDetails.name}>
         <h1 className="detailsTitle">{data.placeDetails.name}</h1>
