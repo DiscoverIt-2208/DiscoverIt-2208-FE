@@ -39,7 +39,7 @@ const SavedPlaces = ({ city }) => {
         );
       });
       return (
-        <div key={city}>
+        <div className='saved-container' key={city}>
           <h2 className="cityName">{city}</h2>
           <div className="cityPlaces">{places}</div>
         </div>

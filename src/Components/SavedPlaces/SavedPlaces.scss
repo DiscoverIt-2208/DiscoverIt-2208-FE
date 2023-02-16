@@ -36,6 +36,7 @@
   color: #fff;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 3vw;
+  text-align: left;
 }
 
 .saved-place-card {
@@ -62,8 +63,21 @@
   }
 
   .cityName {
+    font-size: 30px;
+  }
+}
+
+@media(max-width: 480px) {
+  .cityName {
     text-align: center;
     font-size: 30px;
+  }
+
+  .saved-places-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .saved-title {
