@@ -36,6 +36,7 @@
   color: #fff;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 3vw;
+  text-align: left;
 }
 
 .saved-place-card {
@@ -44,9 +45,42 @@
   border-radius: 2rem;
   padding: 1rem;
   margin: 4%;
+  font-size: 14px;
+  word-wrap: break-word;
+  width: 160px;
 }
 
 .saved-image {
-  height: 200px;
-  width: 200px;
+  height: 120px;
+  width: 120px;
+  border-radius: 2rem;
+}
+
+@media(max-width: 768px) {
+  .cityPlaces {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .cityName {
+    font-size: 30px;
+  }
+}
+
+@media(max-width: 480px) {
+  .cityName {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .saved-places-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .saved-title {
+    text-align: center;
+  }
 }
