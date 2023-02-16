@@ -1,8 +1,11 @@
 <a name="readme-top"></a>
 
 <!-- HEADER -->
+[Learning Goals](#learning-goals) | [Contributors](#contributors) | [Deploy Link](https://discoverit2208.vercel.app/) | [Miro Board](https://miro.com/app/board/uXjVPsXFTmY=/) | [Illustrations](#illustrations) | [Setup](#setup) | [Endpoints](https://github.com/DiscoverIt-2208)
+
 <img src="https://user-images.githubusercontent.com/108088961/219438205-6b760177-7b61-43b2-b85c-20f1444341f7.png" width="100%" height="60%">
 <h1 align="center">DiscoverIt</h1>
+
 
 <h3 align="center">A City Travel Application</h3>
 <p>DiscoverIt is an exciting new travel app designed to help users explore different cities around the world while channeling their inner Carmen Sandiego. With its sleek design and interactive features, this app makes travel planning fun and adventurous.
@@ -17,25 +20,11 @@ The app is designed to be user-friendly and accessible, with a simple and intuit
 
 <img width="1363" alt="Screenshot 2023-02-16 at 11 20 20 AM" src="https://user-images.githubusercontent.com/106535343/219444858-ed6f1f35-1daa-4b57-93d5-1d5df8717ed8.png">
 <img width="1358" alt="Screenshot 2023-02-16 at 11 21 02 AM" src="https://user-images.githubusercontent.com/106535343/219444893-0c4d7b64-b0a0-48ea-b2a4-86b1374a76e5.png">
-<img width="1357" alt="Screenshot 2023-02-16 at 11 21 22 AM" src="https://user-images.githubusercontent.com/106535343/219444918-630e34e1-18c3-4b39-b364-6ad3aab48e2a.png">
 
-
-<h4 align="center"><a href="https://discoverit2208.vercel.app/"><strong>Deploy Link</strong></a> | <a href="https://miro.com/app/board/uXjVPsXFTmY=/"><strong>Miro Board</strong></a></h4>
 
 <p></p>
 
 
-
-here will live the general description of our application. 
-
-
-
-:earth_americas: [Learning Goals](#learning-goals)
-<br>
-:earth_americas: [Contributors](#contributors)
-<br>
-### SplashPage
-[Take Me To the Endpoints!](https://github.com/DiscoverIt-2208)
 
 ### Learning Goals
 - Interface with the BE team’s API(s) that serve JSON data and incorporate that data into your FE
@@ -52,31 +41,27 @@ here will live the general description of our application.
 ![NPM][NPM-shield]
 ![Vercel][Vercel-shield]
 
+### Illustrations
+![Screenshot 2023-02-16 at 11 54 54 AM](https://user-images.githubusercontent.com/106535343/219448492-35800ec0-b4fd-4c84-80a6-83d162008dad.png)
+
+![Screenshot 2023-02-16 at 11 55 19 AM](https://user-images.githubusercontent.com/106535343/219448508-654598a7-1c81-405e-b681-0c1745de0023.png)
+
 ### Contributors
 
 <table>
   <tr>
     <th>Jennifer Yacoubian</th>
-    <th>Astrid Hecht</th>
     <th>Dani Bagley</th>
     <th>Ian McIntosh</th>
-    <th>Lucas Colwell</th>
-    <th>Mostafa Sakr</th>
-    <th>Ashley Turner</th>
     <th>Ty Keating<br>(Project Mentor)</th>
     <th>Leta<br>(Project Manager)</th>
   </tr>
   <tr>
     <td><img src="https://avatars.githubusercontent.com/u/106957849?v=4"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/106942456?v=4"></td>
     <td><img src="https://avatars.githubusercontent.com/u/108088961?v=4"></td>
     <td><img src="https://avatars.githubusercontent.com/u/106535343?v=4"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/98673086?v=4"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/110377741?v=4"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/105073232?v=4"></td>
     <td><img src="https://avatars.githubusercontent.com/u/5234142?v=4"></td>
     <td><img src="https://avatars.githubusercontent.com/u/22563791?v=4"></td>
-    
   </tr>
  
   <tr>
@@ -85,14 +70,6 @@ here will live the general description of our application.
           <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
       </a><br>
         <a href="https://www.linkedin.com/in/jennifer-yacoubian/" rel="nofollow noreferrer">
-    <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn
-      </a>
-    </td>
-    <td>
-       <a href="https://github.com/Astrid-Hecht" rel="nofollow noreferrer">
-          <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
-      </a><br>
-        <a href="https://www.linkedin.com/in/astrid-hecht/" rel="nofollow noreferrer">
     <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn
       </a>
     </td>
@@ -112,30 +89,6 @@ here will live the general description of our application.
     <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn
         </a>
     </td>
-    <td>
-      <a href="https://github.com/lcole37"  rel="nofollow noreferrer">
-          <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
-        </a><br>
-      <a href="https://www.linkedin.com/in/lucas-colwell-b3a753179/" rel="nofollow noreferrer">
-    <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn
-        </a>
-    </td>
-    <td>
-      <a href="https://github.com/msakr21" rel="nofollow noreferrer">
-          <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
-        </a><br>
-      <a href="https://www.linkedin.com/in/mostafa-sakr-4bb722250/" rel="nofollow noreferrer">
-    <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn
-        </a>
-    </td>
-    <td>
-      <a href="https://github.com/ashuhleyt" rel="nofollow noreferrer">
-          <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
-            </a><br>
-            <a href="https://www.linkedin.com/in/ashuhleyt/" rel="nofollow noreferrer">
-    <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn                                                         
-        </a><br>
-        </td>
     <td>
        <a href="https://github.com/bontgoy" rel="nofollow noreferrer">
           <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
