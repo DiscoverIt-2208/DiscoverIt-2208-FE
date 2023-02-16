@@ -22,17 +22,14 @@ here will live the general description of our application.
 - At least 80% test coverage
 
 ### Tech Stack
-![json](https://img.shields.io/badge/json-000000?style=for-the-badge&logo=json&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-100000?style=for-the-badge&logo=Css3&logoColor=FFFFFF&labelColor=1388BA&color=1388BA)
-![ReactRouter](https://img.shields.io/badge/React_Router-100000?style=for-the-badge&logo=ReactRouter&logoColor=FFFFFF&labelColor=D31313&color=D31313)
-![React](https://img.shields.io/badge/React-100000?style=for-the-badge&logo=React&logoColor=46CCEE&labelColor=black&color=black)
-![Markdown](https://img.shields.io/badge/markdown-000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
-![Webpack](https://img.shields.io/badge/Webpack-100000?style=for-the-badge&logo=webpack&logoColor=000000&labelColor=8ED5FA&color=8ED5FA)
-<br>
-![Miro](https://img.shields.io/badge/Miro-000000?style=for-the-badge&logo=Miro&logoColor=yellow)
-![GraphQL](https://img.shields.io/badge/GraphQL-000000?style=for-the-badge&logo=GraphQL&logoColor=pink)
-![Cypress](https://img.shields.io/badge/Cypress-100000?style=for-the-badge&logo=Cypress&logoColor=62E4B4&labelColor=000000&color=black)
-![HTML](https://img.shields.io/badge/HTML-100000?style=for-the-badge&logo=HTML5&logoColor=FF5733&labelColor=black&color=black)
+![React][React-shield]
+![Apollo-GraphQL][Apollo-GraphQL-shield]
+![JavaScript][JavaScript-shield]
+![CSS][CSS-shield]
+![HTML5][HTML-shield]
+![Cypress][Cypress-shield]
+![NPM][NPM-shield]
+![Vercel][Vercel-shield]
 
 ### Contributors
 
@@ -136,3 +133,13 @@ here will live the general description of our application.
     </td>
   </tr>
 </table>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[React-shield]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[Apollo-GraphQL-shield]: https://img.shields.io/badge/-ApolloGraphQL-311C87?style=for-the-badge&logo=apollo-graphql
+[JavaScript-shield]: https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
+[CSS-shield]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[HTML-shield]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[Cypress-shield]: https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e
+[NPM-shield]: https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white
+[Vercel-shield]: https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
