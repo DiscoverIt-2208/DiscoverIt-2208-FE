@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import { Link, useParams } from "react-router-dom";
 import "./PlaceDetails.scss";

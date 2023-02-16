@@ -43,7 +43,7 @@ const SavedDetails = ({ city }) => {
   };
 
   const DeleteUserFavorite = () => {
-    const [deleteUserFavorite, { loading, error, data }] = useMutation(
+    const [deleteUserFavorite, { loading, error }] = useMutation(
       DELETE_USER_FAVORITE,
       {
         variables: {

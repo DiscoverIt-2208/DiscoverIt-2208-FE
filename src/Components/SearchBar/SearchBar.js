@@ -5,7 +5,7 @@ const SearchBar = ({ setCity, city }) => {
   const [searchInput, setSearchInput] = useState("");
   const [foundPlaces, setFoundPlaces] = useState([]);
 
-  const getLive = () => {
+  const getLiveSearch = () => {
     if (searchInput) {
       const requestOptions = {
         method: "GET",
@@ -24,7 +24,7 @@ const SearchBar = ({ setCity, city }) => {
   };
 
   useEffect(() => {
-    getLive();
+    getLiveSearch();
     if (searchInput === "") {
       setFoundPlaces([]);
     }
