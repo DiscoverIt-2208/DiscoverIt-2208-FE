@@ -4,8 +4,7 @@ export const GET_USER = gql`
   query GetUser {
     user(id: "1") {
       favorites {
-        id
-        ninjaId
+        placeId
         placeName
         city
       }
@@ -16,7 +15,7 @@ export const GET_USER = gql`
 export const CREATE_USER_FAVORITE = gql`
   mutation CreateUserFavorite(
     $userId: Int!
-    $ninjaId: String!
+    $placeId: String!
     $placeName: String!
     $thumbnailUrl: String!
     $city: String!
@@ -27,7 +26,7 @@ export const CREATE_USER_FAVORITE = gql`
     createUserFavorite(
       input: {
         userId: $userId
-        ninjaId: $ninjaId
+        placeId: $placeId
         placeName: $placeName
         thumbnailUrl: $thumbnailUrl
         city: $city
@@ -65,9 +64,28 @@ export const FETCH_PLACES = gql`
   }
 `;
 
+export const FETCH_PLACE_DETAILS = gql`
+  query PlaceDetails($placeId: String!) {
+    placeDetails(placeId: $placeId) {
+      name
+      city
+      state
+      country
+      phone
+      website
+      hours
+      categories
+      address
+      lat
+      lon
+      imageData
+    }
+  }
+`;
+
 export const DELETE_USER_FAVORITE = gql`
-  mutation DeleteUserFavorite($id: Int!) {
-    deleteUserFavorite(input: { id: $id }) {
+  mutation DeleteUserFavorite($userId: Int!, $placeId: String!) {
+    deleteUserFavorite(input: { userId: $userId, placeId: $placeId }) {
       success
     }
   }
