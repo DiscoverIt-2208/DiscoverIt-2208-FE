@@ -22,7 +22,7 @@ const SearchBar = ({ setCity, city }) => {
           .catch((error) => console.log("error", error))
       }
     };
-
+    
     getLiveSearch();
     if (searchInput === "") {
       setFoundPlaces([]);

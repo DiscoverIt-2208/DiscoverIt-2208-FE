@@ -1,0 +1,23 @@
+{
+  "data": {
+    "placeDetails": {
+      "city": "Denver",
+      "country": "United States",
+      "name": "Richard Castro",
+      "placeId": "3",
+      "address": "Richard Castro, 200 East Colfax Avenue, Denver, CO 80203, United States of America",
+      "categories": [
+        "tourism",
+        "tourism.attraction",
+        "tourism.attraction.artwork"
+      ],
+      "state": "Colorado",
+      "lat": 39.7392745,
+      "lon": -104.9849287,
+      "phone": "+1 303 706 1919",
+      "hours": "24/7",
+      "website": "https://www.planetfitness.com/gyms/olympia-wa",
+      "imageData": null
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "data": {
+    "places": [
+      {
+        "name": "Colorado Cattlemen's Plaque",
+        "address": "Colorado Cattlemen's Plaque, 200 East Colfax Avenue, Denver, CO 80203, United States of America",
+        "placeId": "1",
+        "categories": [
+          "historical"
+        ],
+        "lat": 39.7392822,
+        "lon": -104.984823
+      },
+      {
+        "name": "National Society of the Army of the Philippines",
+        "address": "National Society of the Army of the Philippines, 200 East Colfax Avenue, Denver, CO 80203, United States of America",
+        "placeId": "2",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "lat": 39.7392613,
+        "lon": -104.9847872
+      },
+      {
+        "name": "Richard Castro",
+        "address": "Richard Castro, 200 East Colfax Avenue, Denver, CO 80203, United States of America",
+        "placeId": "3",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "lat": 39.7392745,
+        "lon": -104.9849287
+      },
+      {
+        "name": "William Lee Knous",
+        "address": "William Lee Knous, 200 East Colfax Avenue, Denver, CO 80203, United States of America",
+        "placeId": "4",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "lat": 39.7393007,
+        "lon": -104.9848399
+      },
+      {
+        "name": "John D. Vanderhoof",
+        "address": "John D. Vanderhoof, 200 East Colfax Avenue, Denver, CO 80203, United States of America",
+        "placeId": "5",
+        "categories": [
+          "catering",
+          "catering.restaurant"
+        ],
+        "lat": 39.7391667,
+        "lon": -104.9848303
+      },
+      {
+        "name": "\"Woman\"",
+        "address": "\"Woman\", 200 East Colfax Avenue, Denver, CO 80203, United States of America",
+        "placeId": "6",
+        "categories": [
+          "catering",
+          "catering.restaurant",
+          "wheelchair"
+        ],
+        "lat": 39.7391664,
+        "lon": -104.9849004
+      }
+    ]
+  }
+}

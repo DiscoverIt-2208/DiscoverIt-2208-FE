@@ -1,0 +1,13 @@
+{
+  "data": {
+   "user": {
+    "favorites": [
+     {
+      "placeId": "1",
+      "placeName": "Cookie Center",
+      "city": "Denver"
+     }
+    ]
+   }
+  }
+ }
