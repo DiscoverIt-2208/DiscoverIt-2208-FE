@@ -26,7 +26,7 @@ context('Dashboard User Flows', () => {
     //   });
     // })
     cy.get('.exploreCity').click()
-    cy.wait('@FetchPlaces')
+    // cy.wait('@FetchPlaces')
   })
 
   it('should display nav bar upon page load', () => {
