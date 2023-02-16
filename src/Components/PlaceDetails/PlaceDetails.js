@@ -8,8 +8,6 @@ import { CREATE_USER_FAVORITE } from "../Queries";
 import { FETCH_PLACE_DETAILS } from "../Queries";
 
 const PlaceDetails = ({ city }) => {
-  const [details, setDetails] = useState({});
-
   const { id } = useParams();
 
   const DisplayPlace = () => {
@@ -21,13 +19,10 @@ const PlaceDetails = ({ city }) => {
     if (loading) return <p>"Loading..."</p>;
     if (error) return <p>Error: {error.message}</p>;
 
-    console.log(data);
-    setDetails(data.placeDetails);
-
     return (
       <div className="detailsThumb" alt={data.placeDetails.name}>
         <h1 className="detailsTitle">{data.placeDetails.name}</h1>
-        <CreateUserFavorite />
+        <CreateUserFavorite dataDetails={data.placeDetails} />
         <div className="detailsInformation">
           <img
             className="detailsImage"
@@ -48,19 +43,19 @@ const PlaceDetails = ({ city }) => {
     );
   };
 
-  const CreateUserFavorite = () => {
+  const CreateUserFavorite = ({ dataDetails }) => {
     const [createUserFavorite, { data, loading, error }] = useMutation(
       CREATE_USER_FAVORITE,
       {
         variables: {
           userId: 1,
           placeId: id,
-          placeName: details.name,
-          thumbnailUrl: `${details.imageData}`,
+          placeName: dataDetails.name,
+          thumbnailUrl: `${dataDetails.imageData}`,
           city: city.properties.city,
           state: city.properties.state,
           country: city.properties.country,
-          address: details.address,
+          address: dataDetails.address,
         },
         refetchQueries: [{ query: GET_USER }, "GetUser"],
       }

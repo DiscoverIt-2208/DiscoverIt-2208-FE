@@ -48,7 +48,7 @@ const SavedDetails = ({ city }) => {
       {
         variables: {
           userId: 1,
-          id: +id,
+          placeId: id,
         },
         refetchQueries: [{ query: GET_USER }, "GetUser"],
       }

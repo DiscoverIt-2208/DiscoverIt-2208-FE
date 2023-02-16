@@ -84,8 +84,8 @@ export const FETCH_PLACE_DETAILS = gql`
 `;
 
 export const DELETE_USER_FAVORITE = gql`
-  mutation DeleteUserFavorite($userId: String!, $id: Int!) {
-    deleteUserFavorite(input: { userId: $userId, id: $id }) {
+  mutation DeleteUserFavorite($userId: Int!, $placeId: String!) {
+    deleteUserFavorite(input: { userId: $userId, placeId: $placeId }) {
       success
     }
   }
