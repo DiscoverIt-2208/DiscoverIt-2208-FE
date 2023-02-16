@@ -29,7 +29,9 @@ const PlaceDetails = ({ city }) => {
           alt={data.placeDetails.name}
         />
       );
-
+        console.log("CITY", city)
+        console.log("Data", data)
+        console.log("Data Place Details", data.placeDetails)
     return (
       <div className="detailsThumb" alt={data.placeDetails.name}>
         <h1 className="detailsTitle">{data.placeDetails.name}</h1>

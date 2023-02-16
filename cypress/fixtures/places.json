@@ -4,11 +4,9 @@
       {
         "name": "Colorado Cattlemen's Plaque",
         "address": "Colorado Cattlemen's Plaque, 200 East Colfax Avenue, Denver, CO 80203, United States of America",
-        "placeId": "5150560c57073f5ac059274194cca0de4340f00103f901d24c7e4f0100000092031b436f6c6f7261646f20436174746c656d656e277320506c61717565",
+        "placeId": "1",
         "categories": [
-          "tourism",
-          "tourism.attraction",
-          "tourism.attraction.artwork"
+          "historical"
         ],
         "lat": 39.7392822,
         "lon": -104.984823
@@ -16,7 +14,7 @@
       {
         "name": "National Society of the Army of the Philippines",
         "address": "National Society of the Army of the Philippines, 200 East Colfax Avenue, Denver, CO 80203, United States of America",
-        "placeId": "513d61e4c0063f5ac059a5d8411da0de4340f00103f9018c0f7f4f0100000092032f4e6174696f6e616c20536f6369657479206f66207468652041726d79206f6620746865205068696c697070696e6573",
+        "placeId": "2",
         "categories": [
           "tourism",
           "tourism.attraction",
@@ -28,7 +26,7 @@
       {
         "name": "Richard Castro",
         "address": "Richard Castro, 200 East Colfax Avenue, Denver, CO 80203, United States of America",
-        "placeId": "5112d96212093f5ac05962a1fc8ba0de4340f00103f9016870232f0100000092030e526963686172642043617374726f",
+        "placeId": "3",
         "categories": [
           "tourism",
           "tourism.attraction",
@@ -40,7 +38,7 @@
       {
         "name": "William Lee Knous",
         "address": "William Lee Knous, 200 East Colfax Avenue, Denver, CO 80203, United States of America",
-        "placeId": "51ef92ee9d073f5ac059b7b3c467a1de4340f00103f90196c4764f0100000092031157696c6c69616d204c6565204b6e6f7573",
+        "placeId": "4",
         "categories": [
           "tourism",
           "tourism.attraction",
@@ -52,11 +50,10 @@
       {
         "name": "John D. Vanderhoof",
         "address": "John D. Vanderhoof, 200 East Colfax Avenue, Denver, CO 80203, United States of America",
-        "placeId": "5108a7aa75073f5ac059a4e4b1039dde4340f00103f901ab6a232f010000009203124a6f686e20442e2056616e646572686f6f66",
+        "placeId": "5",
         "categories": [
-          "tourism",
-          "tourism.attraction",
-          "tourism.attraction.artwork"
+          "catering",
+          "catering.restaurant"
         ],
         "lat": 39.7391667,
         "lon": -104.9848303
@@ -64,11 +61,11 @@
       {
         "name": "\"Woman\"",
         "address": "\"Woman\", 200 East Colfax Avenue, Denver, CO 80203, United States of America",
-        "placeId": "514ef4af9b083f5ac059e6a52d019dde4340f00103f9011f0b7e4f0100000092030722576f6d616e22",
+        "placeId": "6",
         "categories": [
-          "tourism",
-          "tourism.attraction",
-          "tourism.attraction.artwork"
+          "catering",
+          "catering.restaurant",
+          "wheelchair"
         ],
         "lat": 39.7391664,
         "lon": -104.9849004

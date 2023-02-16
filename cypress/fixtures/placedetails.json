@@ -1,0 +1,23 @@
+{
+  "data": {
+    "placeDetails": {
+      "city": "Denver",
+      "country": "United States",
+      "name": "William Lee Knous",
+      "placeId": "4",
+      "address": "William Lee Knous, 200 East Colfax Avenue, Denver, CO 80203, United States of America",
+      "categories": [
+        "tourism",
+        "tourism.attraction",
+        "tourism.attraction.artwork"
+      ],
+      "state": "Colorado",
+      "lat": 39.7393007,
+      "lon": -104.9848399,
+      "phone": "+1 303 706 1919",
+      "hours": "24/7",
+      "website": "https://www.planetfitness.com/gyms/olympia-wa",
+      "imageData": "/static/media/deathandco.620b8412bc6b5d5987fc.jpg"
+    }
+  }
+}

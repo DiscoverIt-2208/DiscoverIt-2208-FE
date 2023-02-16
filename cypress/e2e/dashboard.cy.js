@@ -1,6 +1,4 @@
-import { aliasQuery, operationName } from "../utilities/graphql-test-utilities";
-
-context('Dashboard User Flows', () => {
+describe('Dashboard User Flows', () => {
   beforeEach(() => {
     cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
       if (req.body.operationName === 'FetchPlaces') {
@@ -19,14 +17,7 @@ context('Dashboard User Flows', () => {
     cy.get('[placeholder="Enter City Name..."]')
       .type('Den')
       .get('#0.search-result').click()
-    // cy.intercept('POST', 'https://discover-it.herokuapp.com/graphql', (req) => {
-    //   aliasQuery(req, 'FetchPlaces')
-    //   req.reply({
-    //     fixture: 'places.json'
-    //   });
-    // })
     cy.get('.exploreCity').click()
-    // cy.wait('@FetchPlaces')
   })
 
   it('should display nav bar upon page load', () => {
@@ -37,7 +28,7 @@ context('Dashboard User Flows', () => {
       .get('[href="/saved-places"]').should('be.visible')
   })
 
-  it('should display background, city title, and category buttons', () => {
+  it('should display background, city title, and category, next, and back buttons', () => {
     cy.get('html').should('have.css', 'background').and('include', 'http://localhost:3000/static/media/DiscoverItBackground.9076687e3ac2cae6ea07.png')
       .get('.city-name').should('be.visible').and('contain', 'Denver')
       .get('.buttons-container').should('be.visible')
@@ -47,11 +38,13 @@ context('Dashboard User Flows', () => {
       .get('.buttons-container > :nth-child(3)').should('contain', 'History')
       .get('.buttons-container > :nth-child(4)').should('contain', 'Cafe')
       .get('.buttons-container > :nth-child(5)').should('contain', 'Popular')
-      .get('.buttons-container > :nth-child(5)').should('contain', 'Accessbility')
+      .get('.buttons-container > :nth-child(6)').should('contain', 'Accessibility')
+      .get('.backPage').should('contain', 'Back')
+      .get('.nextPage').should('contain', 'Next')
   })
 
   it('should display all places for the selected city', () => {
-    cy.get('.place-card-container').should('be.visible')
+    cy.get('.place-card-box').should('be.visible')
       .get('[href="/Denver/1"]').should('exist')
       .get('[href="/Denver/1"]').find('.card-img').should('have.attr', 'alt', 'Colorado Cattlemen\'s Plaque')
       .get('[href="/Denver/2"]').should('exist')
@@ -65,13 +58,19 @@ context('Dashboard User Flows', () => {
   })
 
   it('should only display places that match a given category that user selects', () => {
-    //add tests for filter here AFTER functionality added in code
-    //Stub and modify data, too, before adding tests
+    // cy.get('.buttons-container > :nth-child(3)').click()
+    //   .get('.place-thumb').should('have.length', 1)
   })
 
   it('should only display places that match another category that user selects', () => {
-     //add tests for filter here AFTER functionality added in code
-      //Stub and modify data, too, before adding tests
+    // cy.get('.buttons-container > :nth-child(1)').click()
+    //   .get('.place-thumb').should('have.length', 2)
+  })
+
+  it('should only display places that are accessible if user selects category and accessibility', () => {
+    // cy.get('.buttons-container > :nth-child(1)').click()
+    //   .get('.buttons-container > :nth-child(6)').click()
+    //   .get('.place-thumb').should('have.length', 1)
   })
 
   it('should navigate to splash page if user clicks DiscoverIt in nav bar', () => {
@@ -86,19 +85,6 @@ context('Dashboard User Flows', () => {
 
   it('should navigate to saved places page if user clicks saved places in nav bar', () => {
     cy.get('[href="/saved-places"] > h4').click()
-    //link above will change to be dynamic 
-    cy.visit('http://localhost:3000/Denver/saved-places')
-    //Need to change this once the dashboard is dynamic as it will not be Denver saved places
-    //What will display if no places have been saved (sad path)
-  })
-
-  it('should navigate to details page for a specific place when user clicks to select', () => {
-    cy.get('[href="/Denver/4"]').click()
-    cy.visit('http://localhost:3000/Denver/4')
-  })
-
-  it('should navigate to details page for another place when user clicks to select', () => {
-    cy.get('[href="/Denver/3"]').click()
-    cy.visit('http://localhost:3000/Denver/3')
+    cy.visit('http://localhost:3000/saved-places')
   })
 })
