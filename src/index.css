@@ -25,3 +25,32 @@ code {
 :root {
   --color-primary: #ffd700;
 }
+
+/* =================================media queries============================================ */
+/* @media(max-width: 768px) {
+
+  .place-card-box,
+  .cityPlaces {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .intro {
+    height: auto;
+  }
+
+  .intro-text {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .intro-form {
+    justify-self: center;
+    margin: auto;
+  }
+
+  .cli .grid>*:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+} */

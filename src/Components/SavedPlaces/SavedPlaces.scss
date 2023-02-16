@@ -39,7 +39,9 @@
 }
 
 .saved-place-card {
-  box-sizing: border-box;
+  box-sizing: content-box;
+  max-height: 300px;
+  max-width: 200px;
   border: 0.15rem solid #fdd700;
   border-radius: 2rem;
   padding: 1rem;
@@ -47,11 +49,20 @@
 }
 
 .saved-image {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   border-radius: 2rem;
 }
 
 .place-text {
   margin: 0;
+  font-size: 12px;
+}
+
+
+@media(max-width: 768px) {
+  .cityPlaces {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 }

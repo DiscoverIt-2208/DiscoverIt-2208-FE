@@ -19,11 +19,14 @@
   text-align: center;
   border: 2px solid #fdd700;
   border-radius: 2rem;
+  box-sizing: border-box;
+  height: 40vh;
+  width: 15vw;
 }
 
 .card-img {
-  height: 30vh;
-  width: 30vh;
+  height: 20vh;
+  width: 20vh;
   object-fit: cover;
   border-radius: 2rem;
   padding: 1rem 1rem;

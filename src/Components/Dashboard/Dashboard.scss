@@ -102,3 +102,11 @@
   border: solid #d51131 2px;
   color: #d51131;
 }
+
+@media(max-width: 768px) {
+  .place-card-box {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
