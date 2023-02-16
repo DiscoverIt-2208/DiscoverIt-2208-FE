@@ -1,6 +1,31 @@
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/108088961/219438205-6b760177-7b61-43b2-b85c-20f1444341f7.png" width="60%" height="60%">
-<div/>
+<a name="readme-top"></a>
+
+<!-- HEADER -->
+<img src="https://user-images.githubusercontent.com/108088961/219438205-6b760177-7b61-43b2-b85c-20f1444341f7.png" width="100%" height="60%">
+<h1 align="center">DiscoverIt</h1>
+
+<h3 align="center">A City Travel Application</h3>
+<p>DiscoverIt is an exciting new travel app designed to help users explore different cities around the world while channeling their inner Carmen Sandiego. With its sleek design and interactive features, this app makes travel planning fun and adventurous.
+The app is organized around the concept of a virtual treasure hunt, where users can search for hidden gems and little-known local favorites. With its Carmen Sandiego-themed interface, the app takes users on a thrilling journey through the world's most exciting destinations, using maps, trivia, and mini-games to encourage exploration and discovery.
+Users can select their preferred city, and the app provides them with a list of must-see places and activities. As they visit each location, they can earn points and rewards, unlock new features, and compete against other users to become the ultimate Carmen Sandiego-style travel expert.
+With its comprehensive database of tourist attractions, local events, and hidden treasures, DiscoverIt helps users plan their travel itinerary, find the best places to eat, shop, and relax, and make the most of their trip. The app also allows users to connect with other travelers and share their own experiences, tips, and recommendations.
+Whether users are planning a solo adventure or a family vacation, DiscoverIt is the perfect tool to help them explore the world with the spirit of Carmen Sandiego.</p>
+<p>The app is designed to help users discover and explore different cities around the world. Users can choose a city of their choice and the app will provide them with a list of places to visit, including popular tourist attractions, local restaurants, bars, shopping centers, parks, and more.
+The app utilizes a variety of data sources to provide users with up-to-date and accurate information, including user reviews and ratings, local guides, and curated lists of top attractions. Users can filter the results based on their interests, such as food, art, history, nightlife, and more.
+In addition to browsing the lists of places, users can save their favorite locations, create custom itineraries, and share their recommendations with other users. The app also offers a map view to help users navigate to their desired destination, as well as useful information about each place, such as opening hours, contact information, and directions.
+The app is designed to be user-friendly and accessible, with a simple and intuitive interface that allows users to quickly find the information they need. Whether users are planning a trip or exploring their own city, this app provides a valuable resource for discovering new places and experiences.</p>
+
+<img width="1363" alt="Screenshot 2023-02-16 at 11 20 20 AM" src="https://user-images.githubusercontent.com/106535343/219444858-ed6f1f35-1daa-4b57-93d5-1d5df8717ed8.png">
+<img width="1358" alt="Screenshot 2023-02-16 at 11 21 02 AM" src="https://user-images.githubusercontent.com/106535343/219444893-0c4d7b64-b0a0-48ea-b2a4-86b1374a76e5.png">
+<img width="1357" alt="Screenshot 2023-02-16 at 11 21 22 AM" src="https://user-images.githubusercontent.com/106535343/219444918-630e34e1-18c3-4b39-b364-6ad3aab48e2a.png">
+
+
+<h4 align="center"><a href="https://discoverit2208.vercel.app/"><strong>Deploy Link</strong></a> | <a href="https://miro.com/app/board/uXjVPsXFTmY=/"><strong>Miro Board</strong></a></h4>
+
+<p></p>
+
+
+
 here will live the general description of our application. 
 
 
