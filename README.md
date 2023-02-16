@@ -1,8 +1,6 @@
-<div align="center"> 
-
-![Asset 4](https://user-images.githubusercontent.com/105073232/217386688-758d8d96-71ec-46cf-84ea-9de425b0dff0.png)  
-</div>
-
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/108088961/219419341-32430c4a-29be-4474-9e7d-63b5c6ed61b4.png" width="60%" height="60%">
+<div/>
 here will live the general description of our application. 
 
 
