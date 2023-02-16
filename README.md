@@ -36,10 +36,13 @@ The app is designed to be user-friendly and accessible, with a simple and intuit
 ![Apollo-GraphQL][Apollo-GraphQL-shield]
 ![JavaScript][JavaScript-shield]
 ![CSS][CSS-shield]
+![SCSS][SCSS-shield]
 ![HTML5][HTML-shield]
 ![Cypress][Cypress-shield]
 ![NPM][NPM-shield]
 ![Vercel][Vercel-shield]
+![Illustrator][Illustrator-shield]
+
 
 ### Illustrations
 ![Screenshot 2023-02-16 at 11 54 54 AM](https://user-images.githubusercontent.com/106535343/219448492-35800ec0-b4fd-4c84-80a6-83d162008dad.png)
@@ -117,3 +120,6 @@ The app is designed to be user-friendly and accessible, with a simple and intuit
 [Cypress-shield]: https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e
 [NPM-shield]: https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white
 [Vercel-shield]: https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
+[SCSS-shield]: https://img.shields.io/badge/SCSS-100000?style=for-the-badge&logo=SASS&logoColor=FFFFFF&labelColor=F87FFF&color=F87FFF
+[Illustrator-shield]: https://img.shields.io/badge/Adobe_Illustrator-100000?style=for-the-badge&logo=AdobeIllustrator&logoColor=000000&labelColor=EA7101&color=EA7101
+
