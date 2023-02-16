@@ -25,7 +25,7 @@ describe('Details Page User Flows', () => {
         });
       }
     })
-    cy.get('[href="/Denver/4"]').click()
+    cy.get('[href="/Denver/3"]').click()
   })
 
   it('should display nav bar upon page load', () => {
@@ -43,11 +43,11 @@ describe('Details Page User Flows', () => {
   })
 
   it ('should display all name, image, phone, hours, address, and description of place upon page load', () => {
-    cy.get('.detailsTitle').should('contain', 'William Lee Knous')
+    cy.get('.detailsTitle').should('contain', 'Richard Castro')
       .get('.detailsImage').should('have.attr', 'alt', 'Default')
       .get('.infoText').should('contain', 'Phone: +1 303 706 1919')
       .get('.infoText').should('contain', 'Hours: 24/7')
-      .get('.infoText').should('contain', 'Address: William Lee Knous, 200 East Colfax Avenue, Denver, CO 80203, United States of America')
+      .get('.infoText').should('contain', 'Address: Richard Castro, 200 East Colfax Avenue, Denver, CO 80203, United States of America')
       // .get('.infoText').should('contain', 'Description: place to have fun')
   })
 

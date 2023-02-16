@@ -1,0 +1,9 @@
+
+  {
+    "data": {
+      "createUserFavorite": {
+        "success": "Planet Fitness has been added to favorites!",
+        "error": null
+      }
+    }
+  }
