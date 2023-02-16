@@ -1,9 +1,7 @@
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/108088961/219419341-32430c4a-29be-4474-9e7d-63b5c6ed61b4.png" width="60%" height="60%">
+  <img src="https://user-images.githubusercontent.com/108088961/219438205-6b760177-7b61-43b2-b85c-20f1444341f7.png" width="60%" height="60%">
 <div/>
 here will live the general description of our application. 
-
-
 
 
 
