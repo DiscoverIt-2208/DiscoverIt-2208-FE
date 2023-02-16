@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <!-- HEADER -->
-[Learning Goals](#learning-goals) | [Contributors](#contributors) | [Deploy Link](https://discoverit2208.vercel.app/) | [Miro Board](https://miro.com/app/board/uXjVPsXFTmY=/) | [Illustrations](#illustrations) | [Setup](#setup) | [Endpoints](https://github.com/DiscoverIt-2208)
+[Learning Goals](#learning-goals) | [Contributors](#contributors) | [Deploy Link](https://discoverit2208.vercel.app/) | [Miro Board](https://miro.com/app/board/uXjVPsXFTmY=/) | [Planning](#planning) | [Setup](#setup) | [Endpoints](https://github.com/DiscoverIt-2208)
 
 <img src="https://user-images.githubusercontent.com/108088961/219438205-6b760177-7b61-43b2-b85c-20f1444341f7.png" width="100%" height="60%">
 <h1 align="center">DiscoverIt</h1>
