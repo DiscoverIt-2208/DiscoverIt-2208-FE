@@ -4,6 +4,7 @@ import "./SearchBar.scss";
 const SearchBar = ({ setCity, city }) => {
   const [searchInput, setSearchInput] = useState("");
   const [foundPlaces, setFoundPlaces] = useState([]);
+  const [placeholder, setPlaceHolder] = useState("Enter City Name...");
 
   useEffect(() => {
     const getLiveSearch = async () => {
@@ -23,6 +24,9 @@ const SearchBar = ({ setCity, city }) => {
     getLiveSearch();
     if (searchInput === "") {
       setFoundPlaces([]);
+    }
+    if (Object.keys(city).length !== 0) {
+      setPlaceHolder(city.properties.city);
     }
   }, [searchInput]);
 
@@ -52,7 +56,7 @@ const SearchBar = ({ setCity, city }) => {
         <input
           className="search-input"
           type="text"
-          placeholder="Enter City Name..."
+          placeholder={placeholder}
           value={searchInput}
           onChange={handleChange}
           onKeyUp={handleChange}
