@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { gql, useQuery } from "@apollo/client";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
 import "./Dashboard.scss";
 import PlaceCard from "../PlaceCard/PlaceCard";
 import NavBar from "../NavBar/NavBar";
 import { FETCH_PLACES } from "../Queries";
 
-const Dashboard = ({ city, places, setPlaces }) => {
+const Dashboard = ({ city }) => {
   const [categories, setCategories] = useState(["tourism.attraction"]);
   const [restaurantSelected, setRestaurantSelected] = useState(false);
   const [entertainmentSelected, setEntertainmentSelected] = useState(false);

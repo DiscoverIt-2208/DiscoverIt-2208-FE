@@ -1,34 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { gql, useMutation, useQuery } from "@apollo/client";
+import React, { useState } from "react";
+import { useMutation, useQuery } from "@apollo/client";
 import { Link, useParams } from "react-router-dom";
 import "./PlaceDetails.scss";
 import NavBar from "../NavBar/NavBar";
 import { GET_USER } from "../Queries";
 import { CREATE_USER_FAVORITE } from "../Queries";
+import { FETCH_PLACE_DETAILS } from "../Queries";
 
 const PlaceDetails = ({ city }) => {
   const [details, setDetails] = useState({});
 
   const { id } = useParams();
-
-  const FETCH_PLACE_DETAILS = gql`
-    query PlaceDetails($placeId: String!) {
-      placeDetails(placeId: $placeId) {
-        name
-        city
-        state
-        country
-        phone
-        website
-        hours
-        categories
-        address
-        lat
-        lon
-        imageData
-      }
-    }
-  `;
 
   const DisplayPlace = () => {
     const { loading, error, data } = useQuery(FETCH_PLACE_DETAILS, {
@@ -109,23 +91,6 @@ const PlaceDetails = ({ city }) => {
           Back
         </Link>
         <DisplayPlace />
-        {/* <div className="detailsThumb" alt={details.name}>
-          <h1 className="detailsTitle">{details.name}</h1>
-          <CreateUserFavorite />
-          <div className="detailsInformation">
-            <img
-              className="detailsImage"
-              src={details.image}
-              alt={details.name}
-            />
-            <div className="information">
-              <p className="infoText">Phone: {details.phoneNumber}</p>
-              <p className="infoText">Hours: {details.hours}</p>
-              <p className="infoText">Address: {details.address}</p>
-              <p className="infoText">Description: {details.description}</p>
-            </div>
-          </div>
-        </div> */}
       </div>
     </>
   );

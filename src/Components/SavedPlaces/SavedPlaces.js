@@ -6,7 +6,7 @@ import Death from "../assets/deathandco.jpg";
 import { useQuery, gql } from "@apollo/client";
 import { GET_USER } from "../Queries";
 
-const SavedPlaces = ({ city, places }) => {
+const SavedPlaces = ({ city }) => {
   const DisplayUser = () => {
     const { loading, error, data } = useQuery(GET_USER);
 
@@ -27,8 +27,8 @@ const SavedPlaces = ({ city, places }) => {
       const places = favoritesByCity[city].map((place) => {
         return (
           <Link
-            to={`/${city}/${place.id}/saved`}
-            key={place.id}
+            to={`/${city}/${place.placeId}/saved`}
+            key={place.placeId}
             className="place-thumb"
           >
             <div id={`${place.placeName}`} className="saved-place-card">
