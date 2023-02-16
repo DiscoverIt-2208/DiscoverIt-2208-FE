@@ -50,3 +50,10 @@
   height: 200px;
   width: 200px;
 }
+
+@media(max-width: 768px) {
+  .cityPlaces {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}

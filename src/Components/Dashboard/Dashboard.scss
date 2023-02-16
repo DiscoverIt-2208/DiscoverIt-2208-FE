@@ -1,3 +1,9 @@
+$high-tide: 500px;
+$ex-presidents: 600px 800px;
+$surfboard-width: max-width 1000px;
+$surfboard-height: (min-height 1000px) (orientation portrait);
+
+
 .dashboard {
   display: flex;
   flex-direction: column;
@@ -27,7 +33,7 @@
   height: 5vh;
   width: 11vw;
   font-size: 1.5vw;
-  margin-bottom: 3vh;
+  padding: 0;
 }
 
 .category-button:hover {
@@ -101,4 +107,11 @@
   cursor: pointer;
   border: solid #d51131 2px;
   color: #d51131;
+}
+
+@media(max-width: 768px) {
+  .place-card-box {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 }
