@@ -16,9 +16,7 @@ describe('Search Page User Flows', () => {
   })
 
   it('should show user input in search bar as user types', () => {
-    cy.get('[placeholder="Enter City Name..."]')
-      .type('De')
-      .should('have.value', "De")
+    cy.get('[placeholder="Enter City Name..."]').type('De').should('have.value', 'De')
   })
 
   it('should display live search results as user types', () => {
