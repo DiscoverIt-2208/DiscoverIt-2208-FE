@@ -21,11 +21,7 @@ const PlaceDetails = ({ city }) => {
 
     const imageDis =
       data.imageData == null ? (
-        <img
-          className="detailsImage"
-          src={Death}
-          alt="There was no image found for this place!"
-        />
+        <img className="detailsImage" src={Death} alt="Default" />
       ) : (
         <img
           className="detailsImage"

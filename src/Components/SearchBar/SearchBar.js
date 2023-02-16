@@ -28,7 +28,7 @@ const SearchBar = ({ setCity, city }) => {
     if (Object.keys(city).length !== 0) {
       setPlaceHolder(city.properties.city);
     }
-  }, [searchInput]);
+  }, [searchInput, city]);
 
   const handleChange = (e) => {
     e.preventDefault();
