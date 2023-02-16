@@ -1,38 +1,52 @@
 .saved-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    .saved-title {
-        color: #fff;
-        font-family: "Abril Fatface", cursive;
-        font-size: 5em;
-    }
+  .saved-title {
+    color: #fff;
+    font-family: "Abril Fatface", cursive;
+    font-size: 5em;
+  }
 }
 
 .saved-places-container {
-    // height: auto;
-    width: fit-content;
-    background-color: #00000071;
-    color:#fff;
-    border-radius: 2rem;
-    padding: 20px;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    row-gap: 40px;
+  width: fit-content;
+  background-color: #00000071;
+  color: #fff;
+  border-radius: 2rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5%;
+}
+
+.cityPlaces {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cityName {
+  color: #fff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 3vw;
 }
 
 .saved-place-card {
-    box-sizing: border-box;
-    border: 2px solid #fdd700;
-    border-radius: 2rem;
-    padding: 10px;
+  box-sizing: border-box;
+  border: 0.15rem solid #fdd700;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin: 4%;
 }
 
 .saved-image {
-    height: 200px;
-    width: 200px;
+  height: 200px;
+  width: 200px;
 }

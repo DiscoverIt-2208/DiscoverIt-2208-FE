@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { gql, useQuery } from "@apollo/client";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
 import "./Dashboard.scss";
 import PlaceCard from "../PlaceCard/PlaceCard";
 import NavBar from "../NavBar/NavBar";
 import { FETCH_PLACES } from "../Queries";
 
-const Dashboard = ({ city, places, setPlaces }) => {
+const Dashboard = ({ city }) => {
   const [categories, setCategories] = useState(["tourism.attraction"]);
   const [restaurantSelected, setRestaurantSelected] = useState(false);
   const [entertainmentSelected, setEntertainmentSelected] = useState(false);
@@ -14,6 +13,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
   const [cafeSelcted, setCafeSelected] = useState(false);
   const [popularSelected, setPopularSelected] = useState(true);
   const [accessibilitySelected, setAccessibilitySelected] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const DisplayPlaces = () => {
     const { data, loading, error } = useQuery(FETCH_PLACES, {
@@ -21,15 +21,17 @@ const Dashboard = ({ city, places, setPlaces }) => {
         city: city.properties.city,
         country: city.properties.country,
         categories: categories,
+        page: currentPage,
       },
     });
+
     if (loading) {
-      return <p className="error">Submitting...</p>;
+      return <p className="error">Loading...</p>;
     }
     if (error) {
-      return <p className="error">Submission error! {error.message}</p>;
+      return <p className="error">Error! {error.message}</p>;
     }
-    console.log(data)
+
     const eachPlace = data.places.map((place) => {
       return (
         <PlaceCard
@@ -39,12 +41,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
         />
       );
     });
-
-    return (
-      <div className="place-card-box">
-        <div className="place-card">{eachPlace}</div>
-      </div>
-    );
+    return <div className="place-card-box">{eachPlace}</div>;
   };
 
   const changeCategory = (e) => {
@@ -64,7 +61,7 @@ const Dashboard = ({ city, places, setPlaces }) => {
   };
 
   return (
-    <>
+    <div className="dashboard">
       <NavBar city={city.properties.city} />
       <h1 className="city-name">{city.properties.city}</h1>
       <div className="buttons-container">
@@ -140,7 +137,29 @@ const Dashboard = ({ city, places, setPlaces }) => {
         </button>
       </div>
       <DisplayPlaces />
-    </>
+      <div className="back-forward">
+        <button
+          className="backPage"
+          onClick={() => {
+            if (currentPage !== 0) {
+              const newCurrent = currentPage - 1;
+              setCurrentPage(newCurrent);
+            }
+          }}
+        >
+          Back
+        </button>
+        <button
+          className="nextPage"
+          onClick={() => {
+            const newCurrent = currentPage + 1;
+            setCurrentPage(newCurrent);
+          }}
+        >
+          Next
+        </button>
+      </div>
+    </div>
   );
 };
 export default Dashboard;

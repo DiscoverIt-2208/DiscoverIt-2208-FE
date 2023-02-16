@@ -1,20 +1,16 @@
 import React, { useState } from "react";
-import { useQuery, gql } from "@apollo/client";
 import SplashPage from "../SplashPage/SplashPage";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import SearchPage from "../SearchPage/SearchPage";
 import SavedPlaces from "../SavedPlaces/SavedPlaces";
+import SavedDetails from "../SavedDetails/SavedDetails";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import Dashboard from "../Dashboard/Dashboard";
-import samplePlaces from "../sampleData/samplePlaces";
 import BadURL from "../BadURL/BadURL";
 
 const App = () => {
   const [city, setCity] = useState({});
-  const [places, setPlaces] = useState([]);
-  const [error, setError] = useState(false);
-  const [loading, setLoad] = useState(false);
 
   return (
     <>
@@ -28,7 +24,7 @@ const App = () => {
         <Route
           exact
           path={`/saved-places`}
-          element={<SavedPlaces city={city} places={places} />}
+          element={<SavedPlaces city={city} />}
         />
         <Route
           exact
@@ -37,11 +33,10 @@ const App = () => {
         />
         <Route
           exact
-          path={`/dashboard`}
-          element={
-            <Dashboard city={city} places={places} setPlaces={setPlaces} />
-          }
+          path={`/:city/:id/saved`}
+          element={<SavedDetails city={city} />}
         />
+        <Route exact path={`/dashboard`} element={<Dashboard city={city} />} />
         <Route path="/*" element={<BadURL />} />
       </Routes>
     </>

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import "./SavedPlaces.scss";
 import NavBar from "../NavBar/NavBar";
 import Death from "../assets/deathandco.jpg";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { GET_USER } from "../Queries";
 
-const SavedPlaces = ({ city, places }) => {
+const SavedPlaces = ({ city }) => {
   const DisplayUser = () => {
     const { loading, error, data } = useQuery(GET_USER);
 
@@ -21,13 +21,14 @@ const SavedPlaces = ({ city, places }) => {
       return acc;
     }, {});
 
-    const cities = Object.keys(favoritesByCity)
+    const cities = Object.keys(favoritesByCity);
     const placesByCity = cities.map((city) => {
-      <h2>{city}</h2>
+      <h2>{city}</h2>;
       const places = favoritesByCity[city].map((place) => {
         return (
-          <Link to={`/${city}/${place.ninjaId}`} 
-            key={place.ninjaId}
+          <Link
+            to={`/${city}/${place.placeId}/saved`}
+            key={place.placeId}
             className="place-thumb"
           >
             <div id={`${place.placeName}`} className="saved-place-card">
@@ -35,17 +36,17 @@ const SavedPlaces = ({ city, places }) => {
               <p>{place.placeName}</p>
             </div>
           </Link>
-          )
-      })
+        );
+      });
       return (
-        <div>
-          <h2>{city}</h2>
-          {places}
+        <div key={city}>
+          <h2 className="cityName">{city}</h2>
+          <div className="cityPlaces">{places}</div>
         </div>
-      )
-    })
-    return placesByCity
-  }
+      );
+    });
+    return placesByCity;
+  };
   return (
     <>
       <NavBar city={city} />
