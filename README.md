@@ -31,6 +31,19 @@ The app is designed to be user-friendly and accessible, with a simple and intuit
 - Implement GraphQL with Apollo Client
 - At least 80% test coverage
 
+### Setup
+1. Clone the repo
+   ```sh
+   git@github.com:DiscoverIt-2208/DiscoverIt-2208-FE.git
+   ```
+2. Enter the directory and install NPM packages
+   ```sh
+   npm install
+   npm start
+   ``` 
+3. Enter the following url in your browser: http://localhost:3000/
+4. Explore the website
+
 ### Tech Stack
 ![React][React-shield]
 ![Apollo-GraphQL][Apollo-GraphQL-shield]
