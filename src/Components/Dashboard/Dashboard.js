@@ -32,12 +32,15 @@ const Dashboard = ({ city }) => {
       return <p className="error">Error! {error.message}</p>;
     }
 
+    // console.log(data);
+
     const eachPlace = data.places.map((place) => {
       return (
         <PlaceCard
           key={place.placeId}
           place={place}
           city={city.properties.city}
+          image={place.imageData}
         />
       );
     });

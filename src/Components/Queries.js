@@ -60,6 +60,7 @@ export const FETCH_PLACES = gql`
       categories
       lat
       lon
+      imageData
     }
   }
 `;
