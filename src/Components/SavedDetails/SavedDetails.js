@@ -19,6 +19,8 @@ const SavedDetails = ({ city }) => {
     if (loading) return <p className="errorMessage">"Loading..."</p>;
     if (error) return <p className="errorMessage">Error: {error.message}</p>;
 
+    console.log(data);
+
     const imageDis =
       data.placeDetails.imageData == null ? (
         <img className="detailsImage" src={Death} alt="Default!" />
