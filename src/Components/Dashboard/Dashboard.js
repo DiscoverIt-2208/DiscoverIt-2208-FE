@@ -117,6 +117,7 @@ const Dashboard = ({ city }) => {
             changeCategory(e);
             clearSelected();
             setPopularSelected(true);
+            setCategories(null);
           }}
         >
           Popular
