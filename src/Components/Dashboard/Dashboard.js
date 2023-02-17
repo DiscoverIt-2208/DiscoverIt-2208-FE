@@ -38,6 +38,7 @@ const Dashboard = ({ city }) => {
           key={place.placeId}
           place={place}
           city={city.properties.city}
+          image={place.imageData}
         />
       );
     });

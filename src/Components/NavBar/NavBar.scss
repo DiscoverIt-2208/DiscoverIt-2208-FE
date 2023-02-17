@@ -7,7 +7,7 @@
   align-items: center;
   color: #fff;
   width: 100%;
-  height: 70px;
+  height: 10vh;
 }
 
 .discoverIt-title {
@@ -51,12 +51,13 @@
 .links-container {
   display: flex;
   font-size: 1.5vw;
+  width: 40vw;
 }
 
 .nav-link {
   font-family: Georgia, "Times New Roman", Times, serif;
   text-decoration: none;
-  margin: 0 20px;
+  margin: 0 5%;
   color: aliceblue;
 
   h1 {

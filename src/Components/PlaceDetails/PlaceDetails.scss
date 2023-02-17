@@ -54,10 +54,10 @@
 }
 
 .detailsTitle {
-  font-size: 70px;
+  font-size: 5vw;
   color: aliceblue;
   font-family: Georgia, "Times New Roman", Times, serif;
-  margin: 0 20px;
+  margin: 2%;
 }
 
 .detailsInformation {
@@ -91,7 +91,7 @@
   color: aliceblue;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .detailsTitle {
     font-size: 50px;
   }
