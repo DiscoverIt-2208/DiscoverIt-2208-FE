@@ -19,14 +19,15 @@
   text-align: center;
   border: 2px solid #fdd700;
   border-radius: 2rem;
+  padding: 5%;
 }
 
 .card-img {
-  height: 120px;
-  width: 120px;
+  height: 12vh;
+  width: 12vw;
   object-fit: cover;
   border-radius: 2rem;
-  padding: 1rem 1rem;
+  padding: 5%;
 }
 
 .place-thumb:hover {
@@ -35,6 +36,6 @@
 
 .placeName {
   text-align: center;
-  font-size: 14px;
+  font-size: 1vw;
   width: 15vw;
 }
