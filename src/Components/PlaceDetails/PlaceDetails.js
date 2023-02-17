@@ -19,16 +19,15 @@ const PlaceDetails = ({ city }) => {
     if (loading) return <p className="errorMessage">"Loading..."</p>;
     if (error) return <p className="errorMessage">Error: {error.message}</p>;
 
-    const imageDis =
-      data.imageData == null ? (
-        <img className="detailsImage" src={Death} alt="Default" />
-      ) : (
-        <img
-          className="detailsImage"
-          src={data.placeDetails.imageData}
-          alt={data.placeDetails.name}
-        />
-      );
+    const imageDis = !data.placeDetails.imageData ? (
+      <img className="detailsImage" src={Death} alt="Default" />
+    ) : (
+      <img
+        className="detailsImage"
+        src={data.placeDetails.imageData}
+        alt={data.placeDetails.name}
+      />
+    );
 
     return (
       <div className="detailsThumb" alt={data.placeDetails.name}>

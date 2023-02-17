@@ -4,10 +4,8 @@ import "./PlaceCard.scss";
 import Death from "../assets/deathandco.jpg";
 
 const PlaceCard = ({ place, city, image }) => {
-  // console.log(typeof image);
   const fixedImage = image.split('"');
   const newImage = fixedImage[3];
-  console.log(newImage);
 
   const images = newImage ? (
     <img className="card-img" src={newImage} alt={`${place.name}`} />

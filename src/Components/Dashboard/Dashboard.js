@@ -32,8 +32,6 @@ const Dashboard = ({ city }) => {
       return <p className="error">Error! {error.message}</p>;
     }
 
-    // console.log(data);
-
     const eachPlace = data.places.map((place) => {
       return (
         <PlaceCard
