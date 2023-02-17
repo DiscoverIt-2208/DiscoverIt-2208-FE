@@ -6,7 +6,7 @@ import NavBar from "../NavBar/NavBar";
 import { FETCH_PLACES } from "../Queries";
 
 const Dashboard = ({ city }) => {
-  const [categories, setCategories] = useState(["tourism.attraction"]);
+  const [categories, setCategories] = useState(null);
   const [restaurantSelected, setRestaurantSelected] = useState(false);
   const [entertainmentSelected, setEntertainmentSelected] = useState(false);
   const [historySelected, setHistorySelected] = useState(false);
