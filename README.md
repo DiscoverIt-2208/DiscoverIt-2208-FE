@@ -25,9 +25,9 @@
 
 
 ### Learning Goals
-- Interface with the BE team’s API(s) that serve JSON data and incorporate that data into your FE
-- Implement GraphQL with Apollo Client
-- At least 80% test coverage
+- Interface with the Backend team’s APIs that serve JSON data and incorporate that data into our Frontend application
+- Implement GraphQL in React with Apollo Client
+- At least 80% test coverage using Cypress End to End testing
 
 ### Setup
 1. Clone the repo
