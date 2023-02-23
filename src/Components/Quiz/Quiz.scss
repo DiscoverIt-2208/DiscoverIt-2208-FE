@@ -1,0 +1,26 @@
+.quizContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.question {
+  text-align: center;
+  color: aliceblue;
+  margin: 5%;
+}
+
+.options {
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.correct {
+  background-color: greenyellow;
+}
+
+.incorrect {
+  background-color: red;
+}
