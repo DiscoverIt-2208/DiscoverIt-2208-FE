@@ -7,6 +7,7 @@ import SavedPlaces from "../SavedPlaces/SavedPlaces";
 import SavedDetails from "../SavedDetails/SavedDetails";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import Dashboard from "../Dashboard/Dashboard";
+import Quiz from "../Quiz/Quiz";
 import BadURL from "../BadURL/BadURL";
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
           element={<SavedDetails city={city} />}
         />
         <Route exact path={`/dashboard`} element={<Dashboard city={city} />} />
+        <Route exact path={"/quiz"} element={<Quiz />} />
         <Route path="/*" element={<BadURL />} />
       </Routes>
     </>

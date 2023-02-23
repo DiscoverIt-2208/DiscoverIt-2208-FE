@@ -35,6 +35,14 @@ const NavBar = () => {
         >
           <h4>Saved Places</h4>
         </NavLink>
+        <NavLink
+          className="nav-link"
+          activeclassname="active"
+          exact="true"
+          to={`/quiz`}
+        >
+          <h4>Quiz</h4>
+        </NavLink>
       </nav>
     </div>
   );
