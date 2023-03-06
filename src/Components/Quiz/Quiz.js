@@ -5,8 +5,10 @@ import "./Quiz.scss";
 const Quiz = () => {
   const [question, setQuestions] = useState({});
   const [options, setOptions] = useState([]);
-  const [choice, setChoice] = useState("");
-  const [empty, setEmpty] = useState("");
+  const [option1, setOption1] = useState("neutral");
+  const [option2, setOption2] = useState("neutral");
+  const [option3, setOption3] = useState("neutral");
+  const [option4, setOption4] = useState("neutral");
 
   useEffect(() => {
     getQuestions();
@@ -40,13 +42,32 @@ const Quiz = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    setChoice(e.target.innerText);
-    e.target.classList.add(e.target.value);
-    // console.log(e.target.value);
+
+    switch (e.target.id) {
+      case "1":
+        setOption1(e.target.value);
+        break;
+      case "2":
+        setOption2(e.target.value);
+        break;
+      case "3":
+        setOption3(e.target.value);
+        break;
+      case "4":
+        setOption4(e.target.value);
+        break;
+      default:
+        break;
+    }
   };
 
-  // console.log(question);
-  // console.log(options);
+  const getNextQuestion = () => {
+    setOption1("neutral");
+    setOption2("neutral");
+    setOption3("neutral");
+    setOption4("neutral");
+    getQuestions();
+  };
 
   const questionType = () => {
     if (Object.keys(question) != 0) {
@@ -54,28 +75,32 @@ const Quiz = () => {
         question.type != "boolean" ? (
           <div className="options">
             <button
-              className={empty}
+              id={1}
+              className={option1}
               value={options[0].type}
               onClick={(e) => handleClick(e)}
             >
               {options[0].option}
             </button>
             <button
-              className={empty}
+              id={2}
+              className={option2}
               value={options[1].type}
               onClick={(e) => handleClick(e)}
             >
               {options[1].option}
             </button>
             <button
-              className={empty}
+              id={3}
+              className={option3}
               value={options[2].type}
               onClick={(e) => handleClick(e)}
             >
               {options[2].option}
             </button>
             <button
-              className={empty}
+              id={4}
+              className={option4}
               value={options[3].type}
               onClick={(e) => handleClick(e)}
             >
@@ -98,9 +123,13 @@ const Quiz = () => {
     <div>
       <NavBar />
       <div className="quizContainer">
-        <h2 className="question">Question: {question.question}</h2>
-        {questionType()}
-        <button onClick={getQuestions}>Next Question!</button>
+        <div className="background">
+          <h2 className="question">Question: {question.question}</h2>
+          {questionType()}
+        </div>
+        <button className="next" onClick={getNextQuestion}>
+          Next Question
+        </button>
       </div>
     </div>
   );
