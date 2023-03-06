@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import "./Quiz.scss";
+import { getQuestions } from "../apiCalls";
 
 const Quiz = () => {
   const [question, setQuestions] = useState({});
@@ -12,15 +13,8 @@ const Quiz = () => {
   const [optionTrue, setOptionTrue] = useState("neutral");
   const [optionFalse, setOptionFalse] = useState("neutral");
 
-  useEffect(() => {
-    getQuestions();
-  }, []);
-
-  const getQuestions = async () => {
-    const response = await fetch(
-      "https://opentdb.com/api.php?amount=1&category=22"
-    );
-    const data = await response.json();
+  const getAllQuestions = async () => {
+    const data = await getQuestions();
     setQuestions(data.results[0]);
     const incorrect = data.results[0].incorrect_answers.map((item) => {
       return { option: item, type: "incorrect" };
@@ -31,6 +25,10 @@ const Quiz = () => {
     ];
     setOptions(shuffleArray(op));
   };
+
+  useEffect(() => {
+    getAllQuestions();
+  }, []);
 
   const shuffleArray = (shuffled) => {
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -84,13 +82,13 @@ const Quiz = () => {
     setOption4("neutral");
     setOptionTrue("neutral");
     setOptionFalse("neutral");
-    getQuestions();
+    getAllQuestions();
   };
 
   const questionType = () => {
-    if (Object.keys(question) != 0) {
+    if (Object.keys(question) !== 0) {
       const quizOptions =
-        question.type != "boolean" ? (
+        question.type !== "boolean" ? (
           <div className="options">
             <button
               id={1}
