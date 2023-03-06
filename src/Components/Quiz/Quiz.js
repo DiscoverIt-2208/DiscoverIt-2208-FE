@@ -27,8 +27,10 @@ const Quiz = () => {
   };
 
   useEffect(() => {
-    getAllQuestions();
-  }, []);
+    if (Object.keys(question).length === 0) {
+      getAllQuestions();
+    }
+  }, [question]);
 
   const shuffleArray = (shuffled) => {
     for (let i = shuffled.length - 1; i > 0; i--) {
