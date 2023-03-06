@@ -88,7 +88,6 @@ const Quiz = () => {
   };
 
   const questionType = () => {
-    console.log(question);
     if (Object.keys(question) != 0) {
       const quizOptions =
         question.type != "boolean" ? (
