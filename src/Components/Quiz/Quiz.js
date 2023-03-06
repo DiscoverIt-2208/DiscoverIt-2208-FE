@@ -9,6 +9,8 @@ const Quiz = () => {
   const [option2, setOption2] = useState("neutral");
   const [option3, setOption3] = useState("neutral");
   const [option4, setOption4] = useState("neutral");
+  const [optionTrue, setOptionTrue] = useState("neutral");
+  const [optionFalse, setOptionFalse] = useState("neutral");
 
   useEffect(() => {
     getQuestions();
@@ -56,6 +58,20 @@ const Quiz = () => {
       case "4":
         setOption4(e.target.value);
         break;
+      case "true":
+        if (question.correct_answer === "True") {
+          setOptionTrue("correct");
+        } else {
+          setOptionTrue("incorrect");
+        }
+        break;
+      case "false":
+        if (question.correct_answer === "False") {
+          setOptionFalse("correct");
+        } else {
+          setOptionFalse("incorrect");
+        }
+        break;
       default:
         break;
     }
@@ -66,10 +82,13 @@ const Quiz = () => {
     setOption2("neutral");
     setOption3("neutral");
     setOption4("neutral");
+    setOptionTrue("neutral");
+    setOptionFalse("neutral");
     getQuestions();
   };
 
   const questionType = () => {
+    console.log(question);
     if (Object.keys(question) != 0) {
       const quizOptions =
         question.type != "boolean" ? (
@@ -109,8 +128,20 @@ const Quiz = () => {
           </div>
         ) : (
           <div className="options">
-            <button onClick={(e) => handleClick(e)}>True</button>
-            <button onClick={(e) => handleClick(e)}>False</button>
+            <button
+              id="true"
+              className={optionTrue}
+              onClick={(e) => handleClick(e)}
+            >
+              True
+            </button>
+            <button
+              id="false"
+              className={optionFalse}
+              onClick={(e) => handleClick(e)}
+            >
+              False
+            </button>
           </div>
         );
       return quizOptions;
