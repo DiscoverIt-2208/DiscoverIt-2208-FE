@@ -1,0 +1,111 @@
+.quizContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.401);
+  padding: 2%;
+  border-radius: 2.2rem;
+  box-shadow: 0 0 0.9rem 0.15rem black;
+}
+
+.question {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  color: aliceblue;
+  margin: 5%;
+  margin-bottom: 0;
+  width: 55vw;
+}
+
+.options {
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  margin: 1%;
+}
+
+.neutral {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  width: 13vw;
+  height: auto;
+  font-size: 1rem;
+  border-radius: 2.2rem;
+  border: solid #d6c118 0.1rem;
+  color: #d6c118;
+  text-decoration: none;
+  margin: 3%;
+  margin-bottom: 0;
+  background-color: #d6c01800;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25%;
+}
+
+.correct {
+  background-color: greenyellow;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  width: 13vw;
+  height: auto;
+  font-size: 1rem;
+  border-radius: 2.2rem;
+  border: solid #d6c118 0.1rem;
+  color: black;
+  text-decoration: none;
+  margin: 3%;
+  margin-bottom: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25%;
+}
+
+.incorrect {
+  background-color: red;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  width: 13vw;
+  height: auto;
+  font-size: 1rem;
+  border-radius: 2.2rem;
+  border: solid #d6c118 0.1rem;
+  color: aliceblue;
+  text-decoration: none;
+  margin: 3%;
+  margin-bottom: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25%;
+}
+
+.next {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  width: 13vw;
+  height: 5vh;
+  font-size: 1rem;
+  border-radius: 2.2rem;
+  border: solid #d6c118 0.1rem;
+  color: #d6c118;
+  text-decoration: none;
+  margin: 3%;
+  margin-bottom: 0;
+  background-color: #d6c01800;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25%;
+}
+
+.neutral:hover,
+.next:hover {
+  cursor: pointer;
+}

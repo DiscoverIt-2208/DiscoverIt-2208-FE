@@ -50,8 +50,9 @@
 
 .links-container {
   display: flex;
+  justify-content: flex-end;
   font-size: 1.5vw;
-  width: 40vw;
+  width: 60vw;
 }
 
 .nav-link {
