@@ -5,7 +5,12 @@ import { getQuestions } from "../apiCalls";
 
 const Quiz = () => {
   const [question, setQuestions] = useState({});
-  const [options, setOptions] = useState([]);
+  const [options, setOptions] = useState([
+    { type: "" },
+    { type: "" },
+    { type: "" },
+    { type: "" },
+  ]);
   const [option1, setOption1] = useState("neutral");
   const [option2, setOption2] = useState("neutral");
   const [option3, setOption3] = useState("neutral");
@@ -13,11 +18,8 @@ const Quiz = () => {
   const [optionTrue, setOptionTrue] = useState("neutral");
   const [optionFalse, setOptionFalse] = useState("neutral");
 
-  const getQuestions = async () => {
-    const response = await fetch(
-      "https://opentdb.com/api.php?amount=1&category=22"
-    );
-    const data = await response.json();
+  const getAllQuestions = async () => {
+    const data = await getQuestions();
     setQuestions(data.results[0]);
     const incorrect = data.results[0].incorrect_answers.map((item) => {
       return { option: item, type: "incorrect" };
@@ -30,7 +32,7 @@ const Quiz = () => {
   };
 
   useEffect(() => {
-    getQuestions();
+    getAllQuestions();
   }, []);
 
   const shuffleArray = (shuffled) => {
@@ -85,7 +87,7 @@ const Quiz = () => {
     setOption4("neutral");
     setOptionTrue("neutral");
     setOptionFalse("neutral");
-    getQuestions();
+    getAllQuestions();
   };
 
   const questionType = () => {
