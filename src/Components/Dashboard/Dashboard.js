@@ -5,7 +5,7 @@ import PlaceCard from "../PlaceCard/PlaceCard";
 import NavBar from "../NavBar/NavBar";
 import { FETCH_PLACES } from "../Queries";
 
-const Dashboard = ({ city }) => {
+const Dashboard = ({ city, userId }) => {
   const [categories, setCategories] = useState(null);
   const [restaurantSelected, setRestaurantSelected] = useState(false);
   const [entertainmentSelected, setEntertainmentSelected] = useState(false);
@@ -39,6 +39,7 @@ const Dashboard = ({ city }) => {
           place={place}
           city={city.properties.city}
           image={place.imageData}
+          userId={userId}
         />
       );
     });
@@ -63,7 +64,7 @@ const Dashboard = ({ city }) => {
 
   return (
     <div className="dashboard">
-      <NavBar city={city.properties.city} />
+      <NavBar city={city.properties.city} userId={userId} />
       <h1 className="city-name">{city.properties.city}</h1>
       <div className="buttons-container">
         <button

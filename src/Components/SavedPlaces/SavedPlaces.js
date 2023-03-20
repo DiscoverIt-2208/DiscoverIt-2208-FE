@@ -1,14 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./SavedPlaces.scss";
 import NavBar from "../NavBar/NavBar";
 import Death from "../assets/deathandco.jpg";
 import { useQuery } from "@apollo/client";
 import { GET_USER } from "../Queries";
 
-const SavedPlaces = ({ city }) => {
+const SavedPlaces = ({ city, userId }) => {
+  const { user } = useParams();
+
   const DisplayUser = () => {
-    const { loading, error, data } = useQuery(GET_USER);
+    const { loading, error, data } = useQuery(GET_USER, {
+      variables: {
+        userId: user,
+      },
+    });
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
@@ -27,7 +33,7 @@ const SavedPlaces = ({ city }) => {
       const places = favoritesByCity[city].map((place) => {
         return (
           <Link
-            to={`/${city}/${place.placeId}/saved`}
+            to={`/${userId}/${city}/${place.placeId}/saved`}
             key={place.placeId}
             className="place-thumb"
           >
@@ -47,9 +53,10 @@ const SavedPlaces = ({ city }) => {
     });
     return placesByCity;
   };
+
   return (
     <>
-      <NavBar city={city} />
+      <NavBar city={city} userId={userId} />
       <div className="saved-container">
         <h1 className="saved-title">Saved Places</h1>
         <div className="saved-places-container">{<DisplayUser />}</div>

@@ -7,7 +7,7 @@ import NavBar from "../NavBar/NavBar";
 import { FETCH_PLACE_DETAILS } from "../Queries";
 import Death from "../assets/deathandco.jpg";
 
-const SavedDetails = ({ city }) => {
+const SavedDetails = ({ city, userId }) => {
   const { id } = useParams();
 
   const DisplaySavedPlace = () => {
@@ -81,9 +81,8 @@ const SavedDetails = ({ city }) => {
 
   return (
     <>
-      <NavBar />
       <div className="saved-details-page">
-        <Link to={`/saved-places`} className="backButton">
+        <Link to={`/${userId}/saved-places`} className="backButton">
           Back
         </Link>
         <DisplaySavedPlace />

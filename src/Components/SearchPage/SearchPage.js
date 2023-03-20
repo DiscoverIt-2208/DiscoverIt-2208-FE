@@ -4,11 +4,11 @@ import SearchBar from "../SearchBar/SearchBar";
 import Logo from "../assets/DiscoverItLogo.svg";
 import { Link } from "react-router-dom";
 
-const SearchPage = ({ city, setCity }) => {
+const SearchPage = ({ city, setCity, userId }) => {
   const cityKeys = Object.keys(city);
   const exploreCity =
     cityKeys.length !== 0 ? (
-      <Link to={`/dashboard`} className="exploreCity">
+      <Link to={`/${userId}/dashboard`} className="exploreCity">
         GO!
       </Link>
     ) : null;

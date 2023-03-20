@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.scss";
 
-const NavBar = () => {
+const NavBar = ({ userId }) => {
   return (
     <div className="NavBar-container">
       <div className="title-text">
@@ -15,7 +15,7 @@ const NavBar = () => {
           className="nav-link"
           activeclassname="active"
           exact="true"
-          to="/search-page"
+          to={`/${userId}/search-page`}
         >
           <h4>Pick A City</h4>
         </NavLink>
@@ -23,7 +23,7 @@ const NavBar = () => {
           className="nav-link"
           activeclassname="active"
           exact="true"
-          to={`/dashboard`}
+          to={`/${userId}/dashboard`}
         >
           <h4>Dashboard</h4>
         </NavLink>
@@ -31,7 +31,7 @@ const NavBar = () => {
           className="nav-link"
           activeclassname="active"
           exact="true"
-          to={`/saved-places`}
+          to={`/${userId}/saved-places`}
         >
           <h4>Saved Places</h4>
         </NavLink>
@@ -39,7 +39,7 @@ const NavBar = () => {
           className="nav-link"
           activeclassname="active"
           exact="true"
-          to={`/quiz`}
+          to={`/${userId}/quiz`}
         >
           <h4>Quiz</h4>
         </NavLink>

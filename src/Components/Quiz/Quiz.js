@@ -3,7 +3,7 @@ import NavBar from "../NavBar/NavBar";
 import "./Quiz.scss";
 import { getQuestions } from "../apiCalls";
 
-const Quiz = () => {
+const Quiz = ({ userId }) => {
   const [question, setQuestions] = useState({});
   const [options, setOptions] = useState([
     { type: "" },
@@ -155,7 +155,7 @@ const Quiz = () => {
 
   return (
     <div>
-      <NavBar />
+      <NavBar userId={userId} />
       <div className="quizContainer">
         <div className="background">
           <h2 className="question">Question: {question.question}</h2>

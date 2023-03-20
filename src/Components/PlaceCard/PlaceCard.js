@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./PlaceCard.scss";
 import Death from "../assets/deathandco.jpg";
 
-const PlaceCard = ({ place, city, image }) => {
+const PlaceCard = ({ place, city, image, userId }) => {
   const fixedImage = image.split('"');
   const newImage = fixedImage[3];
 
@@ -15,7 +15,7 @@ const PlaceCard = ({ place, city, image }) => {
 
   return (
     <Link
-      to={`/${city}/${place.placeId}`}
+      to={`/${userId}/${city}/${place.placeId}`}
       className="place-thumb"
       key={place.placeId}
     >

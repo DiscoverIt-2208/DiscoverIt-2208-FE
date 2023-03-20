@@ -7,7 +7,7 @@ import { CREATE_USER_FAVORITE } from "../Queries";
 import { FETCH_PLACE_DETAILS } from "../Queries";
 import Death from "../assets/deathandco.jpg";
 
-const PlaceDetails = ({ city }) => {
+const PlaceDetails = ({ city, userId }) => {
   const { id } = useParams();
 
   const DisplayPlace = () => {
@@ -86,9 +86,8 @@ const PlaceDetails = ({ city }) => {
 
   return (
     <>
-      <NavBar city={city.properties.city} />
       <div className="detailsPage">
-        <Link to={`/dashboard`} className="backButton">
+        <Link to={`/${userId}/dashboard`} className="backButton">
           Back
         </Link>
         <DisplayPlace />

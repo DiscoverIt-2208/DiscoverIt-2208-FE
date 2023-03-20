@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const GET_USER = gql`
-  query GetUser {
-    user(id: "1") {
+  query GetUser($userId: ID!) {
+    user(id: $userId) {
       favorites {
         placeId
         placeName
