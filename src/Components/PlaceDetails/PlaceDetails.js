@@ -72,15 +72,16 @@ const PlaceDetails = ({ city }) => {
     if (data) console.log(data);
 
     return (
-      <button
-        className="detailsButtons"
-        onClick={(e) => {
-          e.preventDefault();
-          createUserFavorite();
-        }}
-      >
-        Save
-      </button>
+      <Link to="/saved-places">
+        <button
+          className="detailsButtons"
+          onClick={(e) => {
+            createUserFavorite();
+          }}
+        >
+          Save
+        </button>
+      </Link>
     );
   };
 
